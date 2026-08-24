@@ -392,7 +392,8 @@ const GLO={
 
 
 /* ══════ estado y persistencia ══════ */
-let DB={inicio:null,log:{},fisio:{},cierre:{},sust:{},sesiones:{},ses:null,visto:false};
+const FORMATO=1;
+let DB={v:FORMATO,inicio:null,log:{},fisio:{},cierre:{},sust:{},sesiones:{},desc:null,ses:null,visto:false};
 let dia=null,tab='hoy',abierto=null,gq='';
 const K='mosbyfit:v1';
 const iso=d=>{const x=d||new Date();return x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')+'-'+String(x.getDate()).padStart(2,'0')};
@@ -444,7 +445,9 @@ addEventListener('pagehide',()=>{if(sucio){clearTimeout(pend);try{ALMACEN.set(K,
 document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden'&&sucio){clearTimeout(pend);flush()}});
 
 function sanea(o){
-  const d={inicio:null,log:{},fisio:{},cierre:{},sust:{},sesiones:{},ses:null,visto:false};
+  const d={v:FORMATO,inicio:null,log:{},fisio:{},cierre:{},sust:{},sesiones:{},desc:null,ses:null,visto:false};
+  if(o&&o.v&&o.v>FORMATO){toast('Ese respaldo es de una versión más nueva de la app');return d}
+  if(o&&o.desc&&isFinite(o.desc.fin))d.desc={fin:+o.desc.fin,tot:+o.desc.tot||90,n:String(o.desc.n||'')};
   if(!o||typeof o!=='object')return d;
   d.inicio=typeof o.inicio==='string'?o.inicio:null;
   d.visto=!!o.visto;
@@ -468,7 +471,7 @@ async function cargar(){
   if(DB.ses&&DB.ses.f===HOY&&DIAS.indexOf(DB.ses.dia)>=0){
     dia=DB.ses.dia;abierto=DB.ses.abierto||null;restaurar=DB.ses.sc||0;
   }else dia=diaDeHoy();
-  cerrarViejas();pintar();engancharScroll();tickReloj();
+  cerrarViejas();pintar();engancharScroll();tickReloj();reanudarDescanso();
   if(!DB.visto){DB.visto=true;guardar();ayuda()}
 }
 
@@ -524,19 +527,26 @@ function pintaT(){
   $('rtime').textContent=Math.floor(Math.max(0,tq)/60)+':'+String(Math.max(0,tq)%60).padStart(2,'0');
   $('rbar').style.width=(Math.max(0,tq)/ttot*100)+'%';
 }
-function descanso(seg,nombre){
-  clearInterval(T);tq=seg;ttot=seg;
+function descanso(seg,nombre,fin){
+  clearInterval(T);tq=seg;ttot=fin?Math.max(seg,ttot||seg):seg;
+  if(!fin){DB.desc={fin:Date.now()+seg*1000,tot:seg,n:nombre||''};guardar()}
   $('rnm').textContent=nombre||'';
   $('rest').classList.add('on');pintaT();despierto();
   T=setInterval(()=>{
     tq--;pintaT();
-    if(tq<=0){clearInterval(T);vibra([190,90,190]);pitido(2);
+    if(tq<=0){clearInterval(T);DB.desc=null;guardar();vibra([190,90,190]);pitido(2);
       $('rtime').textContent='Listo';
       setTimeout(()=>$('rest').classList.remove('on'),2200);}
   },1000);
 }
 $('rplus').onclick=()=>{if(tq<=0)return;tq+=30;ttot=Math.max(ttot,tq);pintaT()};
-$('rskip').onclick=()=>{clearInterval(T);$('rest').classList.remove('on')};
+$('rskip').onclick=()=>{clearInterval(T);DB.desc=null;guardar();$('rest').classList.remove('on')};
+function reanudarDescanso(){
+  const d=DB.desc;if(!d||!d.fin)return;
+  const q=Math.floor((d.fin-Date.now())/1000);
+  if(q<=1){DB.desc=null;return}
+  ttot=d.tot||q;descanso(q,d.n,true);
+}
 
 /* ══════ render ══════ */
 function pintar(){
@@ -604,7 +614,7 @@ function cardFisio(){
     r.appendChild(E('div','n',f.n+'<s>'+f.s+'</s>'));
     if(f.w){
       const i=E('input','fw');i.type='number';i.inputMode='decimal';i.placeholder='kg';i.value=s.p!=null?s.p:'';
-      i.oninput=()=>{DB.fisio[HOY]=DB.fisio[HOY]||{};DB.fisio[HOY][f.id]=Object.assign({},DB.fisio[HOY][f.id],{p:i.value===''?null:+i.value});guardar()};
+      i.oninput=()=>{let v=i.value===''?null:Math.max(0,+i.value||0);if(v!==null&&+i.value<0)i.value=0;DB.fisio[HOY]=DB.fisio[HOY]||{};DB.fisio[HOY][f.id]=Object.assign({},DB.fisio[HOY][f.id],{p:v});guardar()};
       r.appendChild(i);
     }
     const t=E('button','tick'+(s.ok?' on':''),s.ok?'✓':'');
@@ -635,13 +645,22 @@ function cardEj(e,n){
   c.appendChild(hd);
   const b=E('div','body');
 
+  const vAnt=u?veredicto(e,u.v):null;
+  const cambioVar=u&&variantePasada(e)!==nombreHoy(e);
+  let sug=null;
+  if(u&&!cambioVar&&vAnt){
+    if(vAnt.t==='sube')sug={p:Math.round((u.v[0].p+e.inc)*100)/100,r:e.r[0],
+      txt:'Precargado con <b>'+Math.round((u.v[0].p+e.inc)*100)/100+' kg</b>: la vez pasada completaste el rango, así que toca subir. Vas a caer cerca de '+e.r[0]+' repeticiones y eso es lo correcto.'};
+    else if(vAnt.t==='baja')sug={p:Math.round(Math.max(0,u.v[0].p-e.inc)*100)/100,r:e.r[0],
+      txt:'Precargado más ligero: la vez pasada te quedaste abajo de '+e.r[0]+' repeticiones.'};
+  }
   const g=E('div','guide'+(u?'':' first'));
   if(u){
     g.innerHTML='<span class="eyebrow">A batir · hace '+u.dias+(u.dias===1?' día':' días')+'</span>'+
       '<span class="v">'+u.v.map(s=>(s.p??'—')+'×'+(s.r??'—')).join('   ')+'</span>'+
       '<span class="s">'+(variantePasada(e)!==nombreHoy(e)
         ? 'Ojo: la vez pasada fue con <b>'+variantePasada(e)+'</b>. Esos pesos no son comparables, trata este como primera vez.'
-        : 'Mismo peso en las '+e.s+' series. Busca una repetición más que la vez pasada en cada una.')+'</span>';
+        : (sug?sug.txt:'Mismo peso en las '+e.s+' series. Busca una repetición más que la vez pasada en cada una.'))+'</span>';
   }else{
     g.innerHTML='<span class="eyebrow">Primera vez con este ejercicio</span>'+
       '<span class="v">Busca el peso</span>'+
@@ -671,8 +690,8 @@ function cardEj(e,n){
 
   cur.forEach((s,i)=>{
     const prev=u&&(u.v[i]||u.v[u.v.length-1]);
-    if(s.p==null&&prev)s.p=prev.p;
-    if(s.r==null&&prev)s.r=prev.r;
+    if(s.p==null)s.p=sug?sug.p:(prev?prev.p:null);
+    if(s.r==null)s.r=sug?sug.r:(prev?prev.r:null);
     const row=E('div','setrow');
     const marca=()=>{
       row.classList.toggle('hecha',!!s.ok);
@@ -711,7 +730,7 @@ function stepper(val,inc,unidad,cb){
   const set=v=>{v=Math.max(0,Math.round(v*100)/100);i.value=v;cb(v);vibra(10)};
   menos.onclick=()=>set((+i.value||0)-inc);
   mas.onclick=()=>set((+i.value||0)+inc);
-  i.oninput=()=>cb(i.value===''?null:+i.value);
+  i.oninput=()=>{if(i.value===''){cb(null);return}let v=+i.value;if(!isFinite(v)||v<0){v=0;i.value=0}cb(v)};
   w.appendChild(menos);w.appendChild(i);w.appendChild(E('span','u',unidad));w.appendChild(mas);
   return w;
 }
@@ -825,7 +844,12 @@ function texto(){
     const hayF=Object.values(F).some(v=>v&&v.ok);
     if(!hayL&&!hayF)return;
     n++;
-    o+='\n'+'-'.repeat(46)+'\n'+f+(dk?'   '+NOM[dk]+' · '+PLAN[dk].t:'')+'\n';
+    const TODOS=[];for(const k in PLAN)PLAN[k].ej.forEach(e=>TODOS.push({e,k}));
+    const hechos=TODOS.filter(x=>Array.isArray(L[x.e.id])&&L[x.e.id].some(s=>s&&s.ok));
+    const S0=(DB.sesiones||{})[f];
+    const real=(S0&&PLAN[S0.dia]?S0.dia:(hechos[0]?hechos[0].k:dk));
+    o+='\n'+'-'.repeat(46)+'\n'+f+(real?'   '+NOM[real]+' · '+PLAN[real].t:'')+'\n';
+    if(real&&dk&&real!==dk)o+='  (hecho en '+NOM[dk].toLowerCase()+')\n';
     const S=(DB.sesiones||{})[f];
     if(S&&S.t0&&S.t1&&!S.incompleta){
       const hh=t=>{const d2=new Date(t);return String(d2.getHours()).padStart(2,'0')+':'+String(d2.getMinutes()).padStart(2,'0')};
@@ -835,8 +859,8 @@ function texto(){
       const h=FISIO.filter(x=>F[x.id]&&F[x.id].ok);
       o+='  fisio '+h.length+'/6   '+h.map(x=>x.k+(F[x.id].p?' '+F[x.id].p+'kg':'')).join(', ')+'\n';
     }
-    (dk?PLAN[dk].ej:Object.values(PLAN).flatMap(x=>x.ej)).forEach(e=>{
-      const v=L[e.id];if(!v)return;const ok=v.filter(s=>s&&s.ok);if(!ok.length)return;
+    hechos.sort((a,b)=>(a.k===real?0:1)-(b.k===real?0:1)).forEach(({e})=>{
+      const v=L[e.id];const ok=v.filter(s=>s&&s.ok);
       const nm=(DB.sust[f]||{})[e.id];
       o+='  '+((nm?nm+' *':e.n)+' '.repeat(42)).slice(0,42)+ok.map(s=>(s.p??'-')+'x'+(s.r??'-')).join('  ')+'\n';
     });
@@ -878,7 +902,7 @@ function vistaExp(m){
     if(!armado){armado=true;r.textContent='Toca otra vez para confirmar';
       setTimeout(()=>{armado=false;r.textContent='Empezar mes nuevo · borra el registro'},4000);return}
     respaldar();
-    DB={inicio:HOY,log:{},fisio:{},cierre:{},sust:{},sesiones:{},ses:null,visto:true};guardar();toast('Registro reiniciado');pintar();
+    DB={v:FORMATO,inicio:HOY,log:{},fisio:{},cierre:{},sust:{},sesiones:{},desc:null,ses:null,visto:true};guardar();toast('Registro reiniciado');pintar();
   };
   m.appendChild(r);
 }
@@ -1174,5 +1198,7 @@ async function compartir(blob,nombre,msg){
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{tab=b.dataset.t;restaurar=(b.dataset.t==='hoy'&&DB.ses&&DB.ses.f===HOY)?DB.ses.sc:0;pintar()});
 document.body.addEventListener('touchstart',()=>{despierto();audioOn()},{once:true,passive:true});
 document.body.addEventListener('click',()=>{despierto();audioOn()},{once:true});
+if('serviceWorker' in navigator)
+  addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 cargar();
 </script>
