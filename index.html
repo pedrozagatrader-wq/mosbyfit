@@ -641,7 +641,7 @@ function texto(DB,plan,hoy,desde){
     const real=S&&diaPlan(plan,S.dia)?S.dia:dk;
     const D=real?diaPlan(plan,real):null;
     L.push('');L.push('-'.repeat(46));
-    L.push(f+'   sem '+semanaDe(f,DB,plan)+(D?'   '+NOM[real]+' · '+D.nombre:''));
+    L.push(f+'   '+(f<lunesDe(inicioDe(DB,plan))?'práctica':'sem '+semanaDe(f,DB,plan))+(D?'   '+NOM[real]+' · '+D.nombre:''));
     if(real&&dk&&real!==dk)L.push('  (hecho en '+LARGO[dk]+')');
     if(S&&S.t1&&!S.incompleta)L.push('  '+hhmm(S.t0)+' a '+hhmm(S.t1)+'   duracion '+hms(Math.floor((S.t1-S.t0)/1000)));
     const orden=D?D.ejercicios.map(e=>e.clave):[];
@@ -737,13 +737,11 @@ function saludo(){const h=new Date().getHours();return h<12?'Buenos días':(h<19
 
 /* ── semana visible y día ── */
 function lunesVisible(){
-  const ini=lunesDe(inicioDe(DB,PLAN));
-  if(HOY<ini)return ini;
   const w=fecha(HOY).getDay();
   return w===0||w===6?masDias(lunesDe(HOY),7):lunesDe(HOY);
 }
 function fechaDia(k){return masDias(lunesVisible(),DIAS.indexOf(k))}
-function diaDeHoy(){const w=fecha(HOY).getDay();return w>=1&&w<=5&&HOY>=lunesDe(inicioDe(DB,PLAN))?DIAS[w-1]:'lun'}
+function diaDeHoy(){const w=fecha(HOY).getDay();return w>=1&&w<=5?DIAS[w-1]:'lun'}
 function esHoy(k){return fechaDia(k)===HOY}
 function semHoy(){return infoSemana(PLAN,semanaDe(HOY,DB,PLAN))}
 function antesDeEmpezar(){return HOY<inicioDe(DB,PLAN)}
@@ -808,7 +806,7 @@ function vistaInicio(m){
   m.appendChild(E('div','saludo','<div class="eyebrow">'+PLAN.nombre+'</div><div class="h">'+saludo()+'</div><div class="f">'+(t=>t[0].toUpperCase()+t.slice(1))(fechaLarga(HOY))+'</div>'));
   const ini=inicioDe(DB,PLAN), chk=checkinDe(DB,PLAN);
   if(antesDeEmpezar()){const fal=difDias(ini,HOY);
-    m.appendChild(E('div','wk','<span class="eyebrow">Arrancas el '+fechaLarga(ini)+'</span><p>Faltan '+fal+(fal===1?' día':' días')+'. Mientras: toma tus medidas en la pestaña Cuerpo y revisa el entreno del lunes para ubicar las máquinas.</p>'));
+    m.appendChild(E('div','wk','<span class="eyebrow">Semana de práctica · arrancas el '+fechaLarga(ini)+'</span><p>Faltan '+fal+(fal===1?' día':' días')+'. Si entrenas antes, usa las reglas de calibración (una serie menos, RIR 3-4): lo que anotes queda como tu punto de partida. Aprovecha para ubicar las máquinas y tomar tus medidas en Cuerpo.</p>'));
   }else{
     let t='<span class="eyebrow">Semana '+sm.n+' · '+sm.nombre+'</span><p>'+(sm.objetivo||'')+'</p>';
     if(sm.extra)t='<span class="eyebrow">Toca check-in</span><p>Ya pasaron las 4 semanas. Manda fotos, medidas y el reporte al chat de entrenamiento. Mientras, sigue con las cargas de la semana 4.</p>';
@@ -853,7 +851,7 @@ function vistaInicio(m){
 /* ── día de entreno ── */
 function vistaDia(m){
   const D=diaPlan(PLAN,dia), sem=infoSemana(PLAN,semanaDe(HOY,DB,PLAN)), act=activa();
-  if(antesDeEmpezar())m.appendChild(E('div','avisod','El programa arranca el '+fechaLarga(inicioDe(DB,PLAN))+'. Puedes revisarlo desde ya; si registras algo antes, cuenta como práctica de la semana 1.'));
+  if(antesDeEmpezar())m.appendChild(E('div','avisod','Semana de práctica: el programa arranca el '+fechaLarga(inicioDe(DB,PLAN))+'. Hoy van las reglas de calibración y lo que anotes queda como punto de partida.'+(esHoy(dia)?'':' Se guarda con la fecha de hoy, '+fechaLarga(HOY)+'.')));
   else if(!esHoy(dia))m.appendChild(E('div','avisod','Estás viendo el entreno del '+LARGO[dia]+'. Lo que registres se guarda con la fecha de hoy, '+fechaLarga(HOY)+'.'));
   if(!act&&!(sesionHoy()&&sesionHoy().t1)){
     const b=E('button','go','Iniciar sesión · '+D.nombre);b.style.marginTop='0';b.style.marginBottom='14px';b.onclick=iniciarSesion;m.appendChild(b);
@@ -1149,7 +1147,7 @@ function vistaGlo(m){
 
 /* ── exportar, respaldo y programa ── */
 function vistaExp(m){
-  const desde=rango==='prog'?lunesDe(inicioDe(DB,PLAN)):null;
+  const desde=rango==='prog'?masDias(lunesDe(inicioDe(DB,PLAN)),-7):null;
   const fs=Object.keys(DB.log).filter(f=>(!desde||f>=desde)&&Object.values(DB.log[f]).some(v=>okSets(v).length));
   let ns=0;fs.forEach(f=>Object.values(DB.log[f]).forEach(v=>ns+=okSets(v).length));
   const st=E('div','stats');[[fs.length,'Sesiones'],[ns,'Series'],[semanaDe(HOY,DB,PLAN),'Semana']].forEach(([v,k])=>st.appendChild(E('div','stat','<div class="v">'+v+'</div><div class="k">'+k+'</div>')));
