@@ -287,6 +287,10 @@ nav button b{display:block;font-size:15px;font-weight:400;margin-bottom:3px;lett
 .exrow:first-child{border-top:none}
 .exrow s{text-decoration:none;font-family:var(--mono);font-size:11px;color:var(--dim)}
 a.lnk{color:var(--gold);text-decoration:none}
+
+header{padding-top:env(safe-area-inset-top)}
+.sheetc{padding-bottom:calc(30px + env(safe-area-inset-bottom))}
+.sheet{padding-top:env(safe-area-inset-top)}
 </style>
 <div id="app">
   <header>
@@ -849,7 +853,8 @@ function vistaInicio(m){
 /* ── día de entreno ── */
 function vistaDia(m){
   const D=diaPlan(PLAN,dia), sem=infoSemana(PLAN,semanaDe(HOY,DB,PLAN)), act=activa();
-  if(!esHoy(dia))m.appendChild(E('div','avisod','Estás viendo el entreno del '+LARGO[dia]+'. Lo que registres se guarda con la fecha de hoy, '+fechaLarga(HOY)+'.'));
+  if(antesDeEmpezar())m.appendChild(E('div','avisod','El programa arranca el '+fechaLarga(inicioDe(DB,PLAN))+'. Puedes revisarlo desde ya; si registras algo antes, cuenta como práctica de la semana 1.'));
+  else if(!esHoy(dia))m.appendChild(E('div','avisod','Estás viendo el entreno del '+LARGO[dia]+'. Lo que registres se guarda con la fecha de hoy, '+fechaLarga(HOY)+'.'));
   if(!act&&!(sesionHoy()&&sesionHoy().t1)){
     const b=E('button','go','Iniciar sesión · '+D.nombre);b.style.marginTop='0';b.style.marginBottom='14px';b.onclick=iniciarSesion;m.appendChild(b);
   }
