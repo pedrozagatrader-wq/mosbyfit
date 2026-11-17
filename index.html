@@ -159,7 +159,7 @@ main{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:14px 12px 28px}
 .gbody b{color:var(--text);font-weight:500}
 .saludo{padding:26px 4px 4px}
 .saludo .h{font-size:26px;font-weight:700;letter-spacing:-.02em;margin:4px 0 0}
-.saludo .f{font-size:13.5px;color:var(--dim);margin-top:5px;text-transform:capitalize}
+.saludo .f{font-size:13.5px;color:var(--dim);margin-top:5px}
 .hero{background:var(--panel);border:1px solid var(--line2);border-radius:14px;padding:18px;margin:20px 0 14px}
 .hero .k{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--gold);text-transform:uppercase}
 .hero .t{font-size:20px;font-weight:700;margin:7px 0 0;letter-spacing:-.015em}
@@ -181,7 +181,7 @@ main{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:14px 12px 28px}
 .fin{display:block;width:100%;padding:16px;border-radius:10px;border:1px solid var(--goldDim);background:#15110A;color:var(--gold);font-size:15px;font-weight:500;text-align:center;margin-top:16px}
 .avisod{background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:11px 12px;margin-bottom:12px;font-size:12.5px;color:var(--dim);line-height:1.5}
 .res{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
-.res div{background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:13px}
+.res>div{background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:13px}
 .res .v{font-family:var(--mono);font-size:23px;color:var(--gold);letter-spacing:-.02em}
 .res .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--dim);text-transform:uppercase;margin-top:3px}
 .tini{width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:13px;font-family:var(--mono);font-size:16px;text-align:center;margin-top:8px}
@@ -228,8 +228,66 @@ nav button b{display:block;font-size:15px;font-weight:400;margin-bottom:3px;lett
 .toast{position:absolute;bottom:76px;left:50%;transform:translateX(-50%);background:var(--panel3);border:1px solid var(--line2);border-radius:8px;padding:10px 16px;font-size:13px;opacity:0;transition:.25s;pointer-events:none;z-index:40;max-width:88%;text-align:center}
 .toast.on{opacity:1}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.colh{display:grid;grid-template-columns:16px 1fr 1fr 46px 42px;gap:6px;padding:2px 0 4px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;color:var(--dimmer);text-transform:uppercase}
+.colh span{text-align:center}
+.setrow{display:grid!important;grid-template-columns:16px 1fr 1fr 46px 42px;gap:6px;align-items:center}
+.stepper button{width:32px}
+.rirb{height:42px;border:1px dashed var(--line);border-radius:7px;background:var(--panel2);font-family:var(--mono);font-size:13px;color:var(--dimmer)}
+.setrow.hecha .rirb{border-style:solid;border-color:var(--line2);color:var(--text);background:var(--panel3)}
+.rirb.set{color:var(--gold)!important}
+.rirrow{display:none;gap:5px;padding:2px 0 8px 22px}
+.rirrow.on{display:flex}
+.rirrow button{flex:1;height:36px;border:1px solid var(--line);border-radius:7px;background:var(--panel2);font-family:var(--mono);font-size:13px;color:var(--dim)}
+.rirrow button.on{border-color:var(--gold);color:var(--gold)}
+.knee{margin-top:12px;padding-top:11px;border-top:1px solid var(--line)}
+.knee .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px}
+.knee .lab{font-family:var(--mono);font-size:11px;letter-spacing:.08em}
+.kchips{display:grid;grid-template-columns:repeat(11,1fr);gap:3px}
+.kchips button{height:34px;border-radius:6px;border:1px solid var(--line);background:var(--panel2);font-family:var(--mono);font-size:12px;color:var(--dim)}
+.kchips button.v.on{background:#0F2A1C;border-color:var(--green);color:var(--greenTxt)}
+.kchips button.a.on{background:#2A2208;border-color:#7A6216;color:var(--gold)}
+.kchips button.r.on{background:var(--redDim);border-color:#6A3129;color:#E0A79F}
+.lab.verde{color:var(--greenTxt)} .lab.amarillo{color:var(--gold)} .lab.rojo{color:var(--red)}
+.badge{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;padding:2px 6px;border-radius:4px;border:1px solid var(--line2);color:var(--dim);margin-left:6px;vertical-align:1px}
+.badge.k{border-color:#4A3A12;color:var(--gold)}
+.badge.ss{border-color:#1A4A34;color:var(--greenTxt)}
+.verd.amar{background:#15110A;border:1px solid var(--goldDim);color:var(--goldSoft)}
+.verd.amar .eyebrow{color:var(--gold)}
+.verd.rojo{background:var(--redDim);border:1px solid #4A2722;color:#D6A9A2}
+.verd.rojo .eyebrow{color:var(--red)}
+.verd.trans,.verd.calib,.verd.parcial,.verd.mezcla{background:var(--panel2);border:1px solid var(--line);color:#B4BAB5}
+.guide .w{display:block;margin-top:7px;font-size:12.5px;line-height:1.5;color:var(--gold)}
+.guide .w.r{color:#E0A79F}
+.act.yt{color:var(--text)}
+.wk{border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:11px 13px;margin-bottom:12px}
+.wk .eyebrow{color:var(--gold)}
+.wk p{margin:4px 0 0;font-size:12.5px;color:var(--dim);line-height:1.5}
+.alarma{border:1px solid #4A2722;background:var(--redDim);border-radius:10px;padding:12px 13px;margin:0 0 12px}
+.alarma .eyebrow{color:var(--red)}
+.alarma p{margin:5px 0 0;font-size:13px;color:#D6A9A2;line-height:1.5}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.fld{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.fld label{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--dim);text-transform:uppercase}
+.fld input{width:100%;background:none;border:none;font-family:var(--mono);font-size:18px;padding:3px 0 0;color:var(--text)}
+.fld input::placeholder{color:var(--dimmer)}
+.big{font-family:var(--mono);font-size:30px;color:var(--gold);letter-spacing:-.02em;line-height:1}
+.kv{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.cuerpo{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px}
+.cuerpo h3{font-size:15px;font-weight:500;margin:0}
+.row2{display:flex;gap:8px;margin-top:10px}
+.row2 .fld{flex:1}
+.row2 .btn{margin-top:0;width:auto;padding:0 18px}
+.echips{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.echips button{height:42px;border:1px solid var(--line);border-radius:8px;background:var(--panel2);font-family:var(--mono);font-size:15px;color:var(--dim)}
+.echips button.on{border-color:var(--gold);color:var(--gold);background:#15110A}
+.blk{margin-top:16px}
+.blk>.eyebrow{display:block;margin-bottom:8px}
+.ssnote{font-family:var(--mono);font-size:11px;color:var(--greenTxt);margin-top:3px}
+.exrow{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13px}
+.exrow:first-child{border-top:none}
+.exrow s{text-decoration:none;font-family:var(--mono);font-size:11px;color:var(--dim)}
+a.lnk{color:var(--gold);text-decoration:none}
 </style>
-
 <div id="app">
   <header>
     <div class="hrow">
@@ -245,13 +303,14 @@ nav button b{display:block;font-size:15px;font-weight:400;margin-bottom:3px;lett
   <main id="main"><div class="empty mono">cargando…</div></main>
   <div class="rest" id="rest">
     <div class="rbar" id="rbar"></div>
-    <div class="rleft"><div class="eyebrow">Descanso</div><div class="nm" id="rnm"></div></div>
+    <div class="rleft"><div class="eyebrow" id="rlab">Descanso</div><div class="nm" id="rnm"></div></div>
     <div class="rtime" id="rtime">0:00</div>
-    <button class="rbtn" id="rplus">+30</button>
-    <button class="rbtn" id="rskip">✕</button>
+    <button class="rbtn" id="rplus" aria-label="Sumar 30 segundos">+30</button>
+    <button class="rbtn" id="rskip" aria-label="Saltar descanso">✕</button>
   </div>
   <nav>
     <button data-t="hoy" class="on"><b>▤</b>Entreno</button>
+    <button data-t="cue"><b>◎</b>Cuerpo</button>
     <button data-t="glo"><b>≡</b>Glosario</button>
     <button data-t="exp"><b>↗</b>Exportar</button>
   </nav>
@@ -260,945 +319,919 @@ nav button b{display:block;font-size:15px;font-weight:400;margin-bottom:3px;lett
 </div>
 
 <script>
-const DIAS=['lun','mar','mie','jue','vie'];
-const NOM={lun:'LUN',mar:'MAR',mie:'MIÉ',jue:'JUE',vie:'VIE'};
-
-const PLAN={
-lun:{t:'Dorsal y hombro',fisio:true,ej:[
- {id:'jalon_ancho',alt:['Dominadas asistidas con banda','Jalón en polea agarre neutro'],g:'Jalón al pecho, agarre ancho',n:'Jalón al pecho, agarre ancho',o:'Dorsal',s:4,r:[8,12],rir:'2',d:'2-3 min',inc:2.5,
-  tip:'Pecho arriba, barra al pecho alto. Piensa en bajar los codos hacia las costillas, no en jalar con las manos. Deja que los hombros se estiren completos arriba.'},
- {id:'pullover',alt:['Pullover con mancuerna en banco','Jalón con brazos extendidos en polea baja'],g:'Pullover en polea alta',n:'Pullover en polea alta',o:'Dorsal aislado',s:3,r:[12,15],rir:'1',d:'90 s',inc:2.5,
-  tip:'Brazos casi rectos con el codo fijo. Baja la barra hasta los muslos usando solo el hombro.'},
- {id:'lat_mancuerna',alt:['Elevación lateral en polea baja','Elevación lateral en máquina'],g:'Elevación lateral con mancuerna',n:'Elevación lateral con mancuerna',o:'Deltoide lateral',s:3,r:[12,20],rir:'1 · últ. 0',d:'60 s',inc:1,
-  tip:'Sube el codo, no la mano. Hasta la altura del hombro, no más. Baja controlado en 2 segundos: ahí está el ejercicio.'},
- {id:'pajaro_banco',alt:['Pájaro en polea cruzada','Pájaro de pie con torso flexionado'],g:'Pájaro en banco inclinado',n:'Pájaro en banco inclinado',o:'Deltoide posterior',s:2,r:[15,20],rir:'1',d:'60 s',inc:1,
-  tip:'Pecho apoyado en banco a 30-45°. Abre hacia los lados, no hacia atrás. Pulgares ligeramente hacia abajo.'}]},
-
-mar:{t:'Empuje completo',fisio:false,ej:[
- {id:'press_inc',alt:['Press inclinado en máquina','Press inclinado con barra'],g:'Press inclinado con mancuernas',n:'Press inclinado con mancuernas',o:'Pecho superior',s:4,r:[8,12],rir:'2',d:'2-3 min',inc:2,
-  tip:'Banco a 30°, no más. Escápulas retraídas y pegadas al banco. Baja hasta sentir estiramiento, sin rebotar.'},
- {id:'press_maq',alt:['Press plano con mancuernas','Aperturas en máquina (pec deck)'],g:'Press de pecho en máquina',n:'Press de pecho en máquina',o:'Pecho medio',s:2,r:[10,15],rir:'1',d:'90 s',inc:2.5,
-  tip:'Estiramiento completo atrás, sin bloquear el codo adelante.'},
- {id:'press_mil',alt:['Press de hombro en máquina','Press Arnold sentado'],g:'Press militar sentado con mancuernas',n:'Press militar sentado, mancuernas',o:'Deltoide anterior',s:3,r:[8,12],rir:'2',d:'2 min',inc:2,
-  tip:'Baja hasta que el codo quede a la altura de la oreja. No arquees la espalda baja para sacar la repetición.'},
- {id:'lat_polea',alt:['Elevación lateral con mancuerna','Elevación lateral en máquina'],g:'Elevación lateral en polea, un brazo',n:'Elevación lateral en polea, un brazo',o:'Deltoide lateral',s:3,r:[12,20],rir:'1',d:'60 s',inc:1,
-  tip:'La polea pasa por delante del cuerpo, agarras con la mano contraria. Tensión constante en todo el rango.'},
- {id:'tri_cuerda',alt:['Extensión de tríceps en polea con barra recta','Fondos en banco'],g:'Extensión de tríceps en polea con cuerda',n:'Extensión de tríceps en polea, cuerda',o:'Tríceps',s:2,r:[10,15],rir:'1',d:'90 s',inc:2.5,
-  tip:'Codos pegados al costado. Solo se mueve el antebrazo. Abre la cuerda al final.'},
- {id:'tri_overhead',alt:['Extensión overhead con mancuerna a dos manos','Press francés con barra Z'],g:'Extensión de tríceps sobre la cabeza',n:'Extensión de tríceps sobre la cabeza',o:'Tríceps, cabeza larga',s:2,r:[12,15],rir:'1 · últ. 0',d:'90 s',inc:2.5,
-  tip:'Codos al frente, sin abrirse. Baja hasta el estiramiento máximo detrás de la cabeza: ese estiramiento es el punto del ejercicio.'}]},
-
-mie:{t:'Espalda grosor y bíceps',fisio:true,ej:[
- {id:'remo_polea',alt:['Remo con barra apoyado en banco inclinado','Remo en máquina con apoyo de pecho'],g:'Remo sentado en polea, agarre neutro',n:'Remo sentado en polea, agarre neutro',o:'Espalda media',s:4,r:[8,12],rir:'2',d:'2-3 min',inc:2.5,
-  tip:'Torso vertical, sin balancearte. Junta las escápulas un segundo al final de cada repetición. Estira completo adelante sin encorvarte.'},
- {id:'remo_mancuerna',alt:['Remo en máquina con apoyo de pecho','Remo en barra T'],g:'Remo con mancuerna a una mano',n:'Remo con mancuerna a una mano',o:'Dorsal, espalda media',s:3,r:[10,12],rir:'2',d:'90 s',inc:2,
-  tip:'Rodilla y mano apoyadas. Jala el codo hacia la cadera, no hacia el hombro. Deja que la escápula se estire abajo.'},
- {id:'pajaro_polea',alt:['Pájaro en banco inclinado','Face pull en polea'],g:'Pájaro en polea cruzada',n:'Pájaro en polea cruzada',o:'Deltoide posterior',s:3,r:[15,20],rir:'1',d:'60 s',inc:1,
-  tip:'Peso ligero, recorrido completo. Si no hay polea cruzada, pájaro en banco inclinado.'},
- {id:'curl_inc',alt:['Curl con mancuernas de pie','Curl en banco predicador'],g:'Curl inclinado con mancuernas',n:'Curl inclinado con mancuernas',o:'Bíceps, cabeza larga',s:3,r:[8,12],rir:'1 · últ. 0',d:'90 s',inc:1,
-  tip:'Banco a 45-60°, brazos colgando detrás de la línea del cuerpo. No subas el codo hacia adelante.'}]},
-
-jue:{t:'Tirón completo y brazos',fisio:false,ej:[
- {id:'jalon_neutro',alt:['Dominadas asistidas agarre supino','Jalón al pecho agarre ancho'],g:'Jalón agarre neutro',n:'Jalón agarre neutro',o:'Dorsal',s:4,r:[6,10],rir:'2',d:'2-3 min',inc:2.5,
-  tip:'Palmas enfrentadas. Rango de reps más bajo porque con este agarre vas a poder más peso.'},
- {id:'remo_apoyo',alt:['Remo con mancuernas en banco inclinado a 30°','Remo sentado en polea'],g:'Remo en máquina con apoyo de pecho',n:'Remo en máquina con apoyo de pecho',o:'Espalda media',s:3,r:[10,15],rir:'2',d:'90 s',inc:2.5,
-  tip:'Codos hacia atrás y ligeramente abiertos, unos 45° del torso. Así entra más deltoide posterior.'},
- {id:'facepull',alt:['Pájaro en polea cruzada','Rotación externa con banda'],g:'Face pull',n:'Face pull en polea',o:'Posterior y postura',s:3,r:[15,20],rir:'1',d:'60 s',inc:2.5,
-  tip:'Polea a la altura de la cara. Jala hacia la frente separando las manos y rotando los antebrazos hacia arriba. Peso ligero.'},
- {id:'lat_mancuerna2',alt:['Elevación lateral en polea baja','Elevación lateral en máquina'],g:'Elevación lateral con mancuerna',n:'Elevación lateral con mancuerna',o:'Deltoide lateral',s:3,r:[12,20],rir:'1 · últ. 0',d:'60 s',inc:1,
-  tip:'Sube el codo, no la mano. Baja controlado en 2 segundos.'},
- {id:'martillo',alt:['Curl con soga en polea','Curl inverso con barra'],g:'Curl martillo',n:'Curl martillo',o:'Braquial, antebrazo',s:2,r:[10,15],rir:'1',d:'60 s',inc:1,
-  tip:'Palmas enfrentadas todo el recorrido. Sin balanceo.'},
- {id:'curl_polea',alt:['Curl en banco predicador','Curl con barra Z de pie'],g:'Curl en polea baja',n:'Curl en polea baja',o:'Bíceps',s:2,r:[10,15],rir:'1 · últ. 0',d:'60 s',inc:2.5,
-  tip:'Codos fijos al costado. Tensión constante.'}]},
-
-vie:{t:'Empuje y hombro',fisio:true,ej:[
- {id:'press_vie',alt:['Press inclinado con mancuernas','Press plano con mancuernas'],g:'Press de pecho en máquina',n:'Press de pecho en máquina',o:'Pecho',s:3,r:[10,15],rir:'2',d:'2 min',inc:2.5,
-  tip:'Más ligero y más reps que el martes. Este día no es para récords.'},
- {id:'lat_maquina',alt:['Elevación lateral en polea baja','Elevación lateral con mancuerna'],g:'Elevación lateral en máquina',n:'Elevación lateral en máquina',o:'Deltoide lateral',s:3,r:[12,20],rir:'1 · últ. 0',d:'60 s',inc:2.5,
-  tip:'Si no hay máquina ni polea, con mancuerna.'},
- {id:'frances',alt:['Extensión de tríceps en polea alta','Extensión overhead con mancuerna'],g:'Press francés',n:'Press francés',o:'Tríceps',s:2,r:[10,15],rir:'1',d:'90 s',inc:2.5,
-  tip:'Codos apuntando al techo y fijos. Si te molesta el codo, cámbialo por extensión en polea. No lo fuerces.'},
- {id:'fondos',alt:['Press de banca agarre cerrado','Extensión de tríceps en polea con barra'],g:'Fondos en máquina asistida',n:'Fondos en máquina asistida',o:'Tríceps',s:2,r:[10,15],rir:'1',d:'90 s',inc:2.5,
-  tip:'Si no hay, press de banca con agarre cerrado a la anchura de los hombros.'}]}
-};
-
-const FISIO=[
- {id:'f_sent',k:'sentadilla',n:'Sentadilla sin peso',s:'3 × 12 · sin carga',w:false},
- {id:'f_desp',k:'desplante',n:'Desplante estático',s:'3 × 12 por lado · 5 kg por mano',w:true},
- {id:'f_fem',k:'prensa-femoral',n:'Prensa femoral',s:'3 × 12',w:true},
- {id:'f_cua',k:'prensa-cuadriceps',n:'Prensa sentado, cuádriceps',s:'3 × 12',w:true},
- {id:'f_adu',k:'aductor',n:'Aductor en máquina',s:'3 × 12',w:true},
- {id:'f_abd',k:'abductor',n:'Abductor en máquina',s:'3 × 12',w:true}
+const PLAN_BASE={"formato":"mosbyfit-programa","version":1,"id":"mes-1","nombre":"Mes 1 · Recomposición + hipertrofia","inicio":"2026-11-23","checkin":"2026-12-19","hora_sugerida":"17:00","semanas":[{"n":1,"nombre":"Calibración","usa_series_semana1":true,"rir_fijo":3,"rir_texto":"3-4","progresa":false,"objetivo":"Encontrar tus pesos, afinar técnica y ver cómo responde la rodilla. No se persigue progresar."},{"n":2,"nombre":"Base","usa_series_semana1":false,"rir_extra":1,"progresa":true,"objetivo":"Primeras progresiones con margen: un RIR más que el objetivo (compuestos 3, aislamientos 2)."},{"n":3,"nombre":"Carga","usa_series_semana1":false,"rir_extra":0,"progresa":true,"objetivo":"Progresar con doble progresión al RIR objetivo de cada ejercicio."},{"n":4,"nombre":"Carga","usa_series_semana1":false,"rir_extra":0,"progresa":true,"checkin":true,"objetivo":"Progresar. Al final de la semana: check-in con fotos y medidas."}],"regla_progresion":{"todas_al_maximo":"sube","dentro_del_rango":"mismo peso, +1 repetición","alguna_bajo_minimo":"mismo peso; si pasa 2 sesiones seguidas, baja 5-10%","tecnica_rota":"esas repeticiones no cuentan; mismo peso","rodilla_amarilla":"no subas peso ni rango","rodilla_roja":"para y usa la alternativa sin dolor","baja_pct":0.075},"semaforo":{"verde":[0,2],"amarillo":[3,4],"rojo":[5,10]},"dias":[{"id":"lun","nombre":"Torso A · Ancho","tipo":"torso","enfoque":"Dorsal, deltoide lateral y posterior, tríceps","calentamiento":"5 min de caminadora, elíptica o bici suave. Después, en el primer ejercicio de jalar y en el primero de empujar: 2 series de aproximación (1 × 10 con ~50% del peso y 1 × 5 con ~75%). Estas series no cuentan.","ejercicios":[{"id":"jalon_neutro","clave":"jalon_neutro","nombre":"Jalón al pecho agarre neutro","youtube":"Neutral grip lat pulldown","musculo":"Dorsal","prioridad":1,"secundarios":"Bíceps, espalda media","series":3,"series_semana1":2,"reps":[8,12],"por_lado":false,"rir":2,"rir_ultima_serie":null,"descanso_seg":150,"tempo":"Bajar en 2-3 s","superserie":null,"rodilla":false,"nota_rodilla":null,"incremento":2.5,"transicion":false,"tecnica":"Pecho alto y quieto. Jala pensando en llevar los codos hacia las costillas, no la barra hacia atrás. Arriba deja que los brazos se estiren completos sin despegar el trasero del asiento. Nada de balanceo.","porque":"Estable, se progresa fácil en pesos pequeños y estira bien el dorsal. Es tu ejercicio base de ancho.","alternativas":[{"nombre":"Jalón al pecho agarre prono medio","youtube":"Lat pulldown"},{"nombre":"Dominadas asistidas","youtube":"Assisted pull up"}]},{"id":"press_inc_manc","clave":"press_inc_manc","nombre":"Press inclinado con mancuernas (banco a 30°)","youtube":"Incline dumbbell press 30 degree","musculo":"Pecho superior","prioridad":2,"secundarios":"Deltoide anterior, tríceps","series":3,"series_semana1":2,"reps":[8,12],"por_lado":false,"rir":2,"rir_ultima_serie":null,"descanso_seg":150,"tempo":"Bajar en 2-3 s","superserie":null,"rodilla":false,"nota_rodilla":null,"incremento":2,"transicion":false,"tecnica":"Banco a 30° (más de 45° se vuelve ejercicio de hombro). Escápulas juntas y abajo. Baja hasta sentir estiramiento en el pecho, codos a unos 45-60° del torso. Sube sin chocar las mancuernas.","porque":"Las mancuernas dejan bajar más que la barra y cada brazo trabaja parejo. La inclinación le da más al pecho de arriba (evidencia de activación y de cambios a corto plazo; no hay estudios largos que lo confirmen del todo).","alternativas":[{"nombre":"Press inclinado en máquina","youtube":"Incline chest press machine"},{"nombre":"Press inclinado en Smith","youtube":"Smith machine incline bench press"}]},{"id":"remo_uni_polea","clave":"remo_uni_polea","nombre":"Remo unilateral en polea baja (enfoque dorsal)","youtube":"Single arm cable row lat focus","musculo":"Dorsal","prioridad":1,"secundarios":"Espalda media, deltoide posterior, bíceps","series":3,"series_semana1":2,"reps":[10,12],"por_lado":true,"rir":2,"rir_ultima_serie":null,"descanso_seg":120,"tempo":null,"superserie":null,"rodilla":false,"nota_rodilla":null,"incremento":2.5,"transicion":false,"tecnica":"Sentado o de pie frente a la polea baja. Deja que el brazo se vaya adelante para estirar el dorsal; luego jala el codo pegado al cuerpo hacia la cadera. El torso no se mueve. Haz todas las de un lado y luego el otro.","porque":"Codo pegado y hacia la cadera = más dorsal y menos trapecio. Una mano a la vez permite más recorrido.","alternativas":[{"nombre":"Remo con mancuerna a una mano","youtube":"One arm dumbbell row"},{"nombre":"Remo en máquina agarre neutro","youtube":"Seated row machine neutral grip"}]},{"id":"lateral_manc_lun","clave":"lateral_mancuerna","nombre":"Elevación lateral con mancuerna","youtube":"Dumbbell lateral raise","musculo":"Deltoide lateral","prioridad":1,"secundarios":null,"series":4,"series_semana1":3,"reps":[12,20],"por_lado":false,"rir":1,"rir_ultima_serie":0,"descanso_seg":90,"tempo":"Bajar en 2-3 s","superserie":null,"rodilla":false,"nota_rodilla":null,"incremento":2,"transicion":true,"tecnica":"Inclínate apenas hacia adelante. Sube guiando con el codo, no con la mano, hasta la altura del hombro. Cero impulso con el cuerpo. Si tienes que balancearte, el peso es mucho.","porque":"Es el ejercicio más directo para el músculo que más ancho te da. Bajo riesgo y poca fatiga general, así que se puede llevar cerca del fallo.","alternativas":[{"nombre":"Elevación lateral en polea","youtube":"Cable lateral raise"},{"nombre":"Elevación lateral en máquina","youtube":"Lateral raise machine"}]},{"id":"pajaros_maq_lun","clave":"pajaros_maq_lun","nombre":"Pájaros en máquina","youtube":"Reverse pec deck rear delt","musculo":"Deltoide posterior","prioridad":1,"secundarios":null,"series":3,"series_semana1":2,"reps":[12,20],"por_lado":false,"rir":1,"rir_ultima_serie":0,"descanso_seg":90,"tempo":null,"superserie":null,"rodilla":false,"nota_rodilla":null,"incremento":2.5,"transicion":false,"tecnica":"Agarre neutro o prono, brazos casi rectos. Abre hacia los lados pensando en llevar las manos lejos de ti, no en juntar las escápulas. Pecho pegado al respaldo.","porque":"Aísla el deltoide posterior con mucha estabilidad. Te da redondez de hombro de lado y de espalda, y ayuda a verte más abierto de hombros.","alternativas":[{"nombre":"Pájaros con mancuernas acostado en banco inclinado","youtube":"Chest supported rear delt fly"},{"nombre":"Cruce invertido en polea","youtube":"Reverse cable fly"}]},{"id":"triceps_overhead","clave":"triceps_overhead","nombre":"Extensión de tríceps sobre la cabeza en polea","youtube":"Overhead cable triceps extension","musculo":"Tríceps","prioridad":1,"secundarios":null,"series":3,"series_semana1":2,"reps":[10,15],"por_lado":false,"rir":1,"rir_ultima_serie":0,"descanso_seg":90,"tempo":null,"superserie":null,"rodilla":false,"nota_rodilla":null,"incremento":2.5,"transicion":false,"tecnica":"De espaldas a la polea, con cuerda. Codos apuntando al frente y arriba, que no se abran. Deja que las manos bajen bien atrás de la cabeza (estiramiento) y extiende completo.","porque":"Con el brazo arriba, la cabeza larga del tríceps trabaja estirada. En un estudio, esta posición dio más crecimiento de tríceps que la extensión con el brazo abajo.","alternativas":[{"nombre":"Extensión sobre la cabeza con mancuerna","youtube":"Overhead dumbbell triceps extension"},{"nombre":"Press francés con barra EZ","youtube":"EZ bar skull crusher"}]}]},{"id":"mar","nombre":"Pierna A · Glúteo e isquios","tipo":"pierna","enfoque":"Glúteo, isquios, cuádriceps en rango controlado, pantorrilla","calentamiento":"5-8 min de bici estática con el asiento alto (rodilla casi estirada abajo). Luego, el bloque que te daba tu fisio, sin peso: sentadilla al rango cómodo 1 × 12 y desplante estático 1 × 10 por pierna. Después 2 series de aproximación en el primer ejercicio. Si algo de esto duele más de 3/10, ese día los ejercicios de rodilla van en rango más corto.","ejercicios":[{"id":"hip_thrust","clave":"hip_thrust","nombre":"Hip thrust con barra","youtube":"Barbell hip thrust","musculo":"Glúteo","prioridad":1,"secundarios":"Isquios","series":4,"series_semana1":3,"reps":[8,12],"por_lado":false,"rir":2,"rir_ultima_serie":null,"descanso_seg":150,"tempo":"Aprieta 1 s arriba","superserie":null,"rodilla":true,"nota_rodilla":"La rodilla queda quieta a ~90°. Si molesta, aleja un poco los pies del banco.","incremento":2.5,"transicion":false,"tecnica":"Espalda alta apoyada en el banco a la altura de las escápulas. Pies al ancho de cadera; arriba las espinillas quedan verticales. Barbilla hacia el pecho. Sube con la cadera hasta quedar recto de rodillas a hombros, sin arquear la espalda baja. Usa un pad o toalla en la barra.","porque":"Carga mucho el glúteo con la rodilla quieta. Un estudio encontró crecimiento de glúteo parecido con hip thrust y sentadilla, pero la sentadilla hizo crecer más el muslo, que tú ya tienes adelantado. Que sea amable con tu rodilla es inferencia biomecánica, no está probado en condromalacia.","alternativas":[{"nombre":"Hip thrust en Smith","youtube":"Smith machine hip thrust"},{"nombre":"Puente de glúteo con barra en el piso","youtube":"Barbell glute bridge"}]},{"id":"rumano","clave":"rumano","nombre":"Peso muerto rumano con mancuernas","youtube":"Dumbbell Romanian deadlift","musculo":"Isquios","prioridad":2,"secundarios":"Glúteo, espalda baja","series":3,"series_semana1":2,"reps":[8,12],"por_lado":false,"rir":2,"rir_ultima_serie":null,"descanso_seg":150,"tempo":"Bajar en 3 s","superserie":null,"rodilla":true,"nota_rodilla":null,"incremento":2,"transicion":false,"tecnica":"Rodillas un poco dobladas y quietas todo el tiempo. Lleva la cadera hacia atrás como si cerraras una puerta con las nalgas, mancuernas pegadas a las piernas. Baja hasta sentir jalón fuerte atrás del muslo (casi siempre a media espinilla) sin redondear la espalda. Sube apretando glúteo.","porque":"Trabaja isquios y glúteo estirados, que es donde más estímulo dan. La rodilla casi no se dobla. Semanas 1 y 2 a RIR 3 para aprender bien la bisagra de cadera.","alternativas":[{"nombre":"Peso muerto rumano con barra","youtube":"Barbell Romanian deadlift"},{"nombre":"Hiperextensión a 45°","youtube":"45 degree back extension"}]},{"id":"curl_fem_mar","clave":"curl_femoral","nombre":"Curl femoral sentado","youtube":"Seated leg curl","musculo":"Isquios","prioridad":2,"secundarios":null,"series":3,"series_semana1":2,"reps":[10,15],"por_lado":false,"rir":1,"rir_ultima_serie":null,"descanso_seg":90,"tempo":"Bajar en 2-3 s","superserie":null,"rodilla":true,"nota_rodilla":null,"incremento":2.5,"transicion":false,"tecnica":"Inclina el torso un poco hacia adelante para estirar más los isquios. Rango completo, sin despegar la cadera.","porque":"En un estudio de 12 semanas, el curl sentado dio más crecimiento de isquios que el acostado, porque la cadera doblada los estira más.","alternativas":[{"nombre":"Curl femoral acostado","youtube":"Lying leg curl"},{"nombre":"Curl femoral de pie a una pierna","youtube":"Standing single leg curl"}]},{"id":"prensa_altos","clave":"prensa_altos","nombre":"Prensa de piernas con pies altos","youtube":"Leg press high foot placement glutes","musculo":"Glúteo","prioridad":1,"secundarios":"Cuádriceps","series":3,"series_semana1":2,"reps":[10,15],"por_lado":false,"rir":2,"rir_ultima_serie":null,"descanso_seg":120,"tempo":"Bajar en 3 s","superserie":null,"rodilla":true,"nota_rodilla":"Primero ganas rango sin dolor y después peso. Semáforo de rodilla obligatorio.","incremento":5,"transicion":false,"tecnica":"Pies arriba en la plataforma, al ancho de hombros. Baja SOLO hasta donde la rodilla no moleste; empieza sin pasar de 90° de rodilla. La cadera no se despega del respaldo. Arriba no bloquees las rodillas de golpe.","porque":"Los pies altos hacen que trabaje más la cadera y que la rodilla se doble menos con la misma profundidad. En la prensa, la presión sobre la rótula sube conforme más doblas la rodilla, así que aquí el rango lo manda el dolor.","alternativas":[{"nombre":"Sentadilla al cajón con mancuerna (cajón alto)","youtube":"Goblet box squat"},{"nombre":"Hack squat en rango corto (solo sin dolor)","youtube":"Hack squat"}]},{"id":"abduccion_mar","clave":"abduccion","nombre":"Abducción de cadera en máquina","youtube":"Hip abduction machine glute medius","musculo":"Glúteo medio","prioridad":1,"secundarios":null,"series":2,"series_semana1":2,"reps":[15,20],"por_lado":false,"rir":1,"rir_ultima_serie":null,"descanso_seg":75,"tempo":"Pausa 1 s abierto","superserie":null,"rodilla":false,"nota_rodilla":null,"incremento":2.5,"transicion":false,"tecnica":"Inclínate un poco hacia adelante. Abre controlado y aguanta 1 s abierto.","porque":"Fortalece la parte de atrás y de afuera de la cadera, que es justo lo que piden las guías para el dolor de rótula. Además le da forma al glúteo de arriba.","alternativas":[{"nombre":"Abducción con banda sentado","youtube":"Seated banded hip abduction"},{"nombre":"Abducción de pie en polea","youtube":"Cable hip abduction"}]},{"id":"talones_pie","clave":"talones_pie","nombre":"Elevación de talones de pie","youtube":"Standing calf raise","musculo":"Pantorrilla","prioridad":3,"secundarios":null,"series":3,"series_semana1":2,"reps":[10,15],"por_lado":false,"rir":1,"rir_ultima_serie":null,"descanso_seg":90,"tempo":"Pausa 2 s abajo (estirado)","superserie":null,"rodilla":false,"nota_rodilla":null,"incremento":2.5,"transicion":false,"tecnica":"Rodilla recta pero sin bloquearla. Baja hasta el estiramiento máximo, aguanta 2 s abajo y sube completo.","porque":"Pantorrilla es prioridad 3: con esto la mantienes y progresa.","alternativas":[{"nombre":"Pantorrilla en prensa","youtube":"Leg press calf raise"},{"nombre":"Pantorrilla en Smith","youtube":"Smith machine calf raise"}]}]},{"id":"mie","nombre":"Torso B · Grosor y brazos","tipo":"torso","enfoque":"Espalda media, pecho superior, dorsal, hombros, bíceps y tríceps","calentamiento":"5 min de caminadora, elíptica o bici suave. Después, en el primer ejercicio de jalar y en el primero de empujar: 2 series de aproximación (1 × 10 con ~50% del peso y 1 × 5 con ~75%). Estas series no cuentan.","ejercicios":[{"id":"remo_pecho_apoyado","clave":"remo_pecho_apoyado","nombre":"Remo con pecho apoyado","youtube":"Chest supported row","musculo":"Espalda media","prioridad":2,"secundarios":"Dorsal, deltoide posterior, bíceps","series":3,"series_semana1":2,"reps":[8,12],"por_lado":false,"rir":2,"rir_ultima_serie":null,"descanso_seg":150,"tempo":"Aprieta 1 s atrás","superserie":null,"rodilla":false,"nota_rodilla":null,"incremento":2.5,"transicion":false,"tecnica":"El pecho no se despega del respaldo en ninguna repetición. Estira los brazos completos adelante y jala los codos hacia atrás a unos 45° del cuerpo. Aprieta 1 s atrás.","porque":"Le da grosor a la espalda sin cargar la espalda baja, que ya trabajó ayer con el peso muerto rumano.","alternativas":[{"nombre":"Remo con mancuernas en banco inclinado","youtube":"Incline bench dumbbell row"},{"nombre":"Remo en máquina","youtube":"Seated row machine"}]},{"id":"press_inc_maq","clave":"press_inc_maq","nombre":"Press inclinado en máquina","youtube":"Incline chest press machine","musculo":"Pecho superior","prioridad":2,"secundarios":"Deltoide anterior, tríceps","series":3,"series_semana1":2,"reps":[8,12],"por_lado":false,"rir":2,"rir_ultima_serie":1,"descanso_seg":150,"tempo":"Bajar en 2-3 s","superserie":null,"rodilla":false,"nota_rodilla":null,"incremento":2.5,"transicion":false,"tecnica":"Ajusta el asiento para que las manijas queden a la altura de la parte alta del pecho. Escápulas atrás. Baja hasta sentir estiramiento sin que los hombros se vayan adelante.","porque":"Una máquina permite acercarse al fallo con seguridad y sin ayudante. Es el segundo estímulo de pecho superior de la semana.","alternativas":[{"nombre":"Press inclinado con mancuernas","youtube":"Incline dumbbell press"},{"nombre":"Press inclinado en Smith","youtube":"Smith machine incline bench press"}]},{"id":"jalon_triangulo","clave":"jalon_triangulo","nombre":"Jalón agarre cerrado (triángulo)","youtube":"Close grip lat pulldown V bar","musculo":"Dorsal","prioridad":1,"secundarios":"Bíceps","series":3,"series_semana1":2,"reps":[10,12],"por_lado":false,"rir":2,"rir_ultima_serie":null,"descanso_seg":120,"tempo":"Bajar en 2-3 s","superserie":null,"rodilla":false,"nota_rodilla":null,"incremento":2.5,"transicion":false,"tecnica":"Inclínate apenas hacia atrás. Jala el triángulo hacia la parte alta del abdomen llevando los codos pegados hacia abajo. Arriba estira completo.","porque":"Segundo ángulo de jalón vertical, con mucho recorrido para el dorsal.","alternativas":[{"nombre":"Jalón agarre neutro","youtube":"Neutral grip lat pulldown"},{"nombre":"Pullover en polea","youtube":"Cable lat pullover"}]},{"id":"lateral_polea","clave":"lateral_polea","nombre":"Elevación lateral en polea","youtube":"Cable lateral raise","musculo":"Deltoide lateral","prioridad":1,"secundarios":null,"series":3,"series_semana1":2,"reps":[12,20],"por_lado":false,"rir":1,"rir_ultima_serie":0,"descanso_seg":90,"tempo":null,"superserie":"X-A","rodilla":false,"nota_rodilla":null,"incremento":2.5,"transicion":false,"tecnica":"Polea a la altura de la mano o un poco más abajo. El codo guía el movimiento. Sin girar el torso.","porque":"La polea mantiene la tensión abajo, donde la mancuerna casi no pesa. Complementa a las laterales con mancuerna.","alternativas":[{"nombre":"Elevación lateral con mancuerna","youtube":"Dumbbell lateral raise"},{"nombre":"Elevación lateral acostado de lado","youtube":"Lying side lateral raise"}]},{"id":"pajaros_maq_mie","clave":"pajaros_maq_mie","nombre":"Pájaros en máquina","youtube":"Reverse pec deck rear delt","musculo":"Deltoide posterior","prioridad":1,"secundarios":null,"series":2,"series_semana1":2,"reps":[15,20],"por_lado":false,"rir":1,"rir_ultima_serie":0,"descanso_seg":90,"tempo":null,"superserie":"X-A","rodilla":false,"nota_rodilla":null,"incremento":2.5,"transicion":false,"tecnica":"Agarre neutro o prono, brazos casi rectos. Abre hacia los lados pensando en llevar las manos lejos de ti, no en juntar las escápulas. Pecho pegado al respaldo. Va en superserie con la lateral en polea: lateral, pájaros y luego descanso.","porque":"Tercer contacto de deltoide posterior a la semana, con muy poca fatiga.","alternativas":[{"nombre":"Cruce invertido en polea","youtube":"Reverse cable fly"},{"nombre":"Pájaros con mancuernas acostado en banco inclinado","youtube":"Chest supported rear delt fly"}]},{"id":"curl_inclinado","clave":"curl_inclinado","nombre":"Curl inclinado con mancuernas","youtube":"Incline dumbbell curl","musculo":"Bíceps","prioridad":2,"secundarios":null,"series":3,"series_semana1":2,"reps":[8,12],"por_lado":false,"rir":1,"rir_ultima_serie":0,"descanso_seg":90,"tempo":"Bajar en 2-3 s","superserie":"X-B","rodilla":false,"nota_rodilla":null,"incremento":2,"transicion":false,"tecnica":"Banco a 45-60°. Los brazos cuelgan atrás del torso (bíceps estirado). Sube sin adelantar los codos y baja lento.","porque":"Trabaja el bíceps estirado y no se puede hacer trampa con el cuerpo.","alternativas":[{"nombre":"Curl bayesiano en polea","youtube":"Bayesian cable curl"},{"nombre":"Curl alterno con mancuernas","youtube":"Alternating dumbbell curl"}]},{"id":"triceps_cuerda","clave":"triceps_cuerda","nombre":"Extensión de tríceps en polea con cuerda","youtube":"Rope triceps pushdown","musculo":"Tríceps","prioridad":1,"secundarios":null,"series":3,"series_semana1":2,"reps":[10,15],"por_lado":false,"rir":1,"rir_ultima_serie":0,"descanso_seg":90,"tempo":null,"superserie":"X-B","rodilla":false,"nota_rodilla":null,"incremento":2.5,"transicion":false,"tecnica":"Codos pegados a los costados y quietos. Abajo separa un poco la cuerda y extiende completo.","porque":"Trabaja las cabezas lateral y medial (la parte de afuera del brazo). Es estable y fácil de progresar.","alternativas":[{"nombre":"Extensión de tríceps con barra en polea","youtube":"Straight bar triceps pushdown"},{"nombre":"Extensión de tríceps en máquina","youtube":"Triceps extension machine"}]}]},{"id":"jue","nombre":"Pierna B · Cuádriceps controlado y glúteo","tipo":"pierna","enfoque":"Cuádriceps en rangos amables, glúteo, isquios, pantorrilla y abdomen","calentamiento":"5-8 min de bici estática con el asiento alto (rodilla casi estirada abajo). Luego, el bloque que te daba tu fisio, sin peso: sentadilla al rango cómodo 1 × 12 y desplante estático 1 × 10 por pierna. Después 2 series de aproximación en el primer ejercicio. Si algo de esto duele más de 3/10, ese día los ejercicios de rodilla van en rango más corto.","ejercicios":[{"id":"prensa_media","clave":"prensa_media","nombre":"Prensa de piernas (pies a la mitad)","youtube":"Leg press","musculo":"Cuádriceps","prioridad":3,"secundarios":"Glúteo","series":3,"series_semana1":2,"reps":[10,15],"por_lado":false,"rir":2,"rir_ultima_serie":null,"descanso_seg":150,"tempo":"Bajar en 3 s","superserie":null,"rodilla":true,"nota_rodilla":"Semáforo obligatorio. El rango crece semana a semana solo si sigues en verde.","incremento":5,"transicion":false,"tecnica":"Pies a la mitad de la plataforma, al ancho de hombros. Baja solo hasta donde no duela y sube sin bloquear las rodillas. Primero ganas rango, después peso.","porque":"Estímulo de cuádriceps con el rango bajo control. Los cuádriceps son una de las dos patas del tratamiento de la rótula.","alternativas":[{"nombre":"Sentadilla al cajón con mancuerna (cajón alto)","youtube":"Goblet box squat"},{"nombre":"Hack squat en rango corto (solo sin dolor)","youtube":"Hack squat"}]},{"id":"extension_cuad","clave":"extension_cuad","nombre":"Extensión de cuádriceps en rango largo (de 90° a 45°)","youtube":"Leg extension lengthened partials","musculo":"Cuádriceps","prioridad":3,"secundarios":null,"series":3,"series_semana1":2,"reps":[12,15],"por_lado":false,"rir":2,"rir_ultima_serie":null,"descanso_seg":90,"tempo":"Bajar en 3 s","superserie":null,"rodilla":true,"nota_rodilla":"Nunca a RIR 0. Si el rango de 90° a 45° molesta, acórtalo y anótalo para el check-in.","incremento":2.5,"transicion":false,"tecnica":"Ajusta el respaldo para que la rodilla quede alineada con el eje de la máquina. Trabaja desde la rodilla doblada (~90°) hasta más o menos la mitad del recorrido (~45°). NO estires la pierna completa. Controlado.","porque":"Un estudio de biomecánica recomienda esta mitad del recorrido para cargar menos la rótula en la extensión. Y otro (en mujeres sin experiencia) encontró que entrenar justo esa mitad, con el músculo estirado, dio más crecimiento en algunas zonas del cuádriceps que el recorrido completo. Aquí coinciden: más amable con tu rodilla y buen estímulo.","alternativas":[{"nombre":"Extensión de cuádriceps a una pierna (mismo rango)","youtube":"Single leg extension"},{"nombre":"Sentadilla al cajón con mancuerna (cajón alto)","youtube":"Goblet box squat"}]},{"id":"hiperextension","clave":"hiperextension","nombre":"Hiperextensión a 45° con enfoque en glúteo","youtube":"45 degree back extension glute focus","musculo":"Glúteo","prioridad":1,"secundarios":"Isquios, espalda baja","series":3,"series_semana1":2,"reps":[10,15],"por_lado":false,"rir":2,"rir_ultima_serie":null,"descanso_seg":120,"tempo":"Aprieta 1 s arriba","superserie":null,"rodilla":false,"nota_rodilla":null,"incremento":2.5,"transicion":false,"tecnica":"El cojín va debajo de la cadera, no en el abdomen. Espalda alta un poco redonda y pies un poco hacia afuera. Sube con el glúteo hasta quedar en línea recta, sin arquear de más. Cuando hagas 15 fácil, carga un disco al pecho.","porque":"Trabaja el glúteo estirado (cadera doblada), al revés que el hip thrust, que lo trabaja contraído. Juntos cubren todo el recorrido.","alternativas":[{"nombre":"Pull-through en polea","youtube":"Cable pull through"},{"nombre":"Hip thrust con barra","youtube":"Barbell hip thrust"}]},{"id":"curl_fem_jue","clave":"curl_femoral","nombre":"Curl femoral sentado","youtube":"Seated leg curl","musculo":"Isquios","prioridad":2,"secundarios":null,"series":3,"series_semana1":2,"reps":[10,15],"por_lado":false,"rir":1,"rir_ultima_serie":null,"descanso_seg":90,"tempo":"Bajar en 2-3 s","superserie":null,"rodilla":true,"nota_rodilla":null,"incremento":2.5,"transicion":false,"tecnica":"Inclina el torso un poco hacia adelante para estirar más los isquios. Rango completo, sin despegar la cadera.","porque":"Mismo ejercicio que el martes para seguir la progresión (no se cambia por cambiar).","alternativas":[{"nombre":"Curl femoral acostado","youtube":"Lying leg curl"},{"nombre":"Curl femoral de pie a una pierna","youtube":"Standing single leg curl"}]},{"id":"abduccion_jue","clave":"abduccion","nombre":"Abducción de cadera en máquina","youtube":"Hip abduction machine glute medius","musculo":"Glúteo medio","prioridad":1,"secundarios":null,"series":2,"series_semana1":2,"reps":[15,20],"por_lado":false,"rir":1,"rir_ultima_serie":null,"descanso_seg":75,"tempo":"Pausa 1 s abierto","superserie":null,"rodilla":false,"nota_rodilla":null,"incremento":2.5,"transicion":false,"tecnica":"Inclínate un poco hacia adelante. Abre controlado y aguanta 1 s abierto.","porque":"Segundo contacto de cadera lateral para glúteo y rodilla.","alternativas":[{"nombre":"Abducción con banda sentado","youtube":"Seated banded hip abduction"},{"nombre":"Abducción de pie en polea","youtube":"Cable hip abduction"}]},{"id":"pantorrilla_sentado","clave":"pantorrilla_sentado","nombre":"Pantorrilla sentado","youtube":"Seated calf raise","musculo":"Pantorrilla","prioridad":3,"secundarios":null,"series":3,"series_semana1":2,"reps":[12,20],"por_lado":false,"rir":1,"rir_ultima_serie":null,"descanso_seg":75,"tempo":"Pausa 2 s abajo","superserie":null,"rodilla":false,"nota_rodilla":null,"incremento":2.5,"transicion":false,"tecnica":"Baja al estiramiento máximo, aguanta 2 s y sube completo.","porque":"Con la rodilla doblada trabaja más el sóleo, la parte de la pantorrilla que de pie trabaja menos.","alternativas":[{"nombre":"Pantorrilla en prensa con rodillas un poco dobladas","youtube":"Leg press calf raise"},{"nombre":"Elevación de talones de pie","youtube":"Standing calf raise"}]},{"id":"crunch_polea","clave":"crunch_polea","nombre":"Crunch en polea","youtube":"Cable crunch","musculo":"Abdomen","prioridad":3,"secundarios":null,"series":2,"series_semana1":2,"reps":[10,15],"por_lado":false,"rir":1,"rir_ultima_serie":null,"descanso_seg":60,"tempo":null,"superserie":null,"rodilla":false,"nota_rodilla":null,"incremento":2.5,"transicion":false,"tecnica":"De rodillas frente a la polea alta. Enrolla la columna llevando las costillas hacia la pelvis; la cadera no se mueve.","porque":"Abdomen es prioridad 3. Esto no baja la panza (eso lo hace la comida); solo mantiene el músculo.","alternativas":[{"nombre":"Crunch en máquina","youtube":"Ab crunch machine"},{"nombre":"Elevación de rodillas colgado","youtube":"Hanging knee raise"}]}]},{"id":"vie","nombre":"Torso C · Hombro, espalda y brazos","tipo":"torso","enfoque":"Cerrar la semana con tus prioridades: dorsal, deltoides, brazos","calentamiento":"5 min de caminadora, elíptica o bici suave. Después, en el primer ejercicio de jalar y en el primero de empujar: 2 series de aproximación (1 × 10 con ~50% del peso y 1 × 5 con ~75%). Estas series no cuentan.","ejercicios":[{"id":"jalon_unilateral","clave":"jalon_unilateral","nombre":"Jalón unilateral en polea alta","youtube":"Single arm lat pulldown kneeling","musculo":"Dorsal","prioridad":1,"secundarios":"Bíceps","series":3,"series_semana1":2,"reps":[10,12],"por_lado":true,"rir":2,"rir_ultima_serie":null,"descanso_seg":120,"tempo":"Bajar en 2-3 s","superserie":null,"rodilla":false,"nota_rodilla":null,"incremento":2.5,"transicion":false,"tecnica":"Arrodillado o sentado, una mano. Arriba deja que el hombro suba y el dorsal se estire; jala el codo hacia la cadera. Todas de un lado y luego el otro.","porque":"Más recorrido y estiramiento que el jalón con barra, y corrige diferencias entre lados.","alternativas":[{"nombre":"Jalón agarre prono medio","youtube":"Lat pulldown"},{"nombre":"Dominadas asistidas","youtube":"Assisted pull up"}]},{"id":"press_inc_smith","clave":"press_inc_smith","nombre":"Press inclinado en Smith","youtube":"Smith machine incline bench press","musculo":"Pecho superior","prioridad":2,"secundarios":"Deltoide anterior, tríceps","series":2,"series_semana1":2,"reps":[8,12],"por_lado":false,"rir":2,"rir_ultima_serie":null,"descanso_seg":150,"tempo":"Bajar en 2-3 s","superserie":null,"rodilla":false,"nota_rodilla":null,"incremento":2.5,"transicion":false,"tecnica":"Banco a 30°. La barra baja a la parte alta del pecho. Escápulas atrás y abajo.","porque":"Tercer estímulo de pecho superior con poco volumen. La Smith es estable y deja empujar fuerte sin ayudante.","alternativas":[{"nombre":"Press inclinado con barra","youtube":"Incline barbell bench press"},{"nombre":"Press inclinado con mancuernas","youtube":"Incline dumbbell press"}]},{"id":"remo_abierto","clave":"remo_abierto","nombre":"Remo en polea baja agarre abierto","youtube":"Wide grip seated cable row","musculo":"Espalda media","prioridad":2,"secundarios":"Deltoide posterior, trapecio medio","series":3,"series_semana1":2,"reps":[10,12],"por_lado":false,"rir":2,"rir_ultima_serie":null,"descanso_seg":120,"tempo":"Aprieta 1 s atrás","superserie":null,"rodilla":false,"nota_rodilla":null,"incremento":2.5,"transicion":false,"tecnica":"Barra larga, agarre más ancho que los hombros. Torso quieto. Jala hacia la parte baja del pecho con los codos abiertos y aprieta las escápulas 1 s.","porque":"Con los codos abiertos trabajan más la espalda media y el deltoide posterior, lo que da grosor visto de espalda y de lado.","alternativas":[{"nombre":"Remo en máquina agarre ancho","youtube":"Wide grip machine row"},{"nombre":"Remo con pecho apoyado codos abiertos","youtube":"Chest supported row wide grip"}]},{"id":"lateral_manc_vie","clave":"lateral_mancuerna","nombre":"Elevación lateral con mancuerna","youtube":"Dumbbell lateral raise","musculo":"Deltoide lateral","prioridad":1,"secundarios":null,"series":4,"series_semana1":3,"reps":[12,20],"por_lado":false,"rir":1,"rir_ultima_serie":0,"descanso_seg":90,"tempo":"Bajar en 2-3 s","superserie":null,"rodilla":false,"nota_rodilla":null,"incremento":2,"transicion":true,"tecnica":"Inclínate apenas hacia adelante. Sube guiando con el codo, no con la mano, hasta la altura del hombro. Cero impulso con el cuerpo. Si tienes que balancearte, el peso es mucho.","porque":"El mismo ejercicio del lunes, para comparar y progresar.","alternativas":[{"nombre":"Elevación lateral en polea","youtube":"Cable lateral raise"},{"nombre":"Elevación lateral en máquina","youtube":"Lateral raise machine"}]},{"id":"cruce_invertido","clave":"cruce_invertido","nombre":"Cruce invertido en polea","youtube":"Reverse cable fly","musculo":"Deltoide posterior","prioridad":1,"secundarios":null,"series":3,"series_semana1":2,"reps":[12,20],"por_lado":false,"rir":1,"rir_ultima_serie":0,"descanso_seg":90,"tempo":null,"superserie":null,"rodilla":false,"nota_rodilla":null,"incremento":2.5,"transicion":false,"tecnica":"Poleas a la altura de los hombros, cables cruzados. Abre los brazos hacia atrás y afuera, casi rectos, sin encoger los hombros.","porque":"La polea da tensión pareja en todo el recorrido. Lo elegí sobre el face pull porque trabaja el deltoide posterior más directo.","alternativas":[{"nombre":"Face pull","youtube":"Face pull rope"},{"nombre":"Pájaros en máquina","youtube":"Reverse pec deck rear delt"}]},{"id":"curl_ez","clave":"curl_ez","nombre":"Curl con barra EZ","youtube":"EZ bar curl","musculo":"Bíceps","prioridad":2,"secundarios":null,"series":3,"series_semana1":2,"reps":[8,12],"por_lado":false,"rir":1,"rir_ultima_serie":0,"descanso_seg":90,"tempo":null,"superserie":"V-A","rodilla":false,"nota_rodilla":null,"incremento":2.5,"transicion":false,"tecnica":"Codos quietos a los costados. Sin impulso de cadera. Baja controlado hasta estirar.","porque":"Es el curl que más peso aguanta y el más fácil de progresar. Va en superserie con el press francés.","alternativas":[{"nombre":"Curl con barra recta","youtube":"Barbell curl"},{"nombre":"Curl en polea baja","youtube":"Cable curl"}]},{"id":"frances_ez","clave":"frances_ez","nombre":"Press francés con barra EZ","youtube":"EZ bar skull crusher","musculo":"Tríceps","prioridad":1,"secundarios":null,"series":3,"series_semana1":2,"reps":[10,12],"por_lado":false,"rir":1,"rir_ultima_serie":0,"descanso_seg":90,"tempo":null,"superserie":"V-A","rodilla":false,"nota_rodilla":null,"incremento":2.5,"transicion":false,"tecnica":"Acostado. Baja la barra hacia atrás de la cabeza, no a la frente, para estirar más el tríceps. Los codos no se abren. Si te molesta el codo, cámbialo por la alternativa en polea.","porque":"Tercer estímulo de tríceps con buena carga y estiramiento.","alternativas":[{"nombre":"Extensión sobre la cabeza en polea","youtube":"Overhead cable triceps extension"},{"nombre":"Press francés con mancuernas","youtube":"Dumbbell skull crusher"}]}]}]};
+const GLO_C=[
+['RIR','Esfuerzo','<span class="lbl">Qué es</span><p>Repeticiones en reserva: cuántas más te salían limpias cuando paraste la serie. RIR 2 = podías hacer 2 más.</p><span class="lbl">Cuándo va cada uno</span><p><b>RIR 3</b> — toda la semana 1, el peso muerto rumano en semanas 1-2, y cualquier ejercicio de pierna con la rodilla en amarillo.<br><b>RIR 2</b> — compuestos: jalones, remos, press, hip thrust, prensa, rumano, hiperextensión, extensión de cuádriceps.<br><b>RIR 1</b> — aislamientos: laterales, pájaros, curls, tríceps, curl femoral, abducción, pantorrilla.<br><b>RIR 0</b> — solo la última serie de los aislamientos que lo indican.</p><p><b>Nunca RIR 0</b> en peso muerto rumano, hip thrust, prensa, extensión de cuádriceps ni press con mancuernas.</p><span class="lbl">Cómo calcularlo</span><p>Al terminar la serie pregúntate cuántas más te salían limpias. De vez en cuando lleva al fallo la última serie de una lateral o un curl en polea y compara con lo que creías: así se calibra.</p>'],
+['Fallo muscular','Esfuerzo','<p>El punto donde ya no completas una repetición más con buena técnica. No es donde duele: es donde el peso deja de subir.</p><p>Un meta-análisis de 2023 encontró solo una ventaja trivial de ir al fallo. Un análisis de 2024 encontró que acercarse al fallo sí ayuda. Conclusión: entrenar cerca del fallo, casi nunca en el fallo.</p>'],
+['Serie','Estructura','<p>Un bloque continuo de repeticiones. "3 × 8-12" son tres bloques, con descanso entre cada uno.</p>'],
+['Repetición','Estructura','<p>Un ciclo completo del movimiento. Si la técnica se rompió para sacarla, no cuenta: no la anotes.</p>'],
+['Rango de repeticiones','Estructura','<span class="lbl">Lo primero</span><p>El rango <b>no lo eliges tú</b>. Lo decide el peso.</p><span class="lbl">Cómo funciona</span><p>Eliges un peso y haces todas las repeticiones que puedas hasta llegar al RIR objetivo. El rango solo te dice si el peso está bien:</p><p>· Menos del mínimo → muy pesado.<br>· Más del máximo → muy ligero.<br>· Dentro del rango → correcto.</p><span class="lbl">Entre series</span><p>Mismo peso en todas. Las repeticiones bajan solas porque te cansas, y eso está bien: 50 × 12 · 50 × 10 · 50 × 9.</p>'],
+['Doble progresión','Progreso','<span class="lbl">El sistema</span><p>1. Elige un peso con el que llegues al menos al mínimo del rango en todas las series.<br>2. Cada sesión intenta sumar repeticiones con el mismo peso. Con +1 en una sola serie ya cuenta.<br>3. Cuando hagas el máximo del rango en <b>todas</b> las series con el RIR objetivo, la siguiente sesión subes el peso.<br>4. Con el peso nuevo bajas cerca del mínimo. Vuelves al paso 2.</p><span class="lbl">Ejemplo · jalón 3 × 8-12</span><p>50 kg → 12, 10, 9 · mismo peso<br>50 kg → 12, 12, 12 · <b>sube</b><br>55 kg → 9, 8, 8 · empieza otra vez</p><span class="lbl">Qué haces según lo que pasó</span><p>· Todas al máximo con el RIR objetivo → sube.<br>· Dentro del rango → mismo peso, +1 repetición.<br>· Alguna abajo del mínimo → mismo peso. Dos sesiones seguidas → baja 5-10%.<br>· Rodilla amarilla → no subas peso ni rango.<br>· Rodilla roja → para y usa la alternativa.</p><p>La app hace este cálculo por ti al terminar cada ejercicio.</p>'],
+['Saltos grandes de mancuerna','Progreso','<p>De 6 a 8 kg en una lateral es +33%: demasiado de golpe. Por eso esos ejercicios usan rango 12-20.</p><p>Cuando llegas a 20 en todas las series, la siguiente sesión haces <b>solo la primera serie</b> con el peso nuevo y el resto con el anterior. Cada sesión pasas una serie más al peso nuevo, hasta que todas lleguen a 12 o más con él.</p><p>La app te lo precarga así sola.</p>'],
+['Sobrecarga progresiva','Progreso','<p>El músculo crece cuando le pides un poco más de lo que ya tolera: más peso, más repeticiones o el mismo peso con mejor técnica. Sin registro no sabes qué superar.</p>'],
+['Semanas 1 a 4','Programa','<p><b>Semana 1 · Calibración.</b> Una serie menos por ejercicio (mínimo 2) y todo a RIR 3-4. Solo encuentras pesos y ves cómo responde la rodilla.<br><b>Semana 2 · Base.</b> Series completas, un RIR más que el objetivo (compuestos 3, aislamientos 2).<br><b>Semanas 3 y 4 · Carga.</b> Series completas al RIR objetivo. Progresas.<br><b>Fin de la semana 4.</b> Check-in con fotos y medidas.<br><b>Semana 5.</b> Se decide en el check-in: descarga solo si hay señales de fatiga.</p>'],
+['Descanso','Estructura','<p>Cada ejercicio trae el suyo y la app lo cuenta sola al marcar la serie. Regla simple: la siguiente serie no debe salir peor porque sigues jadeando.</p><p>Descansar poco no quema más grasa; solo empeora la siguiente serie.</p>'],
+['Superserie','Estructura','<p>Dos ejercicios seguidos sin descanso entre ellos; descansas después del segundo. Se usan con músculos que no se estorban (lateral + pájaros, curl + tríceps) y ahorran tiempo.</p><p>En la app, al marcar la serie del primero te avisa que sigue el segundo; el descanso arranca al marcar el segundo.</p>'],
+['Tempo','Técnica','<p>La velocidad de cada fase. En general: bajar controlado (2-3 s) y subir firme. Solo se indica donde ayuda; las pausas en pantorrilla, hip thrust y abducción sí importan.</p>'],
+['Calentamiento','Estructura','<p><b>Días de torso:</b> 5 min de cardio suave y 2 series de aproximación en el primer ejercicio de jalar y en el primero de empujar.</p><p><b>Días de pierna:</b> 5-8 min de bici con el asiento alto, y el bloque de tu fisio sin peso: sentadilla al rango cómodo 1 × 12 y desplante estático 1 × 10 por pierna.</p>'],
+['Series de aproximación','Estructura','<p>Series ligeras antes de las de trabajo: 1 × 10 con ~50% del peso y 1 × 5 con ~75%. No cuentan y no se registran.</p>'],
+['Semáforo de rodilla','Rodilla','<p>Va en los ejercicios marcados con el ícono de rodilla. Calificas el dolor de 0 a 10 durante el ejercicio.</p><p><b>Verde · 0-2</b>, y al día siguiente igual o mejor → sigue y progresa normal.<br><b>Amarillo · 3-4</b>, o más molestia al día siguiente que se quita en menos de 24 h → no subas peso ni rango, acorta el rango si hace falta, RIR 3.<br><b>Rojo · 5 o más</b>, dolor que sigue al otro día, hinchazón, que la rodilla se trabe o se "vaya" → para ese ejercicio y usa la alternativa sin dolor. Si se repite en dos sesiones: médico o fisio.</p><p>Es una regla práctica de monitoreo de dolor que se usa en rehabilitación. No es un diagnóstico.</p>'],
+['Condromalacia rotuliana','Rodilla','<p>Es lo que te dijeron que tienes en la rodilla. El programa no la trata: solo usa reglas conservadoras mientras no tengas fisio.</p><p>La guía de fisioterapeutas de Estados Unidos (2019) para dolor de rótula pone como base ejercicios de glúteo y cuádriceps. Por eso hay hip thrust, abducción, prensa y extensión en rangos controlados.</p><p>Lo recomendado de verdad: una consulta de revisión con tu fisio o un médico del deporte que confirme los rangos de prensa y extensión.</p>'],
+['Bisagra de cadera','Técnica','<p>Doblarte desde la cadera, no desde la espalda: la cadera va hacia atrás, la espalda queda recta y las rodillas apenas dobladas. Es el movimiento del peso muerto rumano y de la hiperextensión. Por eso el rumano va a RIR 3 en las semanas 1 y 2: para aprenderla bien.</p>'],
+['Concéntrica y excéntrica','Técnica','<p><b>Concéntrica:</b> la fase en que vences el peso (subir en el curl, empujar en el press).<br><b>Excéntrica:</b> la fase en que lo frenas (bajar). Es donde casi todos se apuran y pierden estímulo.</p>'],
+['Respiración','Técnica','<p>Inhala en la bajada y exhala en el esfuerzo. En press y jalón: inhala al bajar o al estirarte, exhala al empujar o jalar. En aislamientos largos respira normal.</p><p>Nunca aguantes la respiración toda la serie. Si te mareas o ves puntos, estabas aguantando de más.</p>'],
+['Rango de movimiento','Técnica','<p>Cuánto recorrido hace la articulación. Recorridos completos, sobre todo con el músculo estirado, suelen dar más crecimiento que medio recorrido con más peso.</p><p>La excepción en tu programa es a propósito: la extensión de cuádriceps de 90° a 45° y la prensa hasta donde no duela, por la rodilla.</p>'],
+['Posición estirada','Técnica','<p>El punto donde el músculo está más largo: abajo del curl inclinado, atrás de la cabeza en la extensión de tríceps, arriba del jalón. Varios ejercicios del programa están elegidos por cargar ahí.</p>'],
+['Escápula','Técnica','<p>El omóplato. Juntarlas y bajarlas da una base estable para empujar y jalar. En los pájaros y la lateral, en cambio, no se trata de juntarlas sino de llevar los brazos lejos.</p>'],
+['Agarres','Técnica','<p><b>Prono:</b> palmas hacia abajo o al frente.<br><b>Supino:</b> palmas hacia arriba o hacia ti.<br><b>Neutro:</b> palmas enfrentadas.</p>'],
+['Unilateral','Técnica','<p>Un lado a la vez. En la app, cuando dice "por lado", las repeticiones que anotas son las de un lado.</p>'],
+['Volumen','Estructura','<p>Series efectivas por músculo a la semana. Tu programa arranca en 97 series (69 en la semana 1). Es un punto de partida, no un número fijo: se ajusta en el check-in. Más no siempre es mejor.</p>'],
+['Frecuencia','Estructura','<p>Cuántas veces por semana entrenas un músculo. Tus prioridades 1 se entrenan 2 o 3 veces por semana.</p>'],
+['Prioridades 1, 2 y 3','Programa','<p><b>1 · mucho énfasis:</b> deltoide lateral, dorsal, tríceps, glúteo (mayor y medio) y deltoide posterior.<br><b>2 · moderado:</b> pecho superior, bíceps, espalda media e isquiotibiales.<br><b>3 · mantenimiento:</b> cuádriceps, pantorrillas, deltoide anterior, pecho medio e inferior, trapecio, antebrazos y abdomen.</p>'],
+['Recomposición','Programa','<p>Ganar músculo y perder grasa al mismo tiempo: comer más o menos lo que gastas, proteína alta y entrenar duro. Una revisión de 2020 concluyó que también pasa en gente que ya entrena.</p><p>No es para marcar abdomen. El ancho se ve por contraste: hombros más grandes junto a una cintura más chica.</p>'],
+['Hombros ÷ cintura','Programa','<p>El número clave del check-in: la circunferencia de hombros dividida entre la cintura al ombligo. Tiene que subir. Se ataca por los dos lados: más hombro y espalda, menos cintura.</p><p>Lo registras en la pestaña Cuerpo.</p>'],
+['Control de fatiga','Recuperación','<p>Al cerrar cada sesión anotas energía (1-5), horas de sueño y rodilla (0-10).</p><p><b>Semana ligera</b> (mitad de series, RIR 3) si se juntan 2 o más:<br>· Dormiste menos de 6 h de promedio.<br>· Energía de 2 o menos en 3 sesiones.<br>· Bajó el rendimiento en 3 o más ejercicios.<br>· Dolor articular que no se va.</p><p>La app revisa esto sola en la portada.</p>'],
+['Si un músculo no progresa','Recuperación','<p>Revisa en este orden: 1) técnica, 2) esfuerzo (RIR real), 3) progresión, 4) recuperación, 5) volumen, 6) elección del ejercicio. El volumen no se sube automáticamente.</p>'],
+['Agujetas','Recuperación','<p>El dolor muscular de 24-48 h después. No indica que el entrenamiento funcionó: puedes crecer sin agujetas y tener agujetas sin crecer.</p>'],
+['Proteína','Recuperación','<p>Un meta-análisis de 2018 encontró que pasar de ~1.6 g por kilo al día ya casi no agrega músculo. Para ti son unos 115 g al día: una buena porción de proteína en cada una de tus 3 comidas.</p><p>Por tu colesterol, las cantidades y los alimentos los confirma tu médico o un nutriólogo.</p>'],
+['Hipertrofia','Concepto','<p>El aumento del tamaño de la fibra muscular. Es lo que buscas. No es lo mismo que fuerza, aunque al principio van juntas.</p>']
 ];
 
-const GLO={
-'Conceptos':[
- ['RIR','Esfuerzo','<span class="lbl">Qué es</span><p>Repeticiones en reserva. Cuántas repeticiones más podrías haber hecho con buena técnica cuando paraste la serie.</p><span class="lbl">Cómo se usa</span><p><b>RIR 3</b> — te quedaban 3. Semana de calibración y ejercicios nuevos.<br><b>RIR 2</b> — tu valor por defecto. El 70% del programa.<br><b>RIR 1</b> — última serie de máquinas y aislamientos.<br><b>RIR 0</b> — fallo real. Solo aislamientos estables y solo la última serie.</p><p>Nunca RIR 0 en press con mancuernas, remo o jalón.</p>'],
- ['Fallo muscular','Esfuerzo','<p>El punto donde ya no puedes completar una repetición más con técnica correcta. No es donde duele: es donde la barra deja de subir.</p><p>Llegar al fallo da una ventaja pequeña en crecimiento a cambio de mucha más fatiga. Por eso casi todo el programa vive en RIR 1-2.</p>'],
- ['Serie','Estructura','<p>Un bloque continuo de repeticiones. "4 series de 8-12" son cuatro bloques, con descanso entre cada uno.</p>'],
- ['Repetición','Estructura','<p>Un ciclo completo del movimiento: bajar y subir. Si no completaste el recorrido, no cuenta.</p>'],
- ['Rango de repeticiones','Estructura','<span class="lbl">Lo primero</span><p>El rango <b>no lo eliges tú</b>. Lo decide el peso.</p><span class="lbl">Cómo funciona</span><p>Eliges un peso y haces todas las repeticiones que puedas hasta llegar al RIR objetivo. El número que salga, salió. El rango solo te dice si el peso está bien:</p><p>· Menos del mínimo → muy pesado, bájale.<br>· Más del máximo → muy ligero, súbele.<br>· Dentro del rango → correcto, no lo muevas.</p><span class="lbl">Entre series</span><p>Mismo peso en todas. Las repeticiones van a bajar solas porque te cansas, y eso está bien:</p><p>40 × 11 · 40 × 10 · 40 × 9 · 40 × 8</p><p>Las cuatro cayeron en 8-12, así que el peso es correcto y no cambias nada.</p>'],
- ['Doble progresión','Progreso','<span class="lbl">El sistema</span><p>1. Empiezas en el límite bajo del rango.<br>2. Cada semana intentas más repeticiones con el mismo peso.<br>3. Cuando llegas al límite alto en todas las series, subes el peso.<br>4. Vuelves a caer abajo del rango y repites.</p><span class="lbl">Ejemplo</span><p>Rango 8-12, 4 series.<br>Sem 1: 40 kg · 10/9/8/8<br>Sem 2: 40 kg · 12/11/10/9<br>Sem 3: 40 kg · 12/12/11/11<br>Sem 4: 40 kg · 12/12/12/12 → <b>subes a 42.5</b></p><p>Si para sacar una repetición tienes que empeorar la técnica, esa repetición no cuenta.</p>'],
- ['Sobrecarga progresiva','Progreso','<p>El principio de fondo: el músculo crece cuando le exiges más de lo que ya tolera. Más peso, más repeticiones o mejor técnica en el mismo peso.</p><p>Sin registro no hay sobrecarga progresiva, porque no sabes qué superar.</p>'],
- ['Descanso','Estructura','<p><b>Ejercicios pesados</b> (jalón, remo, press): 2-3 min. Necesitas recuperar fuerza, no aliento.<br><b>Máquinas y aislamientos</b>: 90 s.<br><b>Elevaciones laterales y pájaros</b>: 60 s.</p><p>Descansar poco no quema más grasa: solo hace que la siguiente serie sea peor.</p>'],
- ['Tempo','Técnica','<p>La velocidad de cada fase. En este programa solo importa en dos lugares: la bajada de 2 segundos en las elevaciones laterales, y la pausa de 1 segundo juntando escápulas en el remo sentado.</p><p>En el resto, "controlado al bajar, decidido al subir" es suficiente.</p>'],
- ['Series de aproximación','Estructura','<p>Las series ligeras antes de las de trabajo. Una con muy poco peso y otra al 60% del peso real. No cuentan en el conteo de series ni se registran.</p>'],
- ['Concéntrica y excéntrica','Técnica','<p><b>Concéntrica</b>: la fase donde el músculo se acorta y vences el peso. Subir en el curl, empujar en el press.<br><b>Excéntrica</b>: la fase donde el músculo se alarga y frenas el peso. Bajar.</p><p>La excéntrica es donde la mayoría se apura y pierde estímulo.</p>'],
- ['Respiración','Técnica','<span class="lbl">Regla general</span><p>Inhalas en la bajada (fase excéntrica) y exhalas en el esfuerzo (fase concéntrica).</p><span class="lbl">En la práctica</span><p><b>Press y jalón</b>: inhala al bajar el peso o al estirarte, exhala al empujar o jalar.<br><b>Elevación lateral</b>: inhala abajo, exhala al subir.<br><b>Curl</b>: inhala al bajar, exhala al subir.</p><span class="lbl">Lo importante</span><p>Nunca aguantes la respiración toda la serie. Si te mareas o ves puntos, estabas aguantando de más. En series largas de aislamiento respira normal y ya.</p>'],
- ['Volumen','Estructura','<p>Series efectivas por músculo por semana. Tu programa arranca en ~65 series semanales de torso.</p><p>Más volumen no es siempre más crecimiento: la relación tiene rendimientos decrecientes y un punto donde la fatiga se come el beneficio.</p>'],
- ['Frecuencia','Estructura','<p>Cuántas veces por semana entrenas un músculo. Con el mismo volumen total, dos veces por semana iguala o supera a una.</p><p>Tu deltoide lateral va 4 veces: es pequeño, se recupera rápido y las elevaciones casi no generan fatiga.</p>'],
- ['Hipertrofia','Concepto','<p>El aumento del tamaño de la fibra muscular. Es lo que buscas. No es lo mismo que fuerza, aunque van juntas al principio.</p>'],
- ['Agujetas (DOMS)','Recuperación','<p>El dolor muscular que aparece 24-48 h después. <b>No es un indicador de que el entrenamiento funcionó.</b> Puedes crecer sin agujetas y tener agujetas sin crecer.</p><p>Si a las 72 h sigue fuerte, ese grupo lleva demasiado volumen.</p>'],
- ['Semana ligera','Recuperación','<p>Mismos ejercicios, la mitad de las series, RIR 4. Una semana. Se hace cuando aparecen dos o más señales de fatiga acumulada, no en el calendario.</p>'],
- ['Fatiga sistémica, muscular y articular','Recuperación','<p><b>Sistémica</b>: cansancio general del cuerpo. La generan los ejercicios pesados y multiarticulares.<br><b>Muscular</b>: el músculo específico está agotado.<br><b>Articular</b>: molestia en codo, hombro o rodilla. Esta es la única que nunca se aguanta: se cambia el ejercicio.</p>'],
- ['Rango de movimiento','Técnica','<p>Cuánto recorrido completa la articulación. Recorridos completos, sobre todo con el músculo estirado, tienden a dar más crecimiento que recorridos parciales con más peso.</p><p>Medio recorrido con 20 kg de más no es progreso, es autoengaño.</p>'],
- ['Posición estirada','Técnica','<p>El punto del ejercicio donde el músculo está más largo: abajo del curl inclinado, atrás de la cabeza en la extensión de tríceps, arriba del jalón.</p><p>Hay evidencia creciente de que cargar ahí produce más crecimiento. Por eso varios ejercicios del programa están elegidos precisamente por eso.</p>'],
- ['Escápula y retracción escapular','Técnica','<p>La escápula es el omóplato. <b>Retraerla</b> es juntarla con la del otro lado, como apretando un lápiz entre ellas.</p><p>En tu caso importa doble: es la base estable para empujar y jalar, y es el movimiento que corrige tus hombros rotados hacia adelante.</p>'],
- ['Agarre pronado, supino y neutro','Técnica','<p><b>Pronado</b>: palmas hacia abajo o hacia adelante.<br><b>Supino</b>: palmas hacia arriba o hacia ti.<br><b>Neutro</b>: palmas enfrentadas, una viendo a la otra.</p>'],
- ['Unilateral','Técnica','<p>Un lado a la vez. Sirve para corregir diferencias entre lados y suele permitir mejor conexión con el músculo.</p>'],
- ['Prioridad 1, 2 y 3','Programa','<p><b>P1</b> — máximo énfasis: deltoide lateral, dorsal, deltoide posterior, espalda media, tríceps.<br><b>P2</b> — moderado: pecho alto, bíceps, isquiotibiales, glúteo, trapecio.<br><b>P3</b> — mantenimiento: cuádriceps, pantorrillas, antebrazos, abdomen directo.</p><p>No todos los músculos se entrenan igual. Se entrena estratégicamente lo que produce el aspecto ancho.</p>'],
- ['Semana de calibración','Programa','<p>La semana 1 no es entrenamiento, es medición. Todo a RIR 3-4, sin aplicar progresión. Solo encuentras los pesos y los anotas.</p><p>Si terminas pensando "estuvo fácil", quedó bien calibrada.</p>']
-],
-'Ejercicios':[
- ['Jalón al pecho, agarre ancho','Dorsal','<span class="lbl">Cómo se hace</span><p>Sentado, muslos fijos bajo el soporte. Agarre pronado más ancho que los hombros. Pecho arriba y ligera inclinación atrás. Baja la barra al pecho alto llevando los codos hacia las costillas. Sube dejando que los hombros se estiren completos.</p><span class="lbl">Respiración</span><p>Inhala arriba en el estiramiento, exhala mientras jalas.</p><span class="lbl">Error común</span><p>Jalar con las manos y los bíceps. Piensa en los codos.</p>'],
- ['Pullover en polea alta','Dorsal aislado','<span class="lbl">Cómo se hace</span><p>De pie frente a la polea alta, brazos casi rectos con el codo en un ángulo fijo y ligero. Lleva la barra o cuerda desde arriba hasta los muslos usando solo el hombro. El codo no cambia de ángulo en todo el recorrido.</p><span class="lbl">Respiración</span><p>Inhala arriba, exhala al bajar la barra.</p><span class="lbl">Por qué está en tu programa</span><p>Es el único ejercicio de dorsal donde el bíceps no se cansa antes que la espalda.</p>'],
- ['Elevación lateral con mancuerna','Deltoide lateral','<span class="lbl">Cómo se hace</span><p>De pie, ligera inclinación del torso hacia adelante. Codo ligeramente flexionado y fijo. Sube hasta la altura del hombro, no más. Baja controlado en 2 segundos.</p><span class="lbl">Respiración</span><p>Inhala abajo, exhala al subir.</p><span class="lbl">Error común</span><p>Subir la mano en lugar del codo, y dejar caer el peso en la bajada. Vas a usar mancuernas que se ven ridículamente ligeras: es correcto.</p>'],
- ['Elevación lateral en polea, un brazo','Deltoide lateral','<span class="lbl">Cómo se hace</span><p>Polea en el punto más bajo. Te paras de lado, el cable pasa por delante del cuerpo y lo agarras con la mano contraria. Subes hasta la altura del hombro.</p><span class="lbl">Ventaja sobre la mancuerna</span><p>Mantiene tensión también abajo del recorrido, donde la mancuerna no ofrece nada.</p>'],
- ['Elevación lateral en máquina','Deltoide lateral','<span class="lbl">Cómo se hace</span><p>Ajusta el asiento para que el eje de la máquina quede a la altura del hombro. Empuja con la parte externa del brazo, no con las manos.</p><span class="lbl">Ventaja</span><p>Es la variante más estable, así que aquí sí puedes llevar la última serie al fallo con seguridad.</p>'],
- ['Pájaro en banco inclinado','Deltoide posterior','<span class="lbl">Cómo se hace</span><p>Pecho apoyado en un banco a 30-45°, mancuernas colgando. Abre los brazos hacia los lados con los codos ligeramente flexionados. Pulgares apuntando un poco hacia abajo.</p><span class="lbl">Respiración</span><p>Inhala abajo, exhala al abrir.</p><span class="lbl">Error común</span><p>Llevar los brazos hacia atrás en vez de hacia los lados: eso convierte el ejercicio en un remo.</p>'],
- ['Pájaro en polea cruzada','Deltoide posterior','<span class="lbl">Cómo se hace</span><p>Poleas altas cruzadas, agarras el cable izquierdo con la mano derecha y viceversa. Abres los brazos hasta formar una cruz.</p><span class="lbl">Nota</span><p>Peso ligero siempre. Es un músculo pequeño y con carga alta lo hace la espalda, no el hombro.</p>'],
- ['Press inclinado con mancuernas','Pecho superior','<span class="lbl">Cómo se hace</span><p>Banco a 30°, no más. Escápulas retraídas y pegadas al banco durante toda la serie. Baja hasta sentir estiramiento en el pecho, sin rebotar en el fondo. Sube sin chocar las mancuernas.</p><span class="lbl">Respiración</span><p>Inhala al bajar, exhala al empujar.</p><span class="lbl">Error común</span><p>Subir el banco a 45° pensando que pega más al pecho alto: a partir de ahí el hombro se lleva el trabajo.</p>'],
- ['Press de pecho en máquina','Pecho medio','<span class="lbl">Cómo se hace</span><p>Ajusta el asiento para que las manijas queden a la altura media del pecho. Estiramiento completo atrás, sin bloquear el codo adelante.</p><span class="lbl">Ventaja</span><p>Estable y fácil de progresar: puedes acercarte al fallo sin riesgo.</p>'],
- ['Press militar sentado con mancuernas','Deltoide anterior','<span class="lbl">Cómo se hace</span><p>Sentado con respaldo. Baja hasta que el codo quede a la altura de la oreja. Sube sin chocar las mancuernas arriba.</p><span class="lbl">Respiración</span><p>Inhala al bajar, exhala al empujar.</p><span class="lbl">Error común</span><p>Arquear la espalda baja para sacar la última repetición. Si pasa, la serie ya terminó.</p>'],
- ['Extensión de tríceps en polea con cuerda','Tríceps','<span class="lbl">Cómo se hace</span><p>Polea alta con cuerda. Codos pegados al costado y fijos. Solo se mueve el antebrazo. Abre la cuerda al final del recorrido.</p><span class="lbl">Error común</span><p>Separar los codos del cuerpo y empujar con el hombro.</p>'],
- ['Extensión de tríceps sobre la cabeza','Tríceps, cabeza larga','<span class="lbl">Cómo se hace</span><p>Con polea baja y cuerda, de espaldas a la máquina, o con una mancuerna a dos manos sentado. Los codos apuntan al frente y no se abren. Baja hasta el estiramiento máximo detrás de la cabeza.</p><span class="lbl">Por qué está en tu programa</span><p>La cabeza larga del tríceps es la que más volumen le da al brazo, y solo se estira completa con el brazo arriba.</p>'],
- ['Press francés','Tríceps','<span class="lbl">Cómo se hace</span><p>Acostado en banco con barra Z o mancuernas. Codos apuntando al techo y fijos. Baja hacia la frente o ligeramente detrás de la cabeza.</p><span class="lbl">Aviso</span><p>Es de los ejercicios que más molestan el codo. Si duele, cámbialo por extensión en polea. No se aguanta.</p>'],
- ['Fondos en máquina asistida','Tríceps','<span class="lbl">Cómo se hace</span><p>Torso lo más vertical posible para cargar el tríceps y no el pecho. Codos cerca del cuerpo. Baja hasta que el brazo forme unos 90°.</p><span class="lbl">Alternativa</span><p>Press de banca con agarre cerrado, manos a la anchura de los hombros.</p>'],
- ['Remo sentado en polea, agarre neutro','Espalda media','<span class="lbl">Cómo se hace</span><p>Torso vertical, sin balancearte hacia atrás. Jala hasta el abdomen bajo y junta las escápulas un segundo. Estira completo adelante sin encorvar la espalda baja.</p><span class="lbl">Respiración</span><p>Inhala en el estiramiento adelante, exhala al jalar.</p><span class="lbl">Por qué importa para ti</span><p>Es el trabajo que corrige directamente tus hombros rotados hacia adelante.</p>'],
- ['Remo con mancuerna a una mano','Dorsal y espalda media','<span class="lbl">Cómo se hace</span><p>Rodilla y mano del mismo lado apoyadas en el banco, espalda plana. Jala el codo hacia la cadera, no hacia el hombro. Deja que la escápula baje en el estiramiento y se retraiga arriba.</p><span class="lbl">Error común</span><p>Rotar el torso para levantar más peso. El hombro se mueve, la cadera no.</p>'],
- ['Remo en máquina con apoyo de pecho','Espalda media','<span class="lbl">Cómo se hace</span><p>Pecho apoyado. Jala llevando los codos hacia atrás y ligeramente abiertos, unos 45° del torso.</p><span class="lbl">Ventaja</span><p>No carga la espalda baja, así que puedes acercarte al fallo sin fatiga extra.</p>'],
- ['Jalón agarre neutro','Dorsal','<span class="lbl">Cómo se hace</span><p>Igual que el jalón ancho, pero con las palmas enfrentadas. Este agarre te deja usar más peso, por eso el rango de repeticiones es más bajo.</p>'],
- ['Face pull','Deltoide posterior y postura','<span class="lbl">Cómo se hace</span><p>Polea a la altura de la cara, con cuerda. Jala hacia la frente separando las manos y rotando los antebrazos hacia arriba, como si hicieras un doble bíceps. Peso ligero.</p><span class="lbl">Por qué está en tu programa</span><p>Ataca directamente lo que se ve en tus fotos de perfil: hombros rodados hacia adelante. Te devuelve anchura visual sin ganar un gramo de músculo.</p>'],
- ['Curl inclinado con mancuernas','Bíceps, cabeza larga','<span class="lbl">Cómo se hace</span><p>Banco a 45-60°, brazos colgando detrás de la línea del cuerpo. Sube sin mover el codo hacia adelante.</p><span class="lbl">Por qué inclinado</span><p>El brazo detrás del cuerpo estira la cabeza larga del bíceps, que es la que da el pico. De pie no hay estiramiento.</p>'],
- ['Curl martillo','Braquial y antebrazo','<span class="lbl">Cómo se hace</span><p>Palmas enfrentadas todo el recorrido. Codos fijos al costado, sin balanceo.</p><span class="lbl">Por qué está en tu programa</span><p>El braquial está debajo del bíceps y al crecer lo empuja hacia arriba, engrosando el brazo visto de frente.</p>'],
- ['Curl en polea baja','Bíceps','<span class="lbl">Cómo se hace</span><p>Codos fijos al costado. La polea mantiene tensión constante, incluso abajo, donde la barra no ofrece resistencia.</p>'],
- ['Sentadilla sin peso','Fisio · cuádriceps y glúteo','<span class="lbl">Cómo se hace</span><p>Pies a la anchura de los hombros, punta ligeramente hacia afuera. Baja controlado hasta donde tu fisio te haya indicado. Rodilla siguiendo la dirección del pie.</p><span class="lbl">Regla</span><p>Prescrito por tu fisioterapeuta. No lo modificas por tu cuenta y no le añades peso sin que él lo autorice.</p>'],
- ['Desplante estático','Fisio · cuádriceps, glúteo y control de rodilla','<span class="lbl">Cómo se hace</span><p>Un pie adelante y otro atrás, sin moverte del lugar. Bajas y subes en el mismo sitio. 12 de un lado y luego 12 del otro, con 5 kg en cada mano.</p><span class="lbl">Regla</span><p>Es el ejercicio más específico para tu rodilla. Es obligatorio y no se recorta.</p>'],
- ['Prensa femoral','Fisio · isquiotibiales','<span class="lbl">Cómo se hace</span><p>Recorrido completo y controlado. Carga donde la última repetición todavía se sienta cómoda, aproximadamente RIR 3-4.</p><span class="lbl">Regla</span><p>Esto cuenta como todo tu trabajo de isquiotibiales. No se le añade nada encima.</p>'],
- ['Prensa sentado, cuádriceps','Fisio · cuádriceps','<span class="lbl">Cómo se hace</span><p>Espalda pegada al respaldo, sin despegar la cadera en el fondo. Carga controlada, RIR 3-4.</p><span class="lbl">Regla</span><p>Cuenta como todo tu trabajo de cuádriceps.</p>'],
- ['Aductor y abductor en máquina','Fisio · aductores y glúteo medio','<span class="lbl">Cómo se hace</span><p>Sentado, cerrando las piernas para aductor y abriéndolas para abductor. Recorrido completo, sin rebotar en los extremos.</p><span class="lbl">Por qué te lo puso</span><p>El glúteo medio controla la posición de la rodilla al caminar y al bajar. Probablemente por eso está en tu lista.</p>']
-]};
+/* ══════════ NÚCLEO · lógica pura, sin pantalla ══════════ */
+const FORMATO=2;
+const DIAS=['lun','mar','mie','jue','vie'];
+const NOM={lun:'LUN',mar:'MAR',mie:'MIÉ',jue:'JUE',vie:'VIE'};
+const LARGO={lun:'lunes',mar:'martes',mie:'miércoles',jue:'jueves',vie:'viernes'};
+const MESES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
 
-
-/* ══════ estado y persistencia ══════ */
-const FORMATO=1;
-let DB={v:FORMATO,inicio:null,log:{},fisio:{},cierre:{},sust:{},sesiones:{},desc:null,ses:null,visto:false};
-let dia=null,tab='hoy',abierto=null,gq='';
-const K='mosbyfit:v1';
 const iso=d=>{const x=d||new Date();return x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')+'-'+String(x.getDate()).padStart(2,'0')};
+const fecha=s=>new Date(s+'T00:00');
+const masDias=(s,n)=>{const d=fecha(s);d.setDate(d.getDate()+n);return iso(d)};
+const difDias=(a,b)=>Math.round((fecha(a)-fecha(b))/864e5);
+function lunesDe(s){const d=fecha(s),w=d.getDay();const off=w===0?-6:1-w;d.setDate(d.getDate()+off);return iso(d)}
+const r2=x=>Math.round(x*100)/100;
+function aIncremento(x,inc){return r2(Math.round(x/inc)*inc)}
+
+/* ── programa ── */
+function validaPlan(p){
+  const err=[];
+  if(!p||typeof p!=='object')return ['No es un archivo de programa'];
+  if(p.formato!=='mosbyfit-programa')err.push('Falta "formato": "mosbyfit-programa"');
+  if(!Array.isArray(p.dias)||!p.dias.length)err.push('No trae días');
+  else p.dias.forEach((d,i)=>{
+    if(DIAS.indexOf(d.id)<0)err.push('Día '+(i+1)+': id debe ser lun, mar, mie, jue o vie');
+    if(!Array.isArray(d.ejercicios)||!d.ejercicios.length)err.push('Día '+d.id+': sin ejercicios');
+    else d.ejercicios.forEach(e=>{
+      const q=d.id+' · '+(e.nombre||e.id||'?');
+      if(!e.id||!e.nombre)err.push(q+': falta id o nombre');
+      if(!(e.series>0))err.push(q+': series inválidas');
+      if(!Array.isArray(e.reps)||e.reps.length!==2||!(e.reps[0]>0)||!(e.reps[1]>=e.reps[0]))err.push(q+': reps debe ser [mínimo, máximo]');
+      if(!(e.rir>=0))err.push(q+': falta rir');
+      if(!(e.descanso_seg>0))err.push(q+': falta descanso_seg');
+    });
+  });
+  if(!Array.isArray(p.semanas)||!p.semanas.length)err.push('No trae semanas');
+  if(err.length)return err;
+  const ids=[];p.dias.forEach(d=>d.ejercicios.forEach(e=>ids.push(e.id)));
+  if(new Set(ids).size!==ids.length)return ['Hay ids de ejercicio repetidos'];
+  return [];
+}
+function normalizaPlan(p){
+  p.dias.forEach(d=>d.ejercicios.forEach(e=>{
+    e.clave=e.clave||e.id;
+    e.series_semana1=e.series_semana1||Math.max(2,e.series-1);
+    e.incremento=e.incremento>0?e.incremento:2.5;
+    e.alternativas=Array.isArray(e.alternativas)?e.alternativas.filter(a=>a&&a.nombre):[];
+    if(e.rir_ultima_serie===undefined)e.rir_ultima_serie=null;
+  }));
+  return p;
+}
+function diaPlan(plan,k){return plan.dias.find(d=>d.id===k)||null}
+function todos(plan){const o=[];plan.dias.forEach(d=>d.ejercicios.forEach(e=>o.push({e,d})));return o}
+function porId(plan,id){const x=todos(plan).find(t=>t.e.id===id);return x?x.e:null}
+function nombreDeClave(plan,key){
+  const [c,a]=key.split('~');
+  const x=todos(plan).find(t=>t.e.clave===c);
+  if(!x)return key;
+  if(!a)return x.e.nombre;
+  const alt=x.e.alternativas[+a-1];return alt?alt.nombre:key;
+}
+
+/* ── semanas ── */
+function inicioDe(DB,plan){return DB.inicioProg||plan.inicio}
+function checkinDe(DB,plan){return masDias(lunesDe(inicioDe(DB,plan)),26)}
+function semanaDe(f,DB,plan){
+  const n=Math.floor(difDias(f,lunesDe(inicioDe(DB,plan)))/7)+1;
+  return Math.max(1,n);
+}
+function infoSemana(plan,n){
+  const S=plan.semanas,ult=S[S.length-1];
+  const s=S.find(x=>x.n===n);
+  if(s)return Object.assign({extra:false},s);
+  return Object.assign({},ult,{n,extra:true,nombre:'Check-in pendiente',checkin:false});
+}
+function seriesPara(e,sem){return sem.usa_series_semana1?e.series_semana1:e.series}
+function rirPara(e,sem,i,total,amarilla){
+  if(sem.rir_fijo!=null)return sem.rir_fijo;
+  let r=e.rir;
+  if(i===total-1&&e.rir_ultima_serie!=null&&!(sem.rir_extra>0))r=e.rir_ultima_serie;
+  r+=sem.rir_extra||0;
+  if(amarilla&&e.rodilla)r=Math.max(r,3);
+  return r;
+}
+function rirTexto(e,sem,total,amarilla){
+  if(sem.rir_texto)return sem.rir_texto;
+  const a=rirPara(e,sem,0,total,amarilla),b=rirPara(e,sem,total-1,total,amarilla);
+  return a===b?String(a):a+' · últ. '+b;
+}
+
+/* ── registro ── */
+function claveEf(e,alt){return alt?e.clave+'~'+alt:e.clave}
+function altDe(DB,f,e){return ((DB.alt||{})[f]||{})[e.id]||0}
+function okSets(v){return Array.isArray(v)?v.filter(s=>s&&s.ok&&s.p!=null&&s.r!=null):[]}
+function sesionesDe(DB,key,antesDe){
+  return Object.keys(DB.log).filter(f=>(!antesDe||f<antesDe)&&okSets(DB.log[f][key]).length).sort()
+    .map(f=>{const v=okSets(DB.log[f][key]);
+      return {f,v,total:DB.log[f][key].length,vol:Math.round(v.reduce((a,s)=>a+s.p*s.r,0)),
+              tope:v.reduce((a,s)=>Math.max(a,s.p),0),rod:((DB.rod||{})[f]||{})[key]}});
+}
+function ultimaDe(DB,key,hoy){const s=sesionesDe(DB,key,hoy);return s.length?s[s.length-1]:null}
+function colorRodilla(n){if(n==null||n==='')return null;n=+n;return n>=5?'rojo':(n>=3?'amarillo':'verde')}
+
+/* ── veredicto · tabla 4.2 del programa ──
+   e: ejercicio · sets: registro de esa sesión · ctx: {sem, rod, prev (sesión anterior), pct} */
+function veredicto(e,sets,ctx){
+  const ok=okSets(sets), total=Array.isArray(sets)?sets.length:0;
+  if(!ok.length)return null;
+  const [mn,mx]=e.reps, inc=e.incremento, c=ctx||{}, sem=c.sem||{progresa:true}, kg=x=>r2(x)+' kg';
+  const pesos=ok.map(s=>s.p), p=pesos[0], todosIg=pesos.every(x=>x===p);
+  const igual={pesos:ok.map(s=>s.p)};
+  const col=colorRodilla(c.rod);
+  if(col==='rojo')return {t:'rojo',h:'Rodilla en rojo',sug:igual,
+    m:'Para este ejercicio. La próxima vez usa <b>la alternativa sin dolor</b>. Si se repite en dos sesiones: médico o fisio.'};
+  if(ok.length<total)return {t:'parcial',h:'Sesión incompleta',sug:igual,
+    m:'Hiciste '+ok.length+' de '+total+' series. Sin veredicto: la próxima vez repite el peso.'};
+  if(col==='amarillo')return {t:'amar',h:'Rodilla en amarillo',sug:igual,
+    m:'No subas peso ni rango. La próxima vez: <b>mismo peso y RIR 3</b>, y acorta el rango si hace falta.'};
+
+  if(!sem.progresa){
+    if(!todosIg)return {t:'calib',h:'Calibración',sug:{pesos:Array(total).fill(Math.max(...pesos))},
+      m:'Esta semana solo buscas el peso. Para la próxima usa uno solo en todas las series.'};
+    if(ok.every(s=>s.r>=mx))return {t:'calib',h:'Calibración · muy ligero',sug:{pesos:Array(total).fill(r2(p+inc))},
+      m:'Llegaste al máximo aun con margen. La semana que entra empieza con <b>'+kg(p+inc)+'</b>.'};
+    if(ok.some(s=>s.r<mn-1)){const b=Math.max(0,r2(p-inc));return {t:'calib',h:'Calibración · muy pesado',sug:{pesos:Array(total).fill(b)},
+      m:'Quedaste lejos del mínimo. La semana que entra prueba con <b>'+kg(b)+'</b>.'}}
+    return {t:'calib',h:'Calibración · peso encontrado',sug:igual,
+      m:'Ese es tu peso de arranque. La semana 2 sigue con <b>'+kg(p)+'</b>.'};
+  }
+
+  if(!todosIg){
+    if(e.transicion){
+      const pmax=Math.max(...pesos), pmin=Math.min(...pesos);
+      const nNuevo=pesos.filter(x=>x===pmax).length;
+      const listos=ok.filter(s=>s.p===pmax).every(s=>s.r>=mn);
+      const sig=listos?nNuevo+1:nNuevo;
+      const dist=Array.from({length:total},(_,i)=>i<sig?pmax:pmin);
+      if(sig>=total)return {t:'trans',h:'Transición terminada',sug:{pesos:Array(total).fill(pmax)},
+        m:'Todas las series pasan a <b>'+kg(pmax)+'</b>. A partir de ahí, doble progresión normal.'};
+      return {t:'trans',h:listos?'Una serie más al peso nuevo':'Transición · repite',sug:{pesos:dist},
+        m:listos?'La próxima vez: <b>'+sig+' series con '+kg(pmax)+'</b> y el resto con '+kg(pmin)+'.'
+                :'La serie con '+kg(pmax)+' no llegó a '+mn+'. Repite la misma combinación.'};
+    }
+    return {t:'mezcla',h:'Usa un solo peso',sug:{pesos:Array(total).fill(p)},
+      m:'Cambiaste de peso entre series. La doble progresión necesita <b>el mismo peso en todas</b>.'};
+  }
+
+  if(ok.every(s=>s.r>=mx)){
+    const corto=ok.some((s,i)=>s.rir!=null&&c.rirObj&&s.rir<c.rirObj[i]);
+    if(corto)return {t:'mant',h:'Al máximo, pero muy al límite',sug:igual,
+      m:'Llegaste a '+mx+' más cerca del fallo de lo que tocaba. Repite <b>'+kg(p)+'</b> una vez más.'};
+    if(e.transicion)return {t:'sube',h:'Sube el peso, de a poco',sug:{pesos:Array.from({length:total},(_,i)=>i===0?r2(p+inc):p)},
+      m:'Con mancuerna el salto es grande. La próxima vez: <b>solo la primera serie con '+kg(p+inc)+'</b> y el resto con '+kg(p)+'.'};
+    return {t:'sube',h:'Sube el peso',sug:{pesos:Array(total).fill(r2(p+inc)),reps:mn},
+      m:'Todas las series llegaron a '+mx+'. La próxima vez arranca con <b>'+kg(p+inc)+'</b>; vas a caer cerca de '+mn+' y es lo esperado.'};
+  }
+  if(ok.some(s=>s.r<mn)){
+    const prevBajo=c.prev&&okSets(c.prev.v||c.prev).some(s=>s.r<mn&&s.p>=p);
+    if(prevBajo){
+      let b=aIncremento(p*(1-(c.pct||0.075)),inc);if(b>=p)b=r2(p-inc);b=Math.max(0,b);
+      return {t:'baja',h:'Baja el peso',sug:{pesos:Array(total).fill(b)},
+        m:'Dos sesiones seguidas abajo de '+mn+'. La próxima vez baja a <b>'+kg(b)+'</b> (5-10% menos).'};
+    }
+    return {t:'mant',h:'Alguna serie quedó corta',sug:igual,
+      m:'Mismo peso la próxima vez. Si vuelve a quedar abajo de '+mn+', la app te baja el peso.'};
+  }
+  return {t:'mant',h:'Peso correcto',sug:igual,
+    m:'Todo dentro de '+mn+'-'+mx+'. La próxima vez: <b>mismo peso</b> y busca +1 repetición.'};
+}
+
+/* contexto con el que se juzgó una sesión pasada */
+function ctxDe(DB,plan,e,key,s,todas){
+  const sem=infoSemana(plan,semanaDe(s.f,DB,plan));
+  const i=todas.findIndex(x=>x.f===s.f);
+  const n=s.total;
+  const prevRod=i>0?todas[i-1].rod:null;
+  const rirObj=Array.from({length:n},(_,j)=>rirPara(e,sem,j,n,colorRodilla(prevRod)==='amarillo'));
+  return {sem,rod:s.rod,prev:i>0?todas[i-1]:null,rirObj,pct:(plan.regla_progresion||{}).baja_pct};
+}
+
+/* lo que se precarga hoy */
+function precarga(DB,plan,e,key,hoy,n){
+  const todas=sesionesDe(DB,key,hoy);
+  const u=todas[todas.length-1];
+  if(!u)return {u:null,ver:null,pesos:Array(n).fill(null),reps:Array(n).fill(null)};
+  const ver=veredicto(e,DB.log[u.f][key],ctxDe(DB,plan,e,key,u,todas));
+  const base=u.v;
+  const pes=ver&&ver.sug&&ver.sug.pesos?ver.sug.pesos:base.map(s=>s.p);
+  const pesos=Array.from({length:n},(_,i)=>pes[i]!=null?pes[i]:pes[pes.length-1]);
+  const reps=Array.from({length:n},(_,i)=>{
+    if(ver&&ver.sug&&ver.sug.reps)return ver.sug.reps;
+    const b=base[i]||base[base.length-1];
+    return pesos[i]!==b.p?e.reps[0]:b.r;
+  });
+  return {u,ver,pesos,reps,dias:difDias(hoy,u.f)};
+}
+
+/* ── control de fatiga · sección 4.7 ── */
+function fatiga(DB,plan,hoy){
+  const desde=masDias(hoy,-7);
+  const ses=Object.keys(DB.sesiones||{}).filter(f=>f>desde&&f<=hoy).map(f=>DB.sesiones[f]).filter(s=>s&&s.t1&&!s.incompleta);
+  const se=[];
+  const sue=ses.map(s=>s.sueno).filter(x=>x>0);
+  if(sue.length>=2&&sue.reduce((a,b)=>a+b,0)/sue.length<6)se.push('Promedio de sueño abajo de 6 h');
+  if(ses.filter(s=>s.energia>0&&s.energia<=2).length>=3)se.push('Energía de 2 o menos en 3 sesiones');
+  const claves=new Set();Object.keys(DB.log).filter(f=>f>desde&&f<=hoy).forEach(f=>Object.keys(DB.log[f]).forEach(k=>claves.add(k)));
+  let bajo=0;
+  claves.forEach(k=>{const s=sesionesDe(DB,k).filter(x=>x.f<=hoy);if(s.length<2)return;
+    const a=s[s.length-2],b=s[s.length-1];if(b.f<=desde)return;
+    if(b.tope<=a.tope&&b.vol<a.vol*0.95)bajo++;});
+  if(bajo>=3)se.push('Bajó el rendimiento en '+bajo+' ejercicios');
+  if(ses.filter(s=>s.rodilla>=3).length>=2)se.push('Molestia de rodilla en 2 o más sesiones');
+  return {senales:se,ligera:se.length>=2,sesiones:ses.length};
+}
+
+/* ── cuerpo ── */
+function medidasOrden(DB){return Object.keys(DB.medidas||{}).sort().map(f=>Object.assign({f},DB.medidas[f]))}
+function ratio(m){return m&&m.hombros>0&&m.cintura>0?Math.round(m.hombros/m.cintura*1000)/1000:null}
+function pesoSemana(DB,hoy){
+  const d=masDias(hoy,-6);const v=Object.keys(DB.pesos||{}).filter(f=>f>=d&&f<=hoy).map(f=>DB.pesos[f]).filter(x=>x>0);
+  return v.length?{prom:r2(v.reduce((a,b)=>a+b,0)/v.length),n:v.length}:null;
+}
+
+/* ── validación de datos guardados ── */
+function sanea(o){
+  const d={v:FORMATO,inicioProg:null,log:{},alt:{},rod:{},sesiones:{},medidas:{},pesos:{},desc:null,ses:null,visto:false,respaldo:null};
+  if(!o||typeof o!=='object')return d;
+  if(o.v&&o.v>FORMATO){d._futuro=true;return d}
+  const ob=x=>x&&typeof x==='object'&&!Array.isArray(x)?x:{};
+  const num=x=>x!==null&&x!==''&&isFinite(x)?+x:null;
+  const isoOk=s=>typeof s==='string'&&/^\d{4}-\d\d-\d\d$/.test(s);
+  if(o.v===FORMATO&&isoOk(o.inicioProg))d.inicioProg=o.inicioProg;
+  d.visto=o.v===FORMATO&&!!o.visto;
+  if(isoOk(o.respaldo))d.respaldo=o.respaldo;
+  for(const f in ob(o.log)){if(!isoOk(f))continue;const x=ob(o.log[f]),y={};
+    for(const k in x)if(Array.isArray(x[k]))y[k]=x[k].map(s=>({p:num(s&&s.p)!=null?Math.max(0,num(s.p)):null,r:num(s&&s.r)!=null?Math.max(0,num(s.r)):null,
+      rir:num(s&&s.rir)!=null?Math.min(10,Math.max(0,num(s.rir))):null,ok:!!(s&&s.ok)}));
+    if(Object.keys(y).length)d.log[f]=y;}
+  for(const f in ob(o.alt)){const x=ob(o.alt[f]),y={};for(const k in x)if(x[k]===1||x[k]===2)y[k]=x[k];if(Object.keys(y).length)d.alt[f]=y;}
+  for(const f in ob(o.rod)){const x=ob(o.rod[f]),y={};for(const k in x){const n=num(x[k]);if(n!=null&&n>=0&&n<=10)y[k]=n}if(Object.keys(y).length)d.rod[f]=y;}
+  for(const f in ob(o.sesiones)){const s=o.sesiones[f];if(!s||!isFinite(s.t0))continue;
+    d.sesiones[f]={dia:DIAS.indexOf(s.dia)>=0?s.dia:'lun',t0:+s.t0,t1:isFinite(s.t1)&&s.t1!==null?+s.t1:null,incompleta:!!s.incompleta,
+      energia:num(s.energia)>=1&&num(s.energia)<=5?num(s.energia):null,sueno:num(s.sueno)>0&&num(s.sueno)<=16?num(s.sueno):null,
+      rodilla:num(s.rodilla)!=null&&num(s.rodilla)>=0&&num(s.rodilla)<=10?num(s.rodilla):null};}
+  const CAMPOS=['cintura','hombros','brazo','pecho','muslo','pantorrilla'];
+  for(const f in ob(o.medidas)){if(!isoOk(f))continue;const x=ob(o.medidas[f]),y={};CAMPOS.forEach(c=>{const n=num(x[c]);if(n>0&&n<300)y[c]=n});if(Object.keys(y).length)d.medidas[f]=y;}
+  for(const f in ob(o.pesos)){const n=num(o.pesos[f]);if(isoOk(f)&&n>20&&n<300)d.pesos[f]=n;}
+  if(o.desc&&isFinite(o.desc.fin))d.desc={fin:+o.desc.fin,tot:+o.desc.tot||90,n:String(o.desc.n||'')};
+  if(o.ses&&isoOk(o.ses.f))d.ses={f:o.ses.f,dia:DIAS.indexOf(o.ses.dia)>=0?o.ses.dia:'lun',ab:typeof o.ses.ab==='string'?o.ses.ab:null,sc:+o.ses.sc||0};
+  return d;
+}
+function fusionar(DB,o){
+  ['log','alt','rod','sesiones','medidas','pesos'].forEach(c=>{
+    DB[c]=DB[c]||{};
+    for(const f in (o[c]||{}))DB[c][f]=typeof o[c][f]==='object'?Object.assign({},DB[c][f],o[c][f]):o[c][f];
+  });
+  if(o.inicioProg&&!DB.inicioProg)DB.inicioProg=o.inicioProg;
+  return DB;
+}
+function cuentaSesiones(o){return Object.keys(o.log||{}).filter(f=>Object.values(o.log[f]).some(v=>okSets(v).length)).length}
+
+/* ── texto para exportar ── */
+function hms(seg){const h=Math.floor(seg/3600),m=Math.floor(seg%3600/60);return h?h+'h '+String(m).padStart(2,'0')+'m':m+'m '+String(seg%60).padStart(2,'0')+'s'}
+function hhmm(t){const d=new Date(t);return String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0')}
+function texto(DB,plan,hoy,desde){
+  const L=[];
+  L.push('MOSBYFIT · REGISTRO');
+  L.push(plan.nombre);
+  L.push('Inicio: '+inicioDe(DB,plan)+'   Check-in: '+checkinDe(DB,plan)+'   Exportado: '+hoy+'   Semana '+semanaDe(hoy,DB,plan));
+  L.push('Formato: peso x reps @RIR sentido, por serie. * = alternativa');
+  const fs=[...new Set([...Object.keys(DB.log),...Object.keys(DB.sesiones||{})])].filter(f=>!desde||f>=desde).sort();
+  let n=0;
+  const T=todos(plan);
+  fs.forEach(f=>{
+    const LG=DB.log[f]||{},S=(DB.sesiones||{})[f];
+    const keys=Object.keys(LG).filter(k=>okSets(LG[k]).length);
+    if(!keys.length&&!(S&&S.t1))return;
+    n++;
+    const wd=fecha(f).getDay(),dk=wd>=1&&wd<=5?DIAS[wd-1]:null;
+    const real=S&&diaPlan(plan,S.dia)?S.dia:dk;
+    const D=real?diaPlan(plan,real):null;
+    L.push('');L.push('-'.repeat(46));
+    L.push(f+'   sem '+semanaDe(f,DB,plan)+(D?'   '+NOM[real]+' · '+D.nombre:''));
+    if(real&&dk&&real!==dk)L.push('  (hecho en '+LARGO[dk]+')');
+    if(S&&S.t1&&!S.incompleta)L.push('  '+hhmm(S.t0)+' a '+hhmm(S.t1)+'   duracion '+hms(Math.floor((S.t1-S.t0)/1000)));
+    const orden=D?D.ejercicios.map(e=>e.clave):[];
+    keys.sort((a,b)=>{const ia=orden.indexOf(a.split('~')[0]),ib=orden.indexOf(b.split('~')[0]);return (ia<0?99:ia)-(ib<0?99:ib)});
+    keys.forEach(k=>{
+      const nm=nombreDeClave(plan,k)+(k.indexOf('~')>0?' *':'');
+      const v=okSets(LG[k]).map(s=>s.p+'x'+s.r+(s.rir!=null?'@'+s.rir:'')).join('  ');
+      const rd=((DB.rod||{})[f]||{})[k];
+      L.push('  '+(nm+' '.repeat(44)).slice(0,44)+v+(rd!=null?'   rodilla '+rd+'/10':''));
+    });
+    if(S&&(S.energia||S.sueno||S.rodilla!=null))
+      L.push('  · energia '+(S.energia||'-')+'/5 · sueno '+(S.sueno||'-')+' h · rodilla '+(S.rodilla!=null?S.rodilla:'-')+'/10');
+  });
+  if(!n)L.push('','Todavía no hay sesiones registradas.');
+  const M=medidasOrden(DB).filter(m=>!desde||m.f>=desde);
+  if(M.length){
+    L.push('','-'.repeat(46),'MEDIDAS (cm)');
+    M.forEach(m=>L.push('  '+m.f+'  cintura '+(m.cintura||'-')+' · hombros '+(m.hombros||'-')+' · brazo '+(m.brazo||'-')+' · pecho '+(m.pecho||'-')+' · muslo '+(m.muslo||'-')+' · pantorrilla '+(m.pantorrilla||'-')+(ratio(m)?'   H/C '+ratio(m):'')));
+  }
+  const P=Object.keys(DB.pesos||{}).filter(f=>!desde||f>=desde).sort();
+  if(P.length){L.push('','PESO CORPORAL (kg)');L.push('  '+P.map(f=>f.slice(5)+' '+DB.pesos[f]).join(' · '));}
+  L.push('','-'.repeat(46),'fin del registro');
+  return L.join('\n');
+}
+
+/* ── calendario ── */
+function ics(plan,DB,hora,ahora){
+  const [H,Mi]=(hora||'17:00').split(':').map(Number);
+  const d2=n=>String(n).padStart(2,'0');
+  const fmt=d=>d.getFullYear()+d2(d.getMonth()+1)+d2(d.getDate())+'T'+d2(d.getHours())+d2(d.getMinutes())+'00';
+  const BY={lun:'MO',mar:'TU',mie:'WE',jue:'TH',vie:'FR'};
+  const lun=lunesDe(inicioDe(DB,plan));
+  let s='BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//MosbyFit//ES\r\nCALSCALE:GREGORIAN\r\n';
+  plan.dias.forEach(D=>{
+    const ini=fecha(masDias(lun,DIAS.indexOf(D.id)));ini.setHours(H,Mi,0,0);
+    const fin=new Date(ini.getTime()+100*60000);
+    const esc=t=>String(t).replace(/\\/g,'\\\\').replace(/,/g,'\\,').replace(/;/g,'\;');
+    s+='BEGIN:VEVENT\r\nUID:mosbyfit-'+plan.id+'-'+D.id+'@local\r\nDTSTAMP:'+fmt(ahora||new Date())+
+      '\r\nDTSTART:'+fmt(ini)+'\r\nDTEND:'+fmt(fin)+'\r\nRRULE:FREQ=WEEKLY;BYDAY='+BY[D.id]+';COUNT='+plan.semanas.length+
+      '\r\nSUMMARY:'+esc('MosbyFit · '+D.nombre)+
+      '\r\nDESCRIPTION:'+esc(D.ejercicios.map(e=>e.nombre).join(' / '))+
+      '\r\nBEGIN:VALARM\r\nTRIGGER:-PT30M\r\nACTION:DISPLAY\r\nDESCRIPTION:MosbyFit en 30 min\r\nEND:VALARM\r\nEND:VEVENT\r\n';
+  });
+  return s+'END:VCALENDAR\r\n';
+}
+
+/* ══════════ APP · pantalla ══════════ */
+const K='mosbyfit:v1', KP='mosbyfit:plan';
+let PLAN=null, DB=sanea({}), dia='lun', tab='hoy', abierto=null, ojear=false, gq='', restaurar=null, rango='prog';
 const HOY=iso();
 const E=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
 const $=i=>document.getElementById(i);
-const diaDeHoy=()=>{const w=new Date().getDay();return w>=1&&w<=5?DIAS[w-1]:'lun'};
+const kg=x=>x==null?'—':String(r2(x));
 
-/* Almacén: dentro de Claude usa window.storage; instalada en el teléfono usa
-   el almacenamiento del navegador; si ninguno responde, queda en memoria. */
+/* ── almacenamiento ── */
 const ALMACEN=(()=>{
-  if(typeof window!=='undefined'&&window.storage&&window.storage.get)
-    return {modo:'claude',nom:'Guardando en Claude',
-      get:async k=>{try{const r=await window.storage.get(k);return r&&r.value||null}catch(e){return null}},
-      set:async(k,v)=>{await window.storage.set(k,v)}};
-  try{
-    const p='__mf'+Date.now();localStorage.setItem(p,'1');localStorage.removeItem(p);
-    return {modo:'local',nom:'Guardando en este teléfono',
-      get:async k=>localStorage.getItem(k),
-      set:async(k,v)=>localStorage.setItem(k,v)};
-  }catch(e){}
-  const mem={};
-  return {modo:'memoria',nom:'Sin guardado permanente. Exporta antes de cerrar.',
-    get:async k=>mem[k]||null, set:async(k,v)=>{mem[k]=v}};
+  if(window.storage&&window.storage.get)return {modo:'claude',nom:'Guardando en Claude',
+    get:async k=>{try{const r=await window.storage.get(k);return r&&r.value||null}catch(e){return null}},
+    set:async(k,v)=>{await window.storage.set(k,v)}};
+  try{const p='__mf'+Date.now();localStorage.setItem(p,'1');localStorage.removeItem(p);
+    return {modo:'local',nom:'Guardando en este teléfono',get:async k=>localStorage.getItem(k),set:async(k,v)=>localStorage.setItem(k,v)}}catch(e){}
+  const mem={};return {modo:'memoria',nom:'Sin guardado permanente. Exporta antes de cerrar.',get:async k=>mem[k]||null,set:async(k,v)=>{mem[k]=v}};
 })();
-
 let pend=null,sucio=false,escribiendo=false,fallos=0;
 function dot(c){$('dot').className='dot'+(c?' '+c:'')}
 $('dot').onclick=()=>toast(ALMACEN.nom);
-function guardar(){
-  sucio=true;dot('save');
-  clearTimeout(pend);pend=setTimeout(flush,900);
-}
-async function flush(reintento){
-  if(escribiendo||!sucio)return;
-  escribiendo=true;
-  try{
-    await ALMACEN.set(K,JSON.stringify(DB));
-    sucio=false;fallos=0;dot('ok');setTimeout(()=>{if(!sucio)dot('')},1200);
-  }catch(e){
-    fallos++;
-    if(!reintento){escribiendo=false;setTimeout(()=>flush(true),1600);return}
-    dot('err');
-    if(fallos>=3){toast('No se está guardando. Cierra y vuelve a abrir la app.');fallos=0}
-  }
+function guardar(){sucio=true;dot('save');clearTimeout(pend);pend=setTimeout(flush,700)}
+async function flush(re){
+  if(escribiendo||!sucio)return;escribiendo=true;
+  try{await ALMACEN.set(K,JSON.stringify(DB));sucio=false;fallos=0;dot('ok');setTimeout(()=>{if(!sucio)dot('')},1200)}
+  catch(e){fallos++;if(!re){escribiendo=false;setTimeout(()=>flush(true),1500);return}
+    dot('err');if(fallos>=3){toast('No se está guardando. Cierra y vuelve a abrir la app.');fallos=0}}
   escribiendo=false;
 }
-addEventListener('pagehide',()=>{if(sucio){clearTimeout(pend);try{ALMACEN.set(K,JSON.stringify(DB))}catch(e){}}});
-document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden'&&sucio){clearTimeout(pend);flush()}});
+addEventListener('pagehide',()=>{if(sucio){try{ALMACEN.set(K,JSON.stringify(DB))}catch(e){}}});
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden'&&sucio){clearTimeout(pend);flush()}else if(document.visibilityState==='visible')despierto()});
 
-function sanea(o){
-  const d={v:FORMATO,inicio:null,log:{},fisio:{},cierre:{},sust:{},sesiones:{},desc:null,ses:null,visto:false};
-  if(o&&o.v&&o.v>FORMATO){toast('Ese respaldo es de una versión más nueva de la app');return d}
-  if(o&&o.desc&&isFinite(o.desc.fin))d.desc={fin:+o.desc.fin,tot:+o.desc.tot||90,n:String(o.desc.n||'')};
-  if(!o||typeof o!=='object')return d;
-  d.inicio=typeof o.inicio==='string'?o.inicio:null;
-  d.visto=!!o.visto;
-  const ob=x=>x&&typeof x==='object'&&!Array.isArray(x)?x:{};
-  for(const f in ob(o.log)){const dia=ob(o.log[f]);d.log[f]={};
-    for(const id in dia)if(Array.isArray(dia[id]))
-      d.log[f][id]=dia[id].map(s=>({p:s&&isFinite(s.p)?+s.p:null,r:s&&isFinite(s.r)?+s.r:null,ok:!!(s&&s.ok)}));
-    if(!Object.keys(d.log[f]).length)delete d.log[f];}
-  for(const f in ob(o.fisio))d.fisio[f]=ob(o.fisio[f]);
-  for(const f in ob(o.cierre))d.cierre[f]=ob(o.cierre[f]);
-  for(const f in ob(o.sust)){d.sust[f]={};for(const id in ob(o.sust[f]))if(typeof o.sust[f][id]==='string')d.sust[f][id]=o.sust[f][id];}
-  for(const f in ob(o.sesiones)){const s=o.sesiones[f];
-    if(s&&isFinite(s.t0))d.sesiones[f]={dia:DIAS.indexOf(s.dia)>=0?s.dia:'lun',t0:+s.t0,t1:isFinite(s.t1)?+s.t1:null,incompleta:!!s.incompleta};}
-  if(o.ses&&typeof o.ses==='object'&&typeof o.ses.f==='string')d.ses={f:o.ses.f,dia:o.ses.dia,abierto:o.ses.abierto,sc:+o.ses.sc||0};
-  return d;
-}
-async function cargar(){
-  try{const raw=await ALMACEN.get(K);if(raw)DB=sanea(JSON.parse(raw))}catch(e){toast('No se pudo leer el registro anterior')}
-  if(ALMACEN.modo==='memoria')dot('err');
-  if(!DB.inicio){DB.inicio=HOY;guardar()}
-  if(DB.ses&&DB.ses.f===HOY&&DIAS.indexOf(DB.ses.dia)>=0){
-    dia=DB.ses.dia;abierto=DB.ses.abierto||null;restaurar=DB.ses.sc||0;
-  }else dia=diaDeHoy();
-  cerrarViejas();pintar();engancharScroll();tickReloj();reanudarDescanso();
-  if(!DB.visto){DB.visto=true;guardar();ayuda()}
-}
-
-function semana(){
-  if(!DB.inicio)return 1;
-  const a=new Date(DB.inicio+'T00:00'),b=new Date(HOY+'T00:00');
-  return Math.max(1,Math.floor((b-a)/864e5/7)+1);
-}
-const sets=(f,id)=>(DB.log[f]&&DB.log[f][id])||null;
-function setSets(f,id,v){DB.log[f]=DB.log[f]||{};DB.log[f][id]=v;guardar()}
-function ultima(id){
-  const fs=Object.keys(DB.log).filter(f=>f<HOY&&DB.log[f][id]&&DB.log[f][id].some(s=>s&&s.ok)).sort();
-  if(!fs.length)return null;
-  const f=fs[fs.length-1];
-  return {f,dias:Math.round((new Date(HOY+'T00:00')-new Date(f+'T00:00'))/864e5),v:DB.log[f][id].filter(s=>s&&s.ok)};
-}
+/* ── utilidades ── */
 function toast(m){const t=$('toast');t.textContent=m;t.classList.add('on');clearTimeout(t._x);t._x=setTimeout(()=>t.classList.remove('on'),2600)}
+function vibra(p){if(navigator.vibrate)try{navigator.vibrate(p)}catch(e){}}
 let AC=null;
 function audioOn(){try{if(!AC)AC=new (window.AudioContext||window.webkitAudioContext)();if(AC.state==='suspended')AC.resume()}catch(e){}}
-function vibra(p){if(navigator.vibrate)try{navigator.vibrate(p)}catch(e){}}
-function pitido(n){ // iOS no vibra: suena
-  audioOn();if(!AC)return;
-  for(let i=0;i<(n||1);i++){
-    const o=AC.createOscillator(),g=AC.createGain(),t=AC.currentTime+i*0.28;
-    o.type='sine';o.frequency.setValueAtTime(880,t);
-    g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(0.25,t+0.015);
-    g.gain.exponentialRampToValueAtTime(0.0001,t+0.22);
-    o.connect(g);g.connect(AC.destination);o.start(t);o.stop(t+0.24);
-  }
-}
+function pitido(n){audioOn();if(!AC)return;
+  for(let i=0;i<(n||1);i++){const o=AC.createOscillator(),g=AC.createGain(),t=AC.currentTime+i*0.28;
+    o.type='sine';o.frequency.setValueAtTime(880,t);g.gain.setValueAtTime(0.0001,t);
+    g.gain.exponentialRampToValueAtTime(0.25,t+0.015);g.gain.exponentialRampToValueAtTime(0.0001,t+0.22);
+    o.connect(g);g.connect(AC.destination);o.start(t);o.stop(t+0.24);}}
 let wl=null;
 async function despierto(){try{if('wakeLock'in navigator&&!wl){wl=await navigator.wakeLock.request('screen');wl.addEventListener('release',()=>wl=null)}}catch(e){}}
-document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')despierto()});
+function mmss(s){s=Math.max(0,s);return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}
+function fechaLarga(s){const d=fecha(s),w=d.getDay();return ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'][w]+' '+d.getDate()+' de '+MESES[d.getMonth()]}
+function saludo(){const h=new Date().getHours();return h<12?'Buenos días':(h<19?'Buenas tardes':'Buenas noches')}
 
-/* ══════ veredicto de progresión ══════ */
-function veredicto(e,cur){
-  const ok=cur.filter(s=>s&&s.ok&&s.r!=null&&s.p!=null);
-  if(ok.length<e.s)return null;
-  const [mn,mx]=e.r, p=ok[0].p;
-  if(!ok.every(s=>s.p===p))
-    return {t:'mant',h:'Usa un solo peso',m:'Cambiaste de peso entre series. La doble progresión necesita <b>el mismo peso en las '+e.s+' series</b>: elige uno y deja que las repeticiones bajen solas.'};
-  if(ok.every(s=>s.r>=mx))
-    return {t:'sube',h:'Sube el peso',m:'Las '+e.s+' series llegaron a '+mx+'. La próxima vez arranca con <b>'+(Math.round((p+e.inc)*100)/100)+' kg</b> y vas a volver a caer cerca de '+mn+'. Es lo esperado.'};
-  if(ok.some(s=>s.r<mn))
-    return {t:'baja',h:'Peso alto',m:'Alguna serie quedó abajo de '+mn+' repeticiones. Si vuelve a pasar la próxima sesión, bájale a <b>'+(Math.round(Math.max(0,p-e.inc)*100)/100)+' kg</b>.'};
-  return {t:'mant',h:'Peso correcto',m:'Todo cayó dentro de '+mn+'-'+mx+'. La próxima vez: <b>mismo peso</b>, y pelea por una repetición más en cada serie.'};
+/* ── semana visible y día ── */
+function lunesVisible(){
+  const ini=lunesDe(inicioDe(DB,PLAN));
+  if(HOY<ini)return ini;
+  const w=fecha(HOY).getDay();
+  return w===0||w===6?masDias(lunesDe(HOY),7):lunesDe(HOY);
 }
+function fechaDia(k){return masDias(lunesVisible(),DIAS.indexOf(k))}
+function diaDeHoy(){const w=fecha(HOY).getDay();return w>=1&&w<=5&&HOY>=lunesDe(inicioDe(DB,PLAN))?DIAS[w-1]:'lun'}
+function esHoy(k){return fechaDia(k)===HOY}
+function semHoy(){return infoSemana(PLAN,semanaDe(HOY,DB,PLAN))}
+function antesDeEmpezar(){return HOY<inicioDe(DB,PLAN)}
 
-/* ══════ temporizador de descanso ══════ */
+/* ── sesión con cronómetro ── */
+let relojS=null;
+const sesionHoy=()=>DB.sesiones[HOY]||null;
+const activa=()=>{const s=sesionHoy();return s&&s.t0&&!s.t1?s:null};
+const transcurrido=()=>{const s=activa();return s?Math.floor((Date.now()-s.t0)/1000):0};
+function tickReloj(){clearInterval(relojS);if(!activa())return;
+  const u=()=>{if(!activa())return clearInterval(relojS);$('wk').textContent='SEM '+semanaDe(HOY,DB,PLAN)+' · '+mmss(transcurrido());
+    const f=document.querySelector('.fin');if(f)f.textContent='He terminado · '+mmss(transcurrido())};
+  u();relojS=setInterval(u,1000);}
+function cerrarViejas(){for(const f in DB.sesiones){const s=DB.sesiones[f];if(s.t0&&!s.t1&&f!==HOY){s.t1=s.t0;s.incompleta=true}}}
+function iniciarSesion(){DB.sesiones[HOY]={dia,t0:Date.now(),t1:null,energia:null,sueno:null,rodilla:null};ojear=false;
+  guardar();audioOn();despierto();pintar();tickReloj();toast('Sesión iniciada. Primero calienta.')}
+
+/* ── descanso ── */
 let T=null,tq=0,ttot=0;
-function segDe(t){const m=t.match(/(\d+)\s*-?\s*(\d+)?\s*(min|s)/);if(!m)return 90;const n=+(m[2]||m[1]);return m[3]==='min'?n*60:n}
-function pintaT(){
-  $('rtime').textContent=Math.floor(Math.max(0,tq)/60)+':'+String(Math.max(0,tq)%60).padStart(2,'0');
-  $('rbar').style.width=(Math.max(0,tq)/ttot*100)+'%';
+function pintaT(){$('rtime').textContent=mmss(tq);$('rbar').style.width=(ttot?Math.max(0,tq)/ttot*100:0)+'%'}
+function descanso(seg,nombre,ret){
+  clearInterval(T);tq=seg;ttot=ret?Math.max(seg,ttot||seg):seg;
+  if(!ret){DB.desc={fin:Date.now()+seg*1000,tot:seg,n:nombre||''};guardar()}
+  $('rlab').textContent='Descanso';$('rnm').textContent=nombre||'';$('rest').classList.add('on');$('rplus').style.visibility='';pintaT();despierto();
+  T=setInterval(()=>{tq--;pintaT();if(tq<=0){clearInterval(T);DB.desc=null;guardar();vibra([190,90,190]);pitido(2);
+    $('rtime').textContent='Listo';setTimeout(()=>$('rest').classList.remove('on'),2200)}},1000);
 }
-function descanso(seg,nombre,fin){
-  clearInterval(T);tq=seg;ttot=fin?Math.max(seg,ttot||seg):seg;
-  if(!fin){DB.desc={fin:Date.now()+seg*1000,tot:seg,n:nombre||''};guardar()}
-  $('rnm').textContent=nombre||'';
-  $('rest').classList.add('on');pintaT();despierto();
-  T=setInterval(()=>{
-    tq--;pintaT();
-    if(tq<=0){clearInterval(T);DB.desc=null;guardar();vibra([190,90,190]);pitido(2);
-      $('rtime').textContent='Listo';
-      setTimeout(()=>$('rest').classList.remove('on'),2200);}
-  },1000);
-}
-$('rplus').onclick=()=>{if(tq<=0)return;tq+=30;ttot=Math.max(ttot,tq);pintaT()};
-$('rskip').onclick=()=>{clearInterval(T);DB.desc=null;guardar();$('rest').classList.remove('on')};
-function reanudarDescanso(){
-  const d=DB.desc;if(!d||!d.fin)return;
-  const q=Math.floor((d.fin-Date.now())/1000);
-  if(q<=1){DB.desc=null;return}
-  ttot=d.tot||q;descanso(q,d.n,true);
-}
+function avisoSS(sig){clearInterval(T);DB.desc=null;$('rlab').textContent='Superserie · sin descanso';$('rnm').textContent='Ahora: '+sig;
+  $('rtime').textContent='→';$('rbar').style.width='0';$('rplus').style.visibility='hidden';$('rest').classList.add('on');
+  T=setTimeout(()=>$('rest').classList.remove('on'),6000)}
+$('rplus').onclick=()=>{if(tq<=0)return;tq+=30;ttot=Math.max(ttot,tq);if(DB.desc){DB.desc.fin+=30000;guardar()}pintaT()};
+$('rskip').onclick=()=>{clearInterval(T);clearTimeout(T);DB.desc=null;guardar();$('rest').classList.remove('on')};
+function reanudarDescanso(){const d=DB.desc;if(!d)return;const q=Math.floor((d.fin-Date.now())/1000);if(q<=1){DB.desc=null;return}ttot=d.tot||q;descanso(q,d.n,true)}
 
-/* ══════ render ══════ */
+/* ── reanudar donde ibas ── */
+let tsc=null;
+function recordar(){DB.ses={f:HOY,dia,ab:abierto,sc:$('main').scrollTop||0};guardar()}
+$('main').addEventListener('scroll',()=>{clearTimeout(tsc);tsc=setTimeout(()=>{if(tab==='hoy'&&(activa()||ojear))recordar()},700)},{passive:true});
+
+/* ══════════ PINTAR ══════════ */
 function pintar(){
-  $('wk').textContent='SEMANA '+semana();
+  const sm=semHoy();
+  if(!activa())$('wk').textContent=antesDeEmpezar()?'INICIA '+fecha(inicioDe(DB,PLAN)).getDate()+' '+MESES[fecha(inicioDe(DB,PLAN)).getMonth()].slice(0,3).toUpperCase():'SEM '+sm.n+' · '+sm.nombre.toUpperCase();
   const d=$('days');d.innerHTML='';
   DIAS.forEach(k=>{
-    const hecho=diaCompleto(k);
-    const b=E('button','day'+(k===dia?' on':'')+(hecho?' hecho':'')+(esHoy(k)&&!hecho?' hoy':''),NOM[k]+'<s>'+fechaDe(k).getDate()+'</s><i></i>');
-    b.onclick=()=>{dia=k;abierto=null;restaurar=0;pintar();recordar()};d.appendChild(b);
+    const f=fechaDia(k),s=DB.sesiones[f],hecho=s&&s.t1&&!s.incompleta;
+    const b=E('button','day'+(k===dia?' on':'')+(hecho?' hecho':'')+(f===HOY&&!hecho?' hoy':''),NOM[k]+'<s>'+fecha(f).getDate()+'</s><i></i>');
+    b.onclick=()=>{dia=k;abierto=null;restaurar=0;if(tab!=='hoy')tab='hoy';if(!activa())ojear=true;pintar();recordar()};
+    d.appendChild(b);
   });
   document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===tab));
-  const m=$('main');m.innerHTML='';m.scrollTop=0;
-  if(tab==='hoy'){ if(activa()||ojear)vistaDia(m); else vistaInicio(m); }
-  else if(tab==='glo')vistaGlo(m);else vistaExp(m);
-  if(!activa())$('wk').textContent='SEMANA '+semana();
-  if(restaurar!=null){const v=restaurar;restaurar=null;setTimeout(()=>{$('main').scrollTop=v},40)}
-  else if(abierto){const c=document.querySelector('.card.open');if(c)setTimeout(()=>c.scrollIntoView({block:'start',behavior:'smooth'}),60)}
+  const m=$('main');m.innerHTML='';
+  if(tab==='hoy'){if(activa()||ojear)vistaDia(m);else vistaInicio(m)}
+  else if(tab==='cue')vistaCuerpo(m);else if(tab==='glo')vistaGlo(m);else vistaExp(m);
+  if(restaurar!=null){const v=restaurar;restaurar=null;requestAnimationFrame(()=>{m.scrollTop=v})}
+  else m.scrollTop=0;
 }
-function diaCompleto(k){
-  const L=DB.log[HOY]||{};
-  return PLAN[k].ej.every(e=>(L[e.id]||[]).filter(s=>s&&s.ok).length>=e.s);
-}
-function hechasDe(e){return ((DB.log[HOY]||{})[e.id]||[]).filter(s=>s&&s.ok).length}
 
+/* ── portada ── */
+function vistaInicio(m){
+  const sm=semHoy(), k=diaDeHoy(), D=diaPlan(PLAN,k), w=fecha(HOY).getDay(), finde=w===0||w===6, s=sesionHoy();
+  m.appendChild(E('div','saludo','<div class="eyebrow">'+PLAN.nombre+'</div><div class="h">'+saludo()+'</div><div class="f">'+(t=>t[0].toUpperCase()+t.slice(1))(fechaLarga(HOY))+'</div>'));
+  const ini=inicioDe(DB,PLAN), chk=checkinDe(DB,PLAN);
+  if(antesDeEmpezar()){const fal=difDias(ini,HOY);
+    m.appendChild(E('div','wk','<span class="eyebrow">Arrancas el '+fechaLarga(ini)+'</span><p>Faltan '+fal+(fal===1?' día':' días')+'. Mientras: toma tus medidas en la pestaña Cuerpo y revisa el entreno del lunes para ubicar las máquinas.</p>'));
+  }else{
+    let t='<span class="eyebrow">Semana '+sm.n+' · '+sm.nombre+'</span><p>'+(sm.objetivo||'')+'</p>';
+    if(sm.extra)t='<span class="eyebrow">Toca check-in</span><p>Ya pasaron las 4 semanas. Manda fotos, medidas y el reporte al chat de entrenamiento. Mientras, sigue con las cargas de la semana 4.</p>';
+    else if(sm.checkin)t+='<p>Check-in el <b>'+fechaLarga(chk)+'</b>: fotos, medidas y el reporte.</p>';
+    m.appendChild(E('div','wk',t));
+  }
+  const fa=fatiga(DB,PLAN,HOY);
+  if(fa.ligera)m.appendChild(E('div','alarma','<span class="eyebrow">Toca semana ligera</span><p>'+fa.senales.join('<br>')+'</p><p>Mitad de series y RIR 3 durante una semana. Luego retomas donde ibas.</p>'));
+  const hero=E('div','hero');
+  if(finde&&!s){
+    const nx=PLAN.dias[0];
+    hero.innerHTML='<div class="k">Hoy descansas</div><div class="t">Caminar está bien</div><div class="s">Siguiente: lunes · '+nx.nombre+'</div>';
+    const b=E('button','go cont','Entrenar de todos modos');b.onclick=()=>{ojear=true;pintar()};hero.appendChild(b);
+  }else{
+    const hecho=s&&s.t1;
+    const sem=infoSemana(PLAN,semanaDe(HOY,DB,PLAN));
+    const tot=D.ejercicios.reduce((a,e)=>a+seriesPara(e,sem),0);
+    hero.innerHTML='<div class="k">'+(hecho?'Hoy · terminado':'Entreno de hoy')+'</div><div class="t">'+D.nombre+'</div>'+
+      '<div class="s">'+D.ejercicios.length+' ejercicios · '+tot+' series'+(hecho&&!s.incompleta?' · '+hms(Math.floor((s.t1-s.t0)/1000)):'')+'</div>';
+    const b=E('button','go'+(hecho?' cont':''),hecho?'Volver a abrir el entreno':'Iniciar sesión');
+    b.onclick=hecho?()=>{ojear=true;pintar()}:()=>{dia=k;iniciarSesion()};hero.appendChild(b);
+  }
+  m.appendChild(hero);
+  if(!finde||s){const v=E('button','ver','Ver el entreno sin empezar →');v.onclick=()=>{ojear=true;pintar()};m.appendChild(v)}
+  m.appendChild(E('div','eyebrow','Esta semana'));
+  const se=E('div','sem');let n=0;
+  DIAS.forEach(x=>{const f=fechaDia(x),ss=DB.sesiones[f],ok=ss&&ss.t1&&!ss.incompleta;if(ok)n++;
+    se.appendChild(E('div',(ok?'si':'')+(f===HOY?' hoyx':''),NOM[x][0]+NOM[x].slice(1).toLowerCase()))});
+  m.appendChild(se);m.appendChild(E('p','tip',n+' de 5 sesiones esta semana.'));
+  const prev=Object.keys(DB.sesiones).filter(f=>f<HOY&&DB.sesiones[f].t1&&!DB.sesiones[f].incompleta).sort();
+  if(prev.length){const f=prev[prev.length-1],ss=DB.sesiones[f],pd=diaPlan(PLAN,ss.dia);
+    const sr=Object.values(DB.log[f]||{}).reduce((a,x)=>a+okSets(x).length,0);
+    m.appendChild(E('div','eyebrow','Última sesión'));
+    m.appendChild(E('div','ult','<div class="a">'+(pd?pd.nombre:'Sesión')+'<s>'+fechaLarga(f)+' · '+sr+' series</s></div><div class="b">'+hms(Math.floor((ss.t1-ss.t0)/1000))+'</div>'));}
+  const nses=cuentaSesiones(DB);
+  if(nses&&(!DB.respaldo||difDias(HOY,DB.respaldo)>=10)){
+    const r=E('button','ver',(DB.respaldo?'Llevas '+difDias(HOY,DB.respaldo)+' días sin respaldo':'Todavía no haces respaldo')+' · hacerlo ahora →');
+    r.style.color='var(--gold)';r.onclick=respaldar;m.appendChild(r);}
+  const c=E('button','ver','Añadir mis entrenos al calendario →');c.onclick=calendario;m.appendChild(c);
+}
+
+/* ── día de entreno ── */
 function vistaDia(m){
-  const p=PLAN[dia];
-  if(semana()===1){
-    const b=E('div','banner','<div class="eyebrow">Semana 1 · calibración</div><p>Todo a RIR 3-4. Esta semana solo buscas los pesos, no progresas todavía. Si terminas pensando “estuvo fácil”, quedó bien calibrada.</p>');
-    const q=E('button',null,'Cómo elegir el peso →');q.onclick=ayuda;b.appendChild(q);m.appendChild(b);
+  const D=diaPlan(PLAN,dia), sem=infoSemana(PLAN,semanaDe(HOY,DB,PLAN)), act=activa();
+  if(!esHoy(dia))m.appendChild(E('div','avisod','Estás viendo el entreno del '+LARGO[dia]+'. Lo que registres se guarda con la fecha de hoy, '+fechaLarga(HOY)+'.'));
+  if(!act&&!(sesionHoy()&&sesionHoy().t1)){
+    const b=E('button','go','Iniciar sesión · '+D.nombre);b.style.marginTop='0';b.style.marginBottom='14px';b.onclick=iniciarSesion;m.appendChild(b);
   }
-  const total=p.ej.reduce((a,e)=>a+e.s,0);
-  const hechas=p.ej.reduce((a,e)=>a+hechasDe(e),0);
-  if(!esHoy(dia))m.appendChild(E('div','avisod','Estás viendo el entreno del '+LARGO[dia]+'. Lo que registres se guarda con la fecha de hoy, '+fechaLarga()+'.'));
+  const tot=D.ejercicios.reduce((a,e)=>a+seriesPara(e,sem),0);
   const h=E('div','daytitle');
-  h.appendChild(E('div',null,'<div class="eyebrow">'+(esHoy(dia)?fechaLarga():LARGO[dia])+' · '+(p.fisio?'con bloque fisio':'sesión larga')+'</div><h1>'+p.t+'</h1>'));
-  h.appendChild(E('div','prog','<b>'+hechas+'/'+total+'</b>series'));
+  h.appendChild(E('div',null,'<div class="eyebrow">'+LARGO[dia]+' '+fecha(fechaDia(dia)).getDate()+' · '+D.tipo+'</div><h1>'+D.nombre+'</h1>'));
+  h.appendChild(E('div','prog','<b id="progb">0/'+tot+'</b>series'));
   m.appendChild(h);
-  if(!p.fisio)m.appendChild(E('div','note','<span class="eyebrow">Antes de empezar</span>Calienta 5 min: círculos de brazo, retracciones de escápula y movilidad de hombro. Luego 2 series de aproximación en el primer ejercicio.'));
-  if(p.fisio)m.appendChild(cardFisio());
-  p.ej.forEach((e,i)=>m.appendChild(cardEj(e,i+1)));
-  m.appendChild(cierre());
-  if(activa()){
-    const fb=E('button','fin','He terminado · '+mmss(transcurrido()));
-    fb.onclick=terminarSesion;m.appendChild(fb);
-  }else if(ojear){
-    const vb=E('button','ver','← Volver al inicio');
-    vb.onclick=()=>{ojear=false;pintar()};m.appendChild(vb);
-  }
+  m.appendChild(E('div','wk','<span class="eyebrow">Semana '+sem.n+' · '+sem.nombre+'</span><p>'+
+    (sem.n===1?'Una serie menos por ejercicio y todo a RIR 3-4. Solo encuentras tus pesos.':sem.extra?'Check-in pendiente: sigue con las cargas de la semana 4.':sem.n===2?'Series completas, un RIR más que el objetivo.':'Series completas al RIR objetivo. Progresas.')+'</p>'));
+  m.appendChild(E('div','note','<span class="eyebrow">Calentamiento</span>'+D.calentamiento));
+  const ss={};D.ejercicios.forEach(e=>{if(e.superserie)(ss[e.superserie]=ss[e.superserie]||[]).push(e)});
+  D.ejercicios.forEach((e,i)=>m.appendChild(cardEj(e,i+1,sem,ss)));
+  if(act){const fb=E('button','fin','He terminado · '+mmss(transcurrido()));fb.onclick=cerrarSesion;m.appendChild(fb)}
+  else{const vb=E('button','ver','← Volver al inicio');vb.onclick=()=>{ojear=false;pintar()};m.appendChild(vb)}
+  progreso();
 }
-
-function cardFisio(){
-  const st=DB.fisio[HOY]||{};
-  const hechos=FISIO.filter(f=>st[f.id]&&st[f.id].ok).length;
-  const c=E('div','card fisio'+(abierto==='fisio'?' open':'')+(hechos===6?' full':''));
-  const hd=E('button','chead');
-  hd.innerHTML='<div class="num">RH</div><div class="ctitle"><h2>Bloque de fisioterapia</h2>'+
-    '<div class="meta">Va primero · 6 ejercicios · <b>'+hechos+'/6</b></div></div>'+
-    (hechos===6?'<div class="done">✓</div>':'<div class="caret">▸</div>');
-  hd.onclick=()=>{abierto=abierto==='fisio'?null:'fisio';pintar();recordar()};
-  c.appendChild(hd);
-  const b=E('div','body');
-  FISIO.forEach(f=>{
-    const s=st[f.id]||{};
-    const r=E('div','frow');
-    r.appendChild(E('div','n',f.n+'<s>'+f.s+'</s>'));
-    if(f.w){
-      const i=E('input','fw');i.type='number';i.inputMode='decimal';i.placeholder='kg';i.value=s.p!=null?s.p:'';
-      i.oninput=()=>{let v=i.value===''?null:Math.max(0,+i.value||0);if(v!==null&&+i.value<0)i.value=0;DB.fisio[HOY]=DB.fisio[HOY]||{};DB.fisio[HOY][f.id]=Object.assign({},DB.fisio[HOY][f.id],{p:v});guardar()};
-      r.appendChild(i);
-    }
-    const t=E('button','tick'+(s.ok?' on':''),s.ok?'✓':'');
-    t.onclick=()=>{
-      DB.fisio[HOY]=DB.fisio[HOY]||{};const c2=DB.fisio[HOY][f.id]||{};c2.ok=!c2.ok;DB.fisio[HOY][f.id]=c2;guardar();
-      t.className='tick'+(c2.ok?' on':'');t.textContent=c2.ok?'✓':'';vibra(18);
-      const n=FISIO.filter(x=>(DB.fisio[HOY][x.id]||{}).ok).length;
-      hd.querySelector('.meta').innerHTML='Va primero · 6 ejercicios · <b>'+n+'/6</b>';
-    };
-    r.appendChild(t);b.appendChild(r);
-  });
-  b.appendChild(E('p','tip','Prescrito por tu fisioterapeuta: tiene prioridad sobre todo lo demás y no se recorta. Carga donde la última repetición todavía se sienta controlada. Si algo te genera dolor de rodilla, paras y se lo dices a él.'));
-  c.appendChild(b);return c;
+function progreso(){
+  const D=diaPlan(PLAN,dia),sem=infoSemana(PLAN,semanaDe(HOY,DB,PLAN)),L=DB.log[HOY]||{};
+  let h=0,t=0;D.ejercicios.forEach(e=>{const n=seriesPara(e,sem);t+=n;h+=Math.min(n,okSets(L[claveEf(e,altDe(DB,HOY,e))]).length)});
+  const b=$('progb');if(b)b.textContent=h+'/'+t;
 }
+function ultRodilla(key){const u=ultimaDe(DB,key,HOY);return u?colorRodilla(u.rod):null}
 
-function cardEj(e,n){
-  const cur=sets(HOY,e.id)||Array.from({length:e.s},()=>({p:null,r:null,ok:false}));
-  const u=ultima(e.id);
-  const c=E('div','card'+(abierto===e.id?' open':''));
+function cardEj(e,num,sem,ssMap){
+  const alt=altDe(DB,HOY,e), key=claveEf(e,alt), n=seriesPara(e,sem);
+  const nom=alt?e.alternativas[alt-1].nombre:e.nombre, yt=alt?e.alternativas[alt-1].youtube:e.youtube;
+  const ocol=ultRodilla(key), amarilla=ocol==='amarillo';
+  const rirObj=Array.from({length:n},(_,i)=>rirPara(e,sem,i,n,amarilla));
+  const pc=precarga(DB,PLAN,e,key,HOY,n);
+  const saved=(DB.log[HOY]||{})[key];
+  const cur=saved||Array.from({length:n},(_,i)=>({p:pc.pesos[i],r:pc.reps[i],rir:null,ok:false}));
+  const okey=e.superserie?'ss:'+e.superserie:e.id;
+  const par=e.superserie?ssMap[e.superserie]:null, primero=par&&par[0].id===e.id&&par.length>1;
+  const c=E('div','card'+(abierto===okey?' open':''));
   const hd=E('button','chead');
   const meta=()=>{const h=cur.filter(s=>s.ok).length;
-    return e.o+' · '+e.s+'×'+e.r[0]+'-'+e.r[1]+' · RIR '+e.rir+(h?' · <b>'+h+'/'+e.s+'</b>':'')};
-  const nom=nombreHoy(e), cambiado=nom!==e.n;
-  hd.innerHTML='<div class="num">'+String(n).padStart(2,'0')+'</div><div class="ctitle"><h2>'+nom+'</h2>'+
-    (cambiado?'<div class="swap">↺ en lugar de '+e.n+'</div>':'')+
-    '<div class="meta">'+meta()+'</div></div><div class="caret">▸</div>';
-  hd.onclick=()=>{abierto=abierto===e.id?null:e.id;pintar();recordar()};
+    return e.musculo+' · '+n+'×'+e.reps[0]+'-'+e.reps[1]+(e.por_lado?' por lado':'')+' · RIR '+rirTexto(e,sem,n,amarilla)+' · '+mmss(e.descanso_seg)+(h?' · <b>'+h+'/'+n+'</b>':'')};
+  hd.innerHTML='<div class="num">'+String(num).padStart(2,'0')+'</div><div class="ctitle"><h2>'+nom+
+    (e.rodilla?'<span class="badge k">RODILLA</span>':'')+(e.superserie?'<span class="badge ss">SS '+e.superserie+'</span>':'')+'</h2>'+
+    (alt?'<div class="swap">↺ en lugar de '+e.nombre+'</div>':'')+'<div class="meta">'+meta()+'</div></div><div class="caret">▸</div>';
+  hd.onclick=()=>{abierto=abierto===okey?null:okey;pintar();recordar();
+    if(abierto){setTimeout(()=>{const x=document.querySelector('.card.open');if(x)x.scrollIntoView({block:'start',behavior:'smooth'})},60)}};
   c.appendChild(hd);
   const b=E('div','body');
 
-  const vAnt=u?veredicto(e,u.v):null;
-  const cambioVar=u&&variantePasada(e)!==nombreHoy(e);
-  let sug=null;
-  if(u&&!cambioVar&&vAnt){
-    if(vAnt.t==='sube')sug={p:Math.round((u.v[0].p+e.inc)*100)/100,r:e.r[0],
-      txt:'Precargado con <b>'+Math.round((u.v[0].p+e.inc)*100)/100+' kg</b>: la vez pasada completaste el rango, así que toca subir. Vas a caer cerca de '+e.r[0]+' repeticiones y eso es lo correcto.'};
-    else if(vAnt.t==='baja')sug={p:Math.round(Math.max(0,u.v[0].p-e.inc)*100)/100,r:e.r[0],
-      txt:'Precargado más ligero: la vez pasada te quedaste abajo de '+e.r[0]+' repeticiones.'};
-  }
-  const g=E('div','guide'+(u?'':' first'));
-  if(u){
-    g.innerHTML='<span class="eyebrow">A batir · hace '+u.dias+(u.dias===1?' día':' días')+'</span>'+
-      '<span class="v">'+u.v.map(s=>(s.p??'—')+'×'+(s.r??'—')).join('   ')+'</span>'+
-      '<span class="s">'+(variantePasada(e)!==nombreHoy(e)
-        ? 'Ojo: la vez pasada fue con <b>'+variantePasada(e)+'</b>. Esos pesos no son comparables, trata este como primera vez.'
-        : (sug?sug.txt:'Mismo peso en las '+e.s+' series. Busca una repetición más que la vez pasada en cada una.'))+'</span>';
+  const g=E('div','guide'+(pc.u?'':' first'));
+  if(pc.u){
+    const ultS=pc.u.v.map(s=>kg(s.p)+'×'+s.r).join('   ');
+    g.innerHTML='<span class="eyebrow">A batir · hace '+pc.dias+(pc.dias===1?' día':' días')+'</span><span class="v">'+ultS+'</span>'+
+      '<span class="s">'+(pc.ver?pc.ver.m.replace('La próxima vez','Hoy').replace('la próxima vez','hoy'):'Mismo peso, busca +1 repetición.')+'</span>';
+    if(ocol==='amarillo')g.innerHTML+='<span class="w">La vez pasada la rodilla quedó en amarillo: hoy no subas peso ni rango, RIR 3.</span>';
+    if(ocol==='rojo')g.innerHTML+='<span class="w r">La vez pasada la rodilla quedó en rojo: hoy usa la alternativa sin dolor (↺ Cambiar ejercicio).</span>';
   }else{
-    g.innerHTML='<span class="eyebrow">Primera vez con este ejercicio</span>'+
-      '<span class="v">Busca el peso</span>'+
-      '<span class="s">Elige un peso, haz las repeticiones que puedas hasta dejar '+(e.rir[0]||'2')+' en reserva y anótalo. Si salen menos de '+e.r[0]+', bájale. Si salen más de '+e.r[1]+', súbele.</span>';
+    g.innerHTML='<span class="eyebrow">'+(alt?'Primera vez con esta alternativa':'Primera vez con este ejercicio')+'</span><span class="v">Busca el peso</span>'+
+      '<span class="s">Elige un peso y haz las repeticiones que puedas hasta dejar '+rirObj[0]+' en reserva. Si salen menos de '+e.reps[0]+', bájale. Si salen más de '+e.reps[1]+', súbele.</span>';
   }
   b.appendChild(g);
-
+  const lbl=E('div','hoyl');b.appendChild(lbl);
+  const pintaLbl=()=>{const h=cur.filter(s=>s.ok).length;
+    lbl.innerHTML='<span class="eyebrow">Hoy · <b>'+h+'</b>/'+n+' series</span>'+(h===0?'<span class="hint">números grises = sugerencia<br>toca ✓ al terminar cada serie</span>':'')};
+  pintaLbl();
+  b.appendChild(E('div','colh','<span>#</span><span>kg</span><span>reps</span><span>rir</span><span></span>'));
   const vwrap=E('div');
+  const guarda=()=>{DB.log[HOY]=DB.log[HOY]||{};DB.log[HOY][key]=cur;guardar()};
   const repinta=()=>{
-    const v=veredicto(e,cur);
-    vwrap.innerHTML=v?'<div class="verd '+v.t+'"><span class="eyebrow">'+v.h+'</span>'+v.m+'</div>':'';
+    const v=veredicto(e,cur,{sem,rod:((DB.rod||{})[HOY]||{})[key],prev:ultimaDe(DB,key,HOY),rirObj,pct:(PLAN.regla_progresion||{}).baja_pct});
+    const todas=cur.filter(s=>s.ok).length>=cur.length;
+    vwrap.innerHTML=v&&(todas||v.t==='rojo')?'<div class="verd '+v.t+'"><span class="eyebrow">'+v.h+'</span>'+v.m+'</div>':'';
     hd.querySelector('.meta').innerHTML=meta();
-    const done=cur.filter(s=>s.ok).length===e.s;
-    c.classList.toggle('full',done);
+    const done=todas;c.classList.toggle('full',done);
     const car=hd.querySelector('.caret,.done');
     if(done&&car.className==='caret'){car.className='done';car.textContent='✓'}
     if(!done&&car.className==='done'){car.className='caret';car.textContent='▸'}
-    const p=document.querySelector('.prog b');
-    if(p)p.textContent=PLAN[dia].ej.reduce((a,x)=>a+hechasDe(x),0)+'/'+PLAN[dia].ej.reduce((a,x)=>a+x.s,0);
+    progreso();
   };
-
-  const lbl=E('div','hoyl');b.appendChild(lbl);
-  const pintaLbl=()=>{const hh=cur.filter(x=>x.ok).length;
-    lbl.innerHTML='<span class="eyebrow">Hoy · <b>'+hh+'</b>/'+e.s+' series</span>'+
-      (hh===0?'<span class="hint">los números son la sugerencia<br>toca ✓ al terminar cada serie</span>':'')};
-  pintaLbl();
-
   cur.forEach((s,i)=>{
-    const prev=u&&(u.v[i]||u.v[u.v.length-1]);
-    if(s.p==null)s.p=sug?sug.p:(prev?prev.p:null);
-    if(s.r==null)s.r=sug?sug.r:(prev?prev.r:null);
-    const row=E('div','setrow');
-    const marca=()=>{
-      row.classList.toggle('hecha',!!s.ok);
-      row.classList.toggle('pr',!!(s.ok&&prev&&s.p!=null&&(s.p>prev.p||(s.p===prev.p&&s.r>prev.r))));
-    };
+    const row=E('div','setrow'), prev=pc.u&&(pc.u.v[i]||pc.u.v[pc.u.v.length-1]);
+    const marca=()=>{row.classList.toggle('hecha',!!s.ok);row.classList.toggle('pr',!!(s.ok&&prev&&s.p!=null&&(s.p>prev.p||(s.p===prev.p&&s.r>prev.r))))};
     row.appendChild(E('div','sn',String(i+1)));
-    row.appendChild(stepper(s.p,e.inc,'kg',v=>{s.p=v;setSets(HOY,e.id,cur);marca();repinta()}));
-    row.appendChild(stepper(s.r,1,'rep',v=>{s.r=v;setSets(HOY,e.id,cur);marca();repinta()}));
-    const t=E('button','tick'+(s.ok?' on':''),s.ok?'✓':'');
+    row.appendChild(stepper(s.p,e.incremento,v=>{s.p=v;guarda();marca();repinta()}));
+    row.appendChild(stepper(s.r,1,v=>{s.r=v;guarda();marca();repinta()}));
+    const rb=E('button','rirb'+(s.rir!=null?' set':''),s.rir!=null?String(s.rir):String(rirObj[i]));
+    rb.setAttribute('aria-label','RIR de la serie '+(i+1));
+    row.appendChild(rb);
+    const t=E('button','tick'+(s.ok?' on':''),s.ok?'✓':'');t.setAttribute('aria-label','Marcar serie '+(i+1)+' como hecha');
+    row.appendChild(t);
+    const rr=E('div','rirrow');
+    [0,1,2,3,4,5].forEach(x=>{const q=E('button',(s.rir===x?'on':''),String(x));q.onclick=()=>{s.rir=x;rb.textContent=x;rb.classList.add('set');
+      rr.querySelectorAll('button').forEach(y=>y.classList.toggle('on',y===q));rr.classList.remove('on');guarda();repinta()};rr.appendChild(q)});
+    rb.onclick=()=>rr.classList.toggle('on');
     t.onclick=()=>{
-      s.ok=!s.ok;setSets(HOY,e.id,cur);
-      t.className='tick'+(s.ok?' on':'');t.textContent=s.ok?'✓':'';
-      marca();pintaLbl();repinta();
-      if(s.ok){vibra(22);descanso(segDe(e.d),nombreHoy(e))}
+      if(!s.ok&&(s.p==null||s.r==null)){toast('Pon kilos y repeticiones antes de marcar');return}
+      s.ok=!s.ok;if(s.ok&&s.rir==null)s.rir=rirObj[i];
+      rb.textContent=s.rir!=null?s.rir:rirObj[i];
+      guarda();t.className='tick'+(s.ok?' on':'');t.textContent=s.ok?'✓':'';marca();pintaLbl();repinta();
+      if(s.ok){vibra(22);
+        if(primero){const otro=par.find(x=>x.id!==e.id);avisoSS(otro.nombre)}
+        else descanso(e.descanso_seg,nom);
+        if(!activa()&&!sesionHoy()){DB.sesiones[HOY]={dia,t0:Date.now(),t1:null};guardar();tickReloj()}
+      }
     };
-    row.appendChild(t);marca();b.appendChild(row);
+    marca();b.appendChild(row);b.appendChild(rr);
   });
   b.appendChild(vwrap);repinta();
-
+  if(e.rodilla){
+    const kn=E('div','knee'), val=()=>((DB.rod||{})[HOY]||{})[key];
+    const top=E('div','top');const kc=E('div','kchips');
+    const pin=()=>{const v=val(),col=colorRodilla(v);
+      top.innerHTML='<span class="eyebrow">Rodilla · 0 a 10</span><span class="lab '+(col||'')+'">'+(v==null?'sin calificar':v+' · '+col.toUpperCase())+'</span>';
+      kc.querySelectorAll('button').forEach((x,i)=>x.classList.toggle('on',i===v))};
+    for(let i=0;i<=10;i++){const q=E('button',i<=2?'v':(i<=4?'a':'r'),String(i));
+      q.onclick=()=>{DB.rod[HOY]=DB.rod[HOY]||{};if(DB.rod[HOY][key]===i)delete DB.rod[HOY][key];else DB.rod[HOY][key]=i;guardar();pin();repinta();
+        if(colorRodilla(i)==='rojo'&&DB.rod[HOY][key]===i)toast('Rojo: para este ejercicio y usa la alternativa')};
+      kc.appendChild(q)}
+    kn.appendChild(top);kn.appendChild(kc);pin();
+    if(e.nota_rodilla)kn.appendChild(E('p','tip',e.nota_rodilla));
+    b.appendChild(kn);
+  }
   const a=E('div','actions');
-  const r=E('button','act rest','⏱ '+e.d);r.onclick=()=>descanso(segDe(e.d),nombreHoy(e));
-  const gg=E('button','act','Técnica');gg.onclick=()=>hoja(e.g||e.n);
-  const hh=E('button','act','Historial');hh.onclick=()=>verHistorial(e);
+  const r=E('button','act rest','⏱ '+mmss(e.descanso_seg));r.onclick=()=>descanso(e.descanso_seg,nom);
+  const gg=E('button','act','Técnica');gg.onclick=()=>ficha(e,alt);
+  const hh=E('button','act','Historial');hh.onclick=()=>verHistorial(e,key,nom);
   a.appendChild(r);a.appendChild(gg);a.appendChild(hh);b.appendChild(a);
   const a2=E('div','actions');
-  const sw=E('button','act','↺ Cambiar ejercicio');sw.onclick=()=>cambiar(e);
-  a2.appendChild(sw);b.appendChild(a2);
-  b.appendChild(E('p','tip',e.tip));
+  const sw=E('button','act','↺ Cambiar');sw.onclick=()=>cambiar(e);
+  const y=E('a','act yt','▶ Ver en YouTube');y.href='https://www.youtube.com/results?search_query='+encodeURIComponent(yt);y.target='_blank';y.rel='noopener';
+  y.style.textDecoration='none';
+  a2.appendChild(sw);a2.appendChild(y);b.appendChild(a2);
+  const tipT=(e.tempo?'<b>Tempo:</b> '+e.tempo+'. ':'')+(primero?'Superserie: al marcar una serie pasas directo a '+par.find(x=>x.id!==e.id).nombre+'.':(par&&par.length>1?'Superserie: el descanso va después de este.':''));
+  if(tipT)b.appendChild(E('p','tip',tipT));
   c.appendChild(b);return c;
 }
-
-function stepper(val,inc,unidad,cb){
-  const w=E('div','stepper');
-  const menos=E('button',null,'−'),mas=E('button',null,'+');
+function stepper(val,inc,cb){
+  const w=E('div','stepper'),me=E('button',null,'−'),ma=E('button',null,'+');
+  me.setAttribute('aria-label','Menos');ma.setAttribute('aria-label','Más');
   const i=E('input');i.type='number';i.inputMode='decimal';i.value=val!=null?val:'';i.placeholder='—';
-  const set=v=>{v=Math.max(0,Math.round(v*100)/100);i.value=v;cb(v);vibra(10)};
-  menos.onclick=()=>set((+i.value||0)-inc);
-  mas.onclick=()=>set((+i.value||0)+inc);
+  const set=v=>{v=Math.max(0,r2(v));i.value=v;cb(v);vibra(10)};
+  me.onclick=()=>set((+i.value||0)-inc);ma.onclick=()=>set((+i.value||0)+inc);
   i.oninput=()=>{if(i.value===''){cb(null);return}let v=+i.value;if(!isFinite(v)||v<0){v=0;i.value=0}cb(v)};
-  w.appendChild(menos);w.appendChild(i);w.appendChild(E('span','u',unidad));w.appendChild(mas);
-  return w;
+  w.appendChild(me);w.appendChild(i);w.appendChild(ma);return w;
 }
 
-function cierre(){
-  const c=DB.cierre[HOY]||{};
-  const w=E('div','close','<h3>Cierre de sesión</h3><div class="eyebrow">Un toque en cada uno. Va en el reporte.</div>');
-  const grupo=(clave,titulo,ops)=>{
-    const r=E('div','crow','<span class="eyebrow">'+titulo+'</span>');
-    const ch=E('div','chips');
-    ops.forEach(([k,txt,warn])=>{
-      const b=E('button','chip'+(c[clave]===k?' on':'')+(warn?' warn':''),txt);
-      b.onclick=()=>{DB.cierre[HOY]=DB.cierre[HOY]||{};
-        const y=DB.cierre[HOY][clave]===k?null:k;DB.cierre[HOY][clave]=y;guardar();
-        [...ch.children].forEach(x=>x.classList.remove('on'));
-        if(y)b.classList.add('on');
-        const av=w.querySelector('.alerta'),tp=w.querySelector('.tip');
-        if(av)av.remove(); if(tp)tp.remove();
-        if(DB.cierre[HOY].rodilla==='dolor')w.appendChild(E('p','alerta','Anótalo y coméntaselo a tu fisioterapeuta. Ese dato es suyo, no mío.'));
-        if(DB.cierre[HOY].energia==='baja')w.appendChild(E('p','tip','Una sesión con energía baja no significa nada. Tres seguidas sí: suele ser sueño.'));};
-      ch.appendChild(b);
-    });
-    r.appendChild(ch);return r;
-  };
-  w.appendChild(grupo('energia','Energía de hoy',[['bien','Bien'],['normal','Normal'],['baja','Baja']]));
-  w.appendChild(grupo('rodilla','Rodilla',[['sin','Sin molestia'],['leve','Leve'],['dolor','Dolió',1]]));
-  if(c.rodilla==='dolor')w.appendChild(E('p','alerta','Anótalo y coméntaselo a tu fisioterapeuta. Ese dato es suyo, no mío.'));
-  if(c.energia==='baja')w.appendChild(E('p','tip','Una sesión con energía baja no significa nada. Tres seguidas sí: suele ser sueño.'));
-  return w;
+/* ── cerrar sesión ── */
+function cerrarSesion(){
+  const s=activa();if(!s)return;
+  const ant=Object.keys(DB.sesiones).filter(f=>f<HOY&&DB.sesiones[f].sueno).sort().pop();
+  let en=null,su=ant?DB.sesiones[ant].sueno:7,ro=null;
+  abrirHoja('<div class="eyebrow">Antes de cerrar</div><h2>¿Cómo te fue?</h2>'+
+    '<div class="blk"><span class="eyebrow">Energía de hoy · 1 a 5</span><div class="echips" id="cEn"></div></div>'+
+    '<div class="blk"><span class="eyebrow">Horas de sueño anoche</span><div id="cSu"></div></div>'+
+    '<div class="blk"><span class="eyebrow">Rodilla al terminar · 0 a 10</span><div class="kchips" id="cRo"></div></div>'+
+    '<button class="sbtn p" id="cOk">Guardar y terminar</button><button class="sbtn" id="cNo">Seguir entrenando</button>');
+  const ce=$('cEn');[1,2,3,4,5].forEach(i=>{const q=E('button',null,String(i));q.onclick=()=>{en=i;ce.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===q))};ce.appendChild(q)});
+  $('cSu').appendChild(stepper(su,0.5,v=>{su=v}));
+  const cr=$('cRo');for(let i=0;i<=10;i++){const q=E('button',i<=2?'v':(i<=4?'a':'r'),String(i));q.onclick=()=>{ro=i;cr.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===q))};cr.appendChild(q)}
+  $('cNo').onclick=()=>$('sheet').classList.remove('on');
+  $('cOk').onclick=()=>{s.t1=Date.now();s.energia=en;s.sueno=su>0?su:null;s.rodilla=ro;DB.ses=null;guardar();clearInterval(relojS);resumen(s)};
+}
+function resumen(s){
+  const D=diaPlan(PLAN,s.dia||dia),sem=infoSemana(PLAN,semanaDe(HOY,DB,PLAN)),L=DB.log[HOY]||{};
+  let h=0,t=0;const sube=[],rojo=[];
+  D.ejercicios.forEach(e=>{const key=claveEf(e,altDe(DB,HOY,e)),n=seriesPara(e,sem);t+=n;h+=Math.min(n,okSets(L[key]).length);
+    const v=veredicto(e,L[key]||[],{sem,rod:((DB.rod||{})[HOY]||{})[key],prev:ultimaDe(DB,key,HOY)});
+    if(v&&v.t==='sube')sube.push(nombreDeClave(PLAN,key)+' → <b>'+kg(v.sug.pesos[0])+' kg</b>');
+    if(v&&v.t==='rojo')rojo.push(nombreDeClave(PLAN,key))});
+  abrirHoja('<div class="eyebrow">Sesión cerrada</div><h2>'+D.nombre+'</h2>'+
+    '<div class="res"><div><div class="v">'+hms(Math.floor((s.t1-s.t0)/1000))+'</div><div class="k">Duración</div></div><div><div class="v">'+h+'/'+t+'</div><div class="k">Series</div></div></div>'+
+    '<div class="gbody" style="display:block">'+
+    (sube.length?'<span class="lbl">La próxima vez sube el peso</span><p>'+sube.join('<br>')+'</p>':'')+
+    (rojo.length?'<span class="lbl" style="color:var(--red)">Rodilla en rojo</span><p>'+rojo.join(', ')+': la próxima vez usa la alternativa. Si se repite, médico o fisio.</p>':'')+
+    (s.rodilla>=5?'<p style="color:#E0A79F">Terminaste con la rodilla en '+s.rodilla+'/10. Si mañana sigue, eso ya es rojo.</p>':'')+
+    (h<t?'<p style="color:var(--dim)">Quedaron '+(t-h)+' series sin marcar. Si las hiciste, márcalas: hoy sigue editable.</p>':'')+
+    '</div><button class="sbtn p" id="fOk">Listo</button>');
+  $('fOk').onclick=()=>{$('sheet').classList.remove('on');ojear=false;pintar()};
 }
 
-/* ══════ hojas ══════ */
-function abrirHoja(html){$('sheetb').innerHTML=html;$('sheet').classList.add('on')}
+/* ── hojas ── */
+function abrirHoja(html){$('sheetb').innerHTML=html;$('sheet').classList.add('on');$('sheet').querySelector('.sheetc').scrollTop=0}
 $('sheet').onclick=ev=>{if(ev.target===$('sheet'))$('sheet').classList.remove('on')};
-$('btnhelp').onclick=()=>ayuda();
-
-function hoja(titulo){
-  let hit=null;
-  for(const s in GLO)for(const it of GLO[s])if(it[0]===titulo)hit=it;
-  abrirHoja(hit
-    ?'<div class="eyebrow">'+hit[1]+'</div><h2>'+hit[0]+'</h2><div class="gbody" style="display:block">'+hit[2]+'</div>'
-    :'<h2>'+titulo+'</h2><p style="color:var(--dim)">Sin ficha. Búscalo en el glosario.</p>');
+function ytLink(q,txt){return '<a class="lnk" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query='+encodeURIComponent(q)+'">'+(txt||'▶ '+q)+'</a>'}
+function fichaHTML(e){
+  return '<span class="lbl">Técnica</span><p>'+e.tecnica+'</p>'+(e.tempo?'<span class="lbl">Tempo</span><p>'+e.tempo+'</p>':'')+
+    '<span class="lbl">Por qué este</span><p>'+e.porque+'</p>'+
+    (e.nota_rodilla?'<span class="lbl">Rodilla</span><p>'+e.nota_rodilla+'</p>':'')+
+    '<span class="lbl">Progresión</span><p>'+e.series+' × '+e.reps[0]+'-'+e.reps[1]+(e.por_lado?' por lado':'')+'. Cuando hagas '+e.reps[1]+' en todas las series con RIR '+e.rir+', sube el peso.</p>'+
+    '<span class="lbl">Video</span><p>'+ytLink(e.youtube)+'</p>'+
+    (e.alternativas.length?'<span class="lbl">Si no hay equipo o molesta</span><p>'+e.alternativas.map(a=>a.nombre+' · '+ytLink(a.youtube,'▶')).join('<br>')+'</p>':'');
 }
-function ayuda(){
-  abrirHoja('<div class="eyebrow">Léelo una vez</div><h2>Cómo funciona</h2><div class="gbody" style="display:block">'+
-  '<span class="lbl">Cómo se usa, en 6 pasos</span>'+
-  '<p>1. Abres la app y tocas <b>Iniciar sesión</b>. Arranca el cronómetro.<br>'+
-  '2. Tocas el ejercicio para abrirlo.<br>'+
-  '3. Los kilos y las reps ya vienen puestos con lo de la vez pasada. Ajústalos con <b>−</b> y <b>+</b> si hace falta.<br>'+
-  '4. Haces la serie. Al terminarla, tocas <b>✓</b>. El descanso arranca solo.<br>'+
-  '5. Repites hasta acabar el último ejercicio.<br>'+
-  '6. Hasta abajo tocas <b>He terminado</b> y te sale el resumen.</p>'+
-  '<span class="lbl">Para qué sirve la ✓</span>'+
-  '<p>Para dos cosas: que <b>tú</b> veas cuál serie ya hiciste y cuál te falta, y que quede guardada en tu registro.</p>'+
-  '<p>Se distinguen a la vista: la serie que <b>no</b> has marcado tiene los números en gris y el borde punteado — es una sugerencia. La que ya marcaste tiene los números en blanco y una línea verde a la izquierda.</p>'+
-  '<p><b>Las palomitas se borran solas cada día.</b> El próximo lunes vas a abrir el ejercicio limpio, sin palomitas, pero con los kilos de hoy ya puestos como punto de partida. No tienes que borrar nada.</p>'+
-  '<p>Si el número de la serie sale en dorado, es que superaste lo de la vez pasada.</p>'+
-  '<span class="lbl">El rango de repeticiones</span>'+
-  '<p>Cuando ves <b>8-12</b>, no significa “elige un número”. El rango <b>no lo eliges tú, lo decide el peso</b>.</p>'+
-  '<p>Agarras un peso y haces todas las repeticiones que puedas hasta llegar al RIR que marca el ejercicio. El número que salga, salió. El rango solo te dice si el peso está bien:</p>'+
-  '<p>· Salieron <b>menos de 8</b> → muy pesado, bájale.<br>· Salieron <b>más de 12</b> → muy ligero, súbele.<br>· Salieron <b>entre 8 y 12</b> → correcto, no lo muevas.</p>'+
-  '<span class="lbl">Entre series usas el mismo peso</span>'+
-  '<p>No subes de 8 a 12 a propósito. Mismo peso en las cuatro, y las repeticiones van a bajar solas porque te cansas:</p>'+
-  '<p>40 × 11 · 40 × 10 · 40 × 9 · 40 × 8</p>'+
-  '<p>Eso está perfecto. Las cuatro cayeron dentro del rango.</p>'+
-  '<span class="lbl">La próxima semana</span>'+
-  '<p>Mismo peso, y peleas por una repetición más en cada serie. 12/11/10/9. Luego 12/12/11/11. Cuando las <b>cuatro</b> lleguen a 12, subes el peso y vuelves a caer en 8-9. Ese ciclo es todo el programa.</p>'+
-  '<p><b>No tienes que acordarte de esto.</b> Al terminar cada ejercicio la app te dice si subes, mantienes o bajas.</p>'+
-  '<span class="lbl">RIR</span>'+
-  '<p>Repeticiones que te quedaban cuando paraste. RIR 2 = podías dos más. Es el valor de casi todo el programa. RIR 0 es fallo real y solo va en la última serie de aislamientos.</p>'+
-  '</div>');
+function ficha(e,alt){
+  const a=alt?e.alternativas[alt-1]:null;
+  abrirHoja('<div class="eyebrow">'+e.musculo+' · prioridad '+e.prioridad+(e.secundarios?' · también: '+e.secundarios:'')+'</div><h2>'+(a?a.nombre:e.nombre)+'</h2>'+
+    (a?'<div class="gbody" style="display:block"><p>Es la alternativa a <b>'+e.nombre+'</b>. Misma idea, mismas series, reps y RIR. '+ytLink(a.youtube,'▶ Ver cómo se hace')+'</p></div>':'')+
+    '<div class="gbody" style="display:block">'+fichaHTML(e)+'</div>');
 }
-
-/* ══════ glosario ══════ */
-function vistaGlo(m){
-  const s=E('input','gsearch');s.placeholder='Buscar: RIR, escápula, face pull…';s.value=gq;
-  const filtrar=()=>{const f=(gq=s.value).toLowerCase();let n=0;
-    document.querySelectorAll('.gitem').forEach(it=>{const v=it.dataset.q.includes(f);it.style.display=v?'':'none';if(v)n++});
-    document.querySelectorAll('.gsec').forEach(h=>{let x=h.nextElementSibling,v=false;
-      while(x&&x.classList.contains('gitem')){if(x.style.display!=='none')v=true;x=x.nextElementSibling}
-      h.style.display=v?'':'none'});
-    $('gnone').style.display=n?'none':'';
-  };
-  s.oninput=filtrar;m.appendChild(s);
-  for(const sec in GLO){
-    m.appendChild(E('div','gsec eyebrow',sec+' · '+GLO[sec].length));
-    GLO[sec].forEach(([t,tag,body])=>{
-      const it=E('div','gitem');it.dataset.q=(t+' '+tag+' '+body).toLowerCase().replace(/<[^>]+>/g,' ');
-      const b=E('button',null,'<h3>'+t+'</h3><span class="tag">'+tag+'</span>');
-      b.onclick=()=>it.classList.toggle('open');
-      it.appendChild(b);it.appendChild(E('div','gbody',body));m.appendChild(it);
-    });
-  }
-  const ne=E('div','empty','Nada con esa palabra.');ne.id='gnone';ne.style.display='none';m.appendChild(ne);
-  if(gq)filtrar();
-}
-
-/* ══════ exportar ══════ */
-const ETI={bien:'energía bien',normal:'energía normal',baja:'energía baja',
-           sin:'rodilla sin molestia',leve:'rodilla molestia leve',dolor:'RODILLA DOLIÓ'};
-function texto(){
-  const fs=[...new Set([...Object.keys(DB.log),...Object.keys(DB.fisio),...Object.keys(DB.cierre)])].sort();
-  let o='MOSBYFIT · REGISTRO DE ENTRENAMIENTO\n';
-  o+='Inicio: '+DB.inicio+'   Exportado: '+HOY+'   Semana: '+semana()+'\n';
-  o+='Formato: peso x repeticiones, por serie\n';
-  let n=0;
-  fs.forEach(f=>{
-    const wd=new Date(f+'T00:00').getDay(),dk=wd>=1&&wd<=5?DIAS[wd-1]:null;
-    const L=DB.log[f]||{},F=DB.fisio[f]||{},C=DB.cierre[f]||{};
-    const hayL=Object.values(L).some(v=>Array.isArray(v)&&v.some(s=>s&&s.ok));
-    const hayF=Object.values(F).some(v=>v&&v.ok);
-    if(!hayL&&!hayF)return;
-    n++;
-    const TODOS=[];for(const k in PLAN)PLAN[k].ej.forEach(e=>TODOS.push({e,k}));
-    const hechos=TODOS.filter(x=>Array.isArray(L[x.e.id])&&L[x.e.id].some(s=>s&&s.ok));
-    const S0=(DB.sesiones||{})[f];
-    const real=(S0&&PLAN[S0.dia]?S0.dia:(hechos[0]?hechos[0].k:dk));
-    o+='\n'+'-'.repeat(46)+'\n'+f+(real?'   '+NOM[real]+' · '+PLAN[real].t:'')+'\n';
-    if(real&&dk&&real!==dk)o+='  (hecho en '+NOM[dk].toLowerCase()+')\n';
-    const S=(DB.sesiones||{})[f];
-    if(S&&S.t0&&S.t1&&!S.incompleta){
-      const hh=t=>{const d2=new Date(t);return String(d2.getHours()).padStart(2,'0')+':'+String(d2.getMinutes()).padStart(2,'0')};
-      o+='  '+hh(S.t0)+' a '+hh(S.t1)+'   duracion '+hms(Math.floor((S.t1-S.t0)/1000))+'\n';
-    }
-    if(hayF){
-      const h=FISIO.filter(x=>F[x.id]&&F[x.id].ok);
-      o+='  fisio '+h.length+'/6   '+h.map(x=>x.k+(F[x.id].p?' '+F[x.id].p+'kg':'')).join(', ')+'\n';
-    }
-    hechos.sort((a,b)=>(a.k===real?0:1)-(b.k===real?0:1)).forEach(({e})=>{
-      const v=L[e.id];const ok=v.filter(s=>s&&s.ok);
-      const nm=(DB.sust[f]||{})[e.id];
-      o+='  '+((nm?nm+' *':e.n)+' '.repeat(42)).slice(0,42)+ok.map(s=>(s.p??'-')+'x'+(s.r??'-')).join('  ')+'\n';
-    });
-    const c=[C.energia&&ETI[C.energia],C.rodilla&&ETI[C.rodilla]].filter(Boolean);
-    if(c.length)o+='  · '+c.join(' · ')+'\n';
-  });
-  if(!n)o+='\nTodavía no hay sesiones registradas.\n';
-  if(o.indexOf(' *')>0)o+='\n* ejercicio sustituido ese dia\n';
-  return o+'\n'+'-'.repeat(46)+'\nfin del registro';
-}
-function vistaExp(m){
-  const fs=Object.keys(DB.log).filter(f=>Object.values(DB.log[f]).some(v=>Array.isArray(v)&&v.some(s=>s&&s.ok)));
-  let ns=0;fs.forEach(f=>Object.values(DB.log[f]).forEach(v=>{if(Array.isArray(v))ns+=v.filter(s=>s&&s.ok).length}));
-  const st=E('div','stats');
-  [[fs.length,'Sesiones'],[ns,'Series'],[semana(),'Semana']].forEach(([v,k])=>
-    st.appendChild(E('div','stat','<div class="v">'+v+'</div><div class="k">'+k+'</div>')));
-  m.appendChild(st);
-  m.appendChild(E('div','note','<span class="eyebrow">Dónde se guarda</span>'+ALMACEN.nom+
-    (ALMACEN.modo==='memoria'?' Copia el registro ahora mismo si vas a cerrar la pestaña.':
-     ' Los datos viven solo aquí: si borras la app o el historial del navegador, se van con ellos. Exporta cada semana.')));
-  m.appendChild(E('div','eyebrow','Registro completo'));
-  const t=E('textarea');t.id='out';t.readOnly=true;t.value=texto();m.appendChild(t);
-  const c=E('button','btn p','Copiar registro');
-  c.onclick=async()=>{
-    try{await navigator.clipboard.writeText(texto());toast('Registro copiado')}
-    catch(e){t.focus();t.setSelectionRange(0,t.value.length);toast('Ya está seleccionado, cópialo')}
-  };
-  m.appendChild(c);
-  m.appendChild(E('p','tip','Pásame esto en la semana 4 junto con las fotos y las medidas. Con eso comparo y ajusto el programa.'));
-  m.appendChild(E('div','eyebrow','Respaldo · hazlo cada semana'));
-  const dos=E('div','two');
-  const bk=E('button','btn s','↓ Guardar respaldo');bk.onclick=respaldar;
-  const im=E('button','btn s','↑ Cargar respaldo');im.onclick=importar;
-  dos.appendChild(bk);dos.appendChild(im);m.appendChild(dos);
-  m.appendChild(E('p','tip','El respaldo es un archivo con todo tu registro. Guárdalo en Archivos o mándatelo por mensaje. Si algún día pierdes los datos, lo cargas y vuelve todo.'));
-  const r=E('button','btn d','Empezar mes nuevo · borra el registro');
-  let armado=false;
-  r.onclick=()=>{
-    if(!armado){armado=true;r.textContent='Toca otra vez para confirmar';
-      setTimeout(()=>{armado=false;r.textContent='Empezar mes nuevo · borra el registro'},4000);return}
-    respaldar();
-    DB={v:FORMATO,inicio:HOY,log:{},fisio:{},cierre:{},sust:{},sesiones:{},desc:null,ses:null,visto:true};guardar();toast('Registro reiniciado');pintar();
-  };
-  m.appendChild(r);
-}
-
-
-/* ══════════ 1 · RESPALDO A ARCHIVO ══════════ */
-function nombreRespaldo(){return 'mosbyfit-'+HOY+'.json'}
-async function respaldar(){
-  const txt=JSON.stringify(DB);
-  const blob=new Blob([txt],{type:'application/json'});
-  try{
-    const f=new File([blob],nombreRespaldo(),{type:'application/json'});
-    if(navigator.canShare&&navigator.canShare({files:[f]})){
-      await navigator.share({files:[f],title:'Respaldo MosbyFit'});
-      toast('Guárdalo en Archivos o mándatelo por mensaje');return;
-    }
-  }catch(e){if(e&&e.name==='AbortError')return}
-  try{
-    const u=URL.createObjectURL(blob),a=document.createElement('a');
-    a.href=u;a.download=nombreRespaldo();document.body.appendChild(a);a.click();a.remove();
-    setTimeout(()=>URL.revokeObjectURL(u),5000);
-    toast('Respaldo descargado');
-  }catch(e){
-    navigator.clipboard&&navigator.clipboard.writeText(txt).then(()=>toast('Respaldo copiado al portapapeles'),()=>toast('No se pudo generar el respaldo'));
-  }
-}
-function cuentaSesiones(o){
-  return Object.keys(o.log||{}).filter(f=>Object.values(o.log[f]).some(v=>Array.isArray(v)&&v.some(s=>s&&s.ok))).length;
-}
-function importar(){
-  const i=document.createElement('input');
-  i.type='file';i.accept='application/json,.json,text/plain';
-  i.onchange=()=>{
-    const f=i.files&&i.files[0];if(!f)return;
-    const r=new FileReader();
-    r.onload=()=>{
-      let o;try{o=sanea(JSON.parse(r.result))}catch(e){return toast('Ese archivo no es un respaldo de MosbyFit')}
-      const n=cuentaSesiones(o),fs=Object.keys(o.log||{}).sort();
-      if(!n)return toast('Ese respaldo no tiene sesiones registradas');
-      abrirHoja('<div class="eyebrow">Respaldo encontrado</div><h2>'+n+(n===1?' sesión':' sesiones')+'</h2>'+
-        '<div class="gbody" style="display:block"><p>Del <b>'+fs[0]+'</b> al <b>'+fs[fs.length-1]+'</b>.</p>'+
-        '<p><b>Fusionar</b> conserva lo que ya tienes y añade lo que falte. Si una fecha existe en los dos, gana la del respaldo.</p>'+
-        '<p><b>Reemplazar</b> borra todo lo actual y deja solo el respaldo.</p></div>'+
-        '<button class="sbtn p" id="imFus">Fusionar</button><button class="sbtn d" id="imRep">Reemplazar todo</button>');
-      $('imFus').onclick=()=>{fusionar(o);guardar();$('sheet').classList.remove('on');pintar();toast('Respaldo fusionado')};
-      $('imRep').onclick=()=>{DB=Object.assign({visto:true},o);guardar();$('sheet').classList.remove('on');pintar();toast('Registro reemplazado')};
-    };
-    r.readAsText(f);
-  };
-  i.click();
-}
-function fusionar(o){
-  ['log','fisio','cierre','sust','sesiones'].forEach(c=>{
-    DB[c]=DB[c]||{};
-    for(const f in (o[c]||{}))DB[c][f]=Object.assign({},DB[c][f],o[c][f]);
-  });
-  if(o.inicio&&(!DB.inicio||o.inicio<DB.inicio))DB.inicio=o.inicio;
-}
-
-/* ══════════ 2 · HISTORIAL POR EJERCICIO ══════════ */
-function sesionesDe(id){
-  return Object.keys(DB.log).filter(f=>Array.isArray(DB.log[f][id])&&DB.log[f][id].some(s=>s&&s.ok))
-    .sort().map(f=>{
-      const v=DB.log[f][id].filter(s=>s&&s.ok);
-      return {f,v,vol:Math.round(v.reduce((a,s)=>a+(s.p||0)*(s.r||0),0)),
-              tope:v.reduce((a,s)=>Math.max(a,s.p||0),0)};
-    });
+function cambiar(e){
+  const act=altDe(DB,HOY,e);
+  const ops=[{n:e.nombre,s:'del programa'}].concat(e.alternativas.map(a=>({n:a.nombre,s:'alternativa'})));
+  let h='<div class="eyebrow">Solo por hoy</div><h2>Cambiar ejercicio</h2><div class="gbody" style="display:block"><p>Si la máquina está ocupada, tu gym no la tiene o molesta. Mismas series, reps y RIR. La alternativa lleva su propio historial.</p></div>';
+  ops.forEach((o,i)=>{h+='<button class="opt'+(i===act?' on':'')+'" data-i="'+i+'">'+o.n+'<s>'+o.s+'</s></button>'});
+  abrirHoja(h);
+  $('sheetb').querySelectorAll('.opt').forEach(b=>b.onclick=()=>{const i=+b.dataset.i;DB.alt[HOY]=DB.alt[HOY]||{};
+    if(i===0)delete DB.alt[HOY][e.id];else DB.alt[HOY][e.id]=i;guardar();$('sheet').classList.remove('on');restaurar=$('main').scrollTop;pintar()});
 }
 function grafica(ss){
   const d=ss.slice(-8);if(d.length<2)return '';
-  const mx=Math.max(...d.map(x=>x.vol))||1, w=100/d.length;
-  let b='';
-  d.forEach((x,i)=>{
-    const hh=Math.max(3,x.vol/mx*72), y=76-hh, ult=i===d.length-1;
-    b+='<rect x="'+(i*w+w*0.18).toFixed(2)+'" y="'+y.toFixed(1)+'" width="'+(w*0.64).toFixed(2)+
-       '" height="'+hh.toFixed(1)+'" rx="1" fill="'+(ult?'#C9A227':'#1E6F4A')+'"/>';
-  });
+  const mx=Math.max(...d.map(x=>x.vol))||1,w=100/d.length;let b='';
+  d.forEach((x,i)=>{const hh=Math.max(3,x.vol/mx*72),y=76-hh;
+    b+='<rect x="'+(i*w+w*.18).toFixed(2)+'" y="'+y.toFixed(1)+'" width="'+(w*.64).toFixed(2)+'" height="'+hh.toFixed(1)+'" rx="1" fill="'+(i===d.length-1?'#C9A227':'#1E6F4A')+'"/>'});
   return '<svg class="chart" viewBox="0 0 100 80" preserveAspectRatio="none" role="img" aria-label="Volumen por sesión">'+b+'</svg>';
 }
-function verHistorial(e){
-  const ss=sesionesDe(e.id);
-  if(!ss.length)return abrirHoja('<div class="eyebrow">Historial</div><h2>'+e.n+'</h2><p style="color:var(--dim)">Todavía no hay sesiones registradas de este ejercicio.</p>');
-  let filas='';
-  [...ss].reverse().forEach((x,i,arr)=>{
-    const prev=arr[i+1];
-    const dif=prev?x.vol-prev.vol:null;
-    const cls=dif===null?'':(dif>0?'up':(dif<0?'dn':''));
-    const txt=dif===null?'—':(dif>0?'+':'')+dif+' kg';
-    const va=(DB.sust[x.f]||{})[e.id];
-    filas+='<div class="hrowx"><div class="hd">'+x.f.slice(5)+'</div><div class="hs">'+
-      x.v.map(s=>(s.p??'-')+'×'+(s.r??'-')).join('  ')+
-      (va?'<div class="hvar">'+va+'</div>':'')+'</div><div class="hv '+cls+'">'+txt+'</div></div>';
-  });
-  const pri=ss[0],ult=ss[ss.length-1];
-  const gan=pri.vol?Math.round((ult.vol-pri.vol)/pri.vol*100):0;
-  abrirHoja('<div class="eyebrow">Historial · '+ss.length+(ss.length===1?' sesión':' sesiones')+'</div><h2>'+e.n+'</h2>'+
-    grafica(ss)+
-    '<div class="eyebrow" style="margin-bottom:2px">Volumen total (peso × reps) por sesión</div>'+
-    (ss.length>1?'<p style="font-size:13px;color:'+(gan>=0?'var(--greenTxt)':'var(--red)')+';margin:8px 0 2px">'+
-      (gan>=0?'+':'')+gan+'% desde la primera sesión · tope '+pri.tope+' → '+ult.tope+' kg</p>':'')+
-    '<div class="hist">'+filas+'</div>');
+function verHistorial(e,key,nom){
+  const ss=sesionesDe(DB,key);
+  if(!ss.length)return abrirHoja('<div class="eyebrow">Historial</div><h2>'+nom+'</h2><p style="color:var(--dim)">Todavía no hay sesiones de este ejercicio.</p>');
+  let fil='';[...ss].reverse().forEach((x,i,arr)=>{const p=arr[i+1],dv=p?x.vol-p.vol:null;
+    fil+='<div class="hrowx"><div class="hd">'+x.f.slice(5)+'</div><div class="hs">'+x.v.map(s=>kg(s.p)+'×'+s.r+(s.rir!=null?'<span style="color:var(--dimmer)">@'+s.rir+'</span>':'')).join('  ')+
+      (x.rod!=null?'<div class="hvar">rodilla '+x.rod+'/10</div>':'')+'</div><div class="hv '+(dv>0?'up':(dv<0?'dn':''))+'">'+(dv==null?'—':(dv>0?'+':'')+dv+' kg')+'</div></div>'});
+  const a=ss[0],z=ss[ss.length-1],g=a.vol?Math.round((z.vol-a.vol)/a.vol*100):0;
+  abrirHoja('<div class="eyebrow">Historial · '+ss.length+(ss.length===1?' sesión':' sesiones')+'</div><h2>'+nom+'</h2>'+grafica(ss)+
+    '<div class="eyebrow">Volumen (peso × reps) por sesión</div>'+
+    (ss.length>1?'<p style="font-size:13px;color:'+(g>=0?'var(--greenTxt)':'var(--red)')+';margin:8px 0 2px">'+(g>=0?'+':'')+g+'% desde la primera · tope '+kg(a.tope)+' → '+kg(z.tope)+' kg</p>':'')+
+    '<div class="hist">'+fil+'</div>');
+}
+function ayuda(){
+  abrirHoja('<div class="eyebrow">Léelo una vez</div><h2>Cómo funciona</h2><div class="gbody" style="display:block">'+
+  '<span class="lbl">En el gym, en 7 pasos</span><p>'+
+  '1. Abres la app y tocas <b>Iniciar sesión</b>. Arranca el cronómetro.<br>'+
+  '2. Calienta como dice arriba del entreno.<br>'+
+  '3. Abres el ejercicio. Los kilos y las reps ya vienen con lo que te toca hoy (en gris).<br>'+
+  '4. Haces la serie, ajustas con <b>−</b> y <b>+</b> si salió distinto, y tocas <b>✓</b>. El descanso arranca solo.<br>'+
+  '5. Si sentiste otro RIR, toca el número de la columna RIR y elige el real.<br>'+
+  '6. En los ejercicios con <b>RODILLA</b>, califica el dolor de 0 a 10 al terminar.<br>'+
+  '7. Hasta abajo, <b>He terminado</b>: energía, sueño y rodilla. Te sale el resumen.</p>'+
+  '<span class="lbl">Lo gris y lo blanco</span><p>Gris con borde punteado = sugerencia, todavía no la haces. Blanco con línea verde = ya la marcaste. El número de serie en dorado = superaste la vez pasada. Las palomitas se reinician solas cada día.</p>'+
+  '<span class="lbl">El rango de repeticiones</span><p>"8-12" no es "elige un número". Usas el mismo peso en todas las series y haces las que salgan hasta el RIR que toca. Si todas llegan a 12, la app te sube el peso la próxima vez. Si alguna queda abajo de 8 dos veces seguidas, te lo baja.</p>'+
+  '<span class="lbl">RIR</span><p>Repeticiones que te quedaban. RIR 2 = podías 2 más. La columna RIR ya trae el objetivo; si no lo tocas, se guarda ese.</p>'+
+  '<span class="lbl">Superseries (SS)</span><p>Dos ejercicios seguidos sin descanso. Al abrir uno se abren los dos. Marcas la serie del primero, la app te dice que sigue el segundo, y el descanso arranca al marcar el segundo.</p>'+
+  '<span class="lbl">Cambiar ejercicio</span><p>Si la máquina no está o molesta, ↺ Cambiar. Cada alternativa lleva su propio historial.</p>'+
+  '</div>');
+}
+$('btnhelp').onclick=ayuda;
+
+/* ── cuerpo ── */
+function vistaCuerpo(m){
+  const CAM=[['cintura','Cintura'],['hombros','Hombros'],['brazo','Brazo contraído'],['pecho','Pecho'],['muslo','Muslo'],['pantorrilla','Pantorrilla']];
+  const M=medidasOrden(DB), hoyM=DB.medidas[HOY]||{}, ult=M[M.length-1], pri=M[0];
+  const top=E('div','cuerpo');
+  const rt=ult?ratio(ult):null, r0=pri?ratio(pri):null;
+  top.innerHTML='<div class="kv"><div><span class="eyebrow">Hombros ÷ cintura</span><div class="big" style="margin-top:6px">'+(rt||'—')+'</div></div>'+
+    '<div style="text-align:right"><span class="eyebrow">Tiene que subir</span><div class="mono" style="font-size:13px;margin-top:8px;color:'+(rt&&r0&&rt>r0?'var(--greenTxt)':'var(--dim)')+'">'+
+    (rt&&r0&&M.length>1?(rt>=r0?'+':'')+r2(rt-r0)+' desde '+pri.f.slice(5):'primera medida')+'</div></div></div>';
+  m.appendChild(top);
+  const f=E('div','cuerpo','<h3>Medidas de hoy</h3><p class="tip" style="border:none;padding:0;margin:5px 0 0">Una vez por semana, en la mañana y en ayunas. Cintura a la altura del ombligo; hombros por lo más ancho de los deltoides.</p>');
+  const gr=E('div','fgrid');const vals=Object.assign({},hoyM);
+  CAM.forEach(([k,l])=>{const d=E('div','fld','<label>'+l+' · cm</label>');const i=E('input');i.type='number';i.inputMode='decimal';i.placeholder=ult&&ult[k]?String(ult[k]):'—';
+    if(hoyM[k])i.value=hoyM[k];i.oninput=()=>{vals[k]=i.value===''?null:+i.value;const r=ratio(vals);$('rtLive').textContent=r?'H/C de hoy: '+r:''};d.appendChild(i);gr.appendChild(d)});
+  f.appendChild(gr);f.appendChild(E('div','mono','<div id="rtLive" style="font-size:12px;color:var(--gold);margin-top:9px">'+(ratio(hoyM)?'H/C de hoy: '+ratio(hoyM):'')+'</div>'));
+  const sb=E('button','btn p','Guardar medidas');sb.onclick=()=>{const y={};CAM.forEach(([k])=>{if(vals[k]>0&&vals[k]<300)y[k]=r2(vals[k])});
+    if(!Object.keys(y).length)return toast('Escribe al menos una medida');DB.medidas[HOY]=y;guardar();toast('Medidas guardadas');pintar()};
+  f.appendChild(sb);m.appendChild(f);
+  const ps=pesoSemana(DB,HOY);
+  const p=E('div','cuerpo','<div class="kv"><h3>Peso corporal</h3><span class="mono" style="font-size:12px;color:var(--dim)">'+(ps?'promedio 7 días · '+ps.n+' de 3-4':'3 o 4 mañanas por semana')+'</span></div>'+
+    (ps?'<div class="big" style="margin-top:9px">'+ps.prom+' <span style="font-size:14px;color:var(--dim)">kg</span></div>':''));
+  const r=E('div','row2');const fd=E('div','fld','<label>Hoy · kg</label>');const pi=E('input');pi.type='number';pi.inputMode='decimal';pi.placeholder='72.0';
+  if(DB.pesos[HOY])pi.value=DB.pesos[HOY];fd.appendChild(pi);r.appendChild(fd);
+  const pb=E('button','btn p','Anotar');pb.onclick=()=>{const v=+pi.value;if(!(v>20&&v<300))return toast('Escribe tu peso en kg');DB.pesos[HOY]=r2(v);guardar();toast('Peso anotado');pintar()};
+  r.appendChild(pb);p.appendChild(r);
+  p.appendChild(E('p','tip','Usa el promedio de la semana, no un día suelto: el peso diario sube y baja por agua y comida.'));
+  m.appendChild(p);
+  if(M.length){const h=E('div','cuerpo','<h3>Registro de medidas</h3>');
+    [...M].reverse().forEach(x=>h.appendChild(E('div','exrow','<span>'+x.f+'</span><s>cin '+(x.cintura||'-')+' · hom '+(x.hombros||'-')+' · bra '+(x.brazo||'-')+(ratio(x)?' · H/C '+ratio(x):'')+'</s>')));
+    m.appendChild(h)}
 }
 
-/* ══════════ 3 · SUSTITUIR EJERCICIO ══════════ */
-function nombreHoy(e){return (DB.sust[HOY]||{})[e.id]||e.n}
-function variantePasada(e){
-  const ss=sesionesDe(e.id);if(!ss.length)return null;
-  return (DB.sust[ss[ss.length-1].f]||{})[e.id]||e.n;
-}
-function cambiar(e){
-  const act=nombreHoy(e);
-  const ops=[e.n].concat(e.alt);
-  let html='<div class="eyebrow">Solo por hoy</div><h2>Cambiar ejercicio</h2>'+
-    '<div class="gbody" style="display:block"><p>Si la máquina está ocupada o tu gym no la tiene. Mismas series, reps y RIR.</p></div>';
-  ops.forEach((o,i)=>{html+='<button class="opt'+(o===act?' on':'')+'" data-i="'+i+'">'+o+
-    '<s>'+(i===0?'del programa':'alternativa')+'</s></button>'});
-  html+='<div class="gbody" style="display:block"><p style="color:var(--dim);font-size:12.5px">Si cambias, los pesos de la vez pasada dejan de ser comparables. La app te lo avisa.</p></div>';
-  abrirHoja(html);
-  $('sheetb').querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
-    const o=ops[+b.dataset.i];
-    DB.sust[HOY]=DB.sust[HOY]||{};
-    if(o===e.n)delete DB.sust[HOY][e.id];else DB.sust[HOY][e.id]=o;
-    guardar();$('sheet').classList.remove('on');pintar();
-  });
+/* ── glosario ── */
+function vistaGlo(m){
+  const s=E('input','gsearch');s.placeholder='Buscar: RIR, rodilla, hip thrust…';s.value=gq;
+  const filtra=()=>{const f=(gq=s.value).toLowerCase();let n=0;
+    document.querySelectorAll('.gitem').forEach(it=>{const v=it.dataset.q.includes(f);it.style.display=v?'':'none';if(v)n++});
+    document.querySelectorAll('.gsec').forEach(h=>{let x=h.nextElementSibling,v=false;while(x&&x.classList.contains('gitem')){if(x.style.display!=='none')v=true;x=x.nextElementSibling}h.style.display=v?'':'none'});
+    $('gnone').style.display=n?'none':''};
+  s.oninput=filtra;m.appendChild(s);
+  const ej=[],vis=new Set();todos(PLAN).forEach(({e})=>{if(!vis.has(e.clave)){vis.add(e.clave);ej.push([e.nombre,e.musculo,fichaHTML(e)])}});
+  const sec=[['Conceptos',GLO_C],['Ejercicios del programa',ej]];
+  sec.forEach(([t,L])=>{m.appendChild(E('div','gsec eyebrow',t+' · '+L.length));
+    L.forEach(([ti,tag,body])=>{const it=E('div','gitem');it.dataset.q=(ti+' '+tag+' '+body).toLowerCase().replace(/<[^>]+>/g,' ');
+      const b=E('button',null,'<h3>'+ti+'</h3><span class="tag">'+tag+'</span>');b.onclick=()=>it.classList.toggle('open');
+      it.appendChild(b);it.appendChild(E('div','gbody',body));m.appendChild(it)})});
+  const ne=E('div','empty','Nada con esa palabra.');ne.id='gnone';ne.style.display='none';m.appendChild(ne);
+  if(gq)filtra();
 }
 
-/* ══════════ 4 · REANUDAR SESIÓN ══════════ */
-let restaurar=null,tsc=null;
-function recordar(){
-  DB.ses={f:HOY,dia,abierto,sc:($('main')||{}).scrollTop||0};
-  guardar();
-}
-function engancharScroll(){
-  const m=$('main');
-  m.onscroll=()=>{clearTimeout(tsc);tsc=setTimeout(()=>{if(tab==='hoy')recordar()},700)};
-}
-
-
-/* ══════════ 5 · SESIÓN CON CRONÓMETRO ══════════ */
-let ojear=false, relojS=null;
-const MESES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
-const LARGO={lun:'lunes',mar:'martes',mie:'miércoles',jue:'jueves',vie:'viernes'};
-
-function lunesSemana(){
-  const d=new Date(),w=d.getDay();
-  const off=w===0?1:(w===6?2:1-w);
-  const m=new Date(d);m.setDate(d.getDate()+off);m.setHours(0,0,0,0);return m;
-}
-function fechaDe(k){const m=lunesSemana();m.setDate(m.getDate()+DIAS.indexOf(k));return m}
-function esHoy(k){return iso(fechaDe(k))===HOY}
-function saludo(){const h=new Date().getHours();return h<12?'Buenos días':(h<19?'Buenas tardes':'Buenas noches')}
-function fechaLarga(d){d=d||new Date();return LARGO[DIAS[Math.max(0,Math.min(4,d.getDay()-1))]]&&d.getDay()>=1&&d.getDay()<=5
-  ? LARGO[DIAS[d.getDay()-1]]+' '+d.getDate()+' de '+MESES[d.getMonth()]
-  : (['domingo','','','','','','sábado'][d.getDay()]||'')+' '+d.getDate()+' de '+MESES[d.getMonth()]}
-
-function sesionHoy(){return DB.sesiones[HOY]||null}
-function activa(){const s=sesionHoy();return s&&s.t0&&!s.t1?s:null}
-function transcurrido(){const s=activa();return s?Math.floor((Date.now()-s.t0)/1000):0}
-function hms(seg){const h=Math.floor(seg/3600),m=Math.floor(seg%3600/60);
-  return h?h+'h '+String(m).padStart(2,'0')+'m':m+'m '+String(seg%60).padStart(2,'0')+'s'}
-function mmss(seg){return Math.floor(seg/60)+':'+String(seg%60).padStart(2,'0')}
-
-function tickReloj(){
-  clearInterval(relojS);
-  if(!activa())return;
-  const upd=()=>{const s=activa();if(!s)return clearInterval(relojS);
-    $('wk').textContent='SEM '+semana()+' · '+mmss(transcurrido());};
-  upd();relojS=setInterval(upd,1000);
-}
-function iniciarSesion(){
-  DB.sesiones[HOY]={dia,t0:Date.now(),t1:null};
-  ojear=false;guardar();audioOn();despierto();pintar();
-}
-function cerrarViejas(){
-  for(const f in DB.sesiones){
-    const s=DB.sesiones[f];
-    if(s&&s.t0&&!s.t1&&f!==HOY){s.t1=s.t0;s.incompleta=true}
-  }
-}
-function terminarSesion(){
-  const s=activa();if(!s)return;
-  s.t1=Date.now();guardar();clearInterval(relojS);
-  const p=PLAN[s.dia||dia];
-  const L=DB.log[HOY]||{};
-  const series=p.ej.reduce((a,e)=>a+((L[e.id]||[]).filter(x=>x&&x.ok).length),0);
-  const total=p.ej.reduce((a,e)=>a+e.s,0);
-  const listos=p.ej.filter(e=>(L[e.id]||[]).filter(x=>x&&x.ok).length>=e.s).length;
-  const sube=p.ej.map(e=>{const v=veredicto(e,L[e.id]||[]);return v&&v.t==='sube'?{n:nombreHoy(e),p:(L[e.id].filter(x=>x.ok)[0].p+e.inc)}:null}).filter(Boolean);
-  const F=DB.fisio[HOY]||{},nf=FISIO.filter(x=>(F[x.id]||{}).ok).length;
-  abrirHoja('<div class="eyebrow">Sesión cerrada</div><h2>'+p.t+'</h2>'+
-    '<div class="res"><div><div class="v">'+hms(Math.floor((s.t1-s.t0)/1000))+'</div><div class="k">Duración</div></div>'+
-    '<div><div class="v">'+series+'/'+total+'</div><div class="k">Series</div></div></div>'+
-    '<div class="gbody" style="display:block"><p>'+listos+' de '+p.ej.length+' ejercicios completos'+
-    (p.fisio?' · bloque fisio '+nf+'/6':'')+'.</p>'+
-    (sube.length?'<span class="lbl">La próxima vez sube el peso</span><p>'+
-      sube.map(x=>x.n+' → <b>'+x.p+' kg</b>').join('<br>')+'</p>':'')+
-    (series<total?'<p style="color:var(--dim)">Quedaron '+(total-series)+' series sin registrar. Si las hiciste, ábrelas y márcalas: la sesión sigue editable hoy.</p>':'')+
-    '</div><button class="sbtn p" id="finOk">Listo</button>');
-  $('finOk').onclick=()=>{$('sheet').classList.remove('on');ojear=false;pintar()};
-}
-
-/* ══════════ 6 · PANTALLA DE INICIO ══════════ */
-function vistaInicio(m){
-  const p=PLAN[dia], s=sesionHoy();
-  const cab=E('div','saludo','<div class="eyebrow">Semana '+semana()+'</div>'+
-    '<div class="h">'+saludo()+'</div><div class="f">'+fechaLarga()+'</div>');
-  m.appendChild(cab);
-
-  const hero=E('div','hero');
-  const hecho=s&&s.t1;
-  const L=DB.log[HOY]||{};
-  const series=p.ej.reduce((a,e)=>a+((L[e.id]||[]).filter(x=>x&&x.ok).length),0);
-  const total=p.ej.reduce((a,e)=>a+e.s,0);
-  hero.innerHTML='<div class="k">'+(hecho?'Hoy · terminado':'Entreno de hoy')+'</div>'+
-    '<div class="t">'+p.t+'</div>'+
-    '<div class="s">'+(p.fisio?'Con bloque fisio · ':'Sesión larga · ')+total+' series'+
-    (hecho?' · '+hms(Math.floor((s.t1-s.t0)/1000)):'')+'</div>';
-  const b=E('button','go'+(hecho?' cont':''),hecho?'Volver a abrir el entreno':'Iniciar sesión');
-  b.onclick=hecho?()=>{ojear=true;pintar()}:iniciarSesion;
-  hero.appendChild(b);
-  if(hecho&&series<total)hero.appendChild(E('div','s','Te faltaron '+(total-series)+' series por marcar.'));
-  m.appendChild(hero);
-
-  const v=E('button','ver','Ver el entreno sin empezar →');
-  v.onclick=()=>{ojear=true;pintar()};m.appendChild(v);
-
-  m.appendChild(E('div','eyebrow','Esta semana'));
-  const sem=E('div','sem');
-  let n=0;
-  DIAS.forEach(k=>{
-    const f=iso(fechaDe(k)),ss=DB.sesiones[f];
-    const ok=ss&&ss.t1;if(ok)n++;
-    sem.appendChild(E('div',(ok?'si':'')+(esHoy(k)?' hoyx':''),NOM[k][0]+NOM[k][1].toLowerCase()));
-  });
-  m.appendChild(sem);
-  m.appendChild(E('p','tip',n+' de 5 sesiones esta semana.'));
-
-  const prev=Object.keys(DB.sesiones).filter(f=>f<HOY&&DB.sesiones[f].t1&&!DB.sesiones[f].incompleta).sort();
-  if(prev.length){
-    const f=prev[prev.length-1],ss=DB.sesiones[f],pp=PLAN[ss.dia]||{t:'Sesión'};
-    const LL=DB.log[f]||{},sr=Object.values(LL).reduce((a,x)=>a+(Array.isArray(x)?x.filter(y=>y&&y.ok).length:0),0);
-    const u=E('div','ult','<div class="a">'+pp.t+'<s>'+f+' · '+sr+' series</s></div>'+
-      '<div class="b">'+hms(Math.floor((ss.t1-ss.t0)/1000))+'</div>');
-    m.appendChild(E('div','eyebrow','Última sesión'));m.appendChild(u);
-  }
-  const c=E('button','ver','Añadir mis entrenos al calendario →');
-  c.onclick=calendario;m.appendChild(c);
-}
-
-/* ══════════ 7 · ARCHIVO DE CALENDARIO ══════════ */
-function calendario(){
-  abrirHoja('<div class="eyebrow">Archivo de calendario</div><h2>Tus 5 entrenos</h2>'+
-    '<div class="gbody" style="display:block"><p>Te genero un archivo con las cinco sesiones repitiéndose cada semana durante 4 semanas, con recordatorio 30 minutos antes.</p>'+
-    '<p style="color:var(--dim)">Se importa una vez al Calendario del iPhone. La app no puede leer ni modificar tu calendario: solo te entrega el archivo.</p>'+
-    '<span class="lbl">¿A qué hora entrenas?</span></div>'+
-    '<input class="tini" type="time" id="hEnt" value="18:00">'+
-    '<button class="sbtn p" id="genIcs">Generar archivo</button>');
-  $('genIcs').onclick=()=>{hacerIcs(($('hEnt').value||'18:00'));$('sheet').classList.remove('on')};
-}
-function hacerIcs(hora){
-  const [H,M]=hora.split(':').map(Number);
-  const dosd=n=>String(n).padStart(2,'0');
-  const fmt=d=>d.getFullYear()+dosd(d.getMonth()+1)+dosd(d.getDate())+'T'+dosd(d.getHours())+dosd(d.getMinutes())+'00';
-  const BY={lun:'MO',mar:'TU',mie:'WE',jue:'TH',vie:'FR'};
-  let ics='BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//MosbyFit//ES\r\nCALSCALE:GREGORIAN\r\n';
-  DIAS.forEach((k,i)=>{
-    const ini=fechaDe(k);ini.setHours(H,M,0,0);
-    if(ini<new Date())ini.setDate(ini.getDate()+7);
-    const fin=new Date(ini.getTime()+100*60000);
-    ics+='BEGIN:VEVENT\r\nUID:mosbyfit-'+k+'-'+Date.now()+'@local\r\nDTSTAMP:'+fmt(new Date())+
-      '\r\nDTSTART:'+fmt(ini)+'\r\nDTEND:'+fmt(fin)+
-      '\r\nRRULE:FREQ=WEEKLY;BYDAY='+BY[k]+';COUNT=4'+
-      '\r\nSUMMARY:MosbyFit · '+PLAN[k].t+
-      '\r\nDESCRIPTION:'+(PLAN[k].fisio?'Bloque de fisioterapia primero. ':'')+
-      PLAN[k].ej.map(e=>e.n).join(', ').replace(/,/g,'\\,')+
-      '\r\nBEGIN:VALARM\r\nTRIGGER:-PT30M\r\nACTION:DISPLAY\r\nDESCRIPTION:MosbyFit en 30 min\r\nEND:VALARM\r\nEND:VEVENT\r\n';
-  });
-  ics+='END:VCALENDAR\r\n';
-  compartir(new Blob([ics],{type:'text/calendar'}),'mosbyfit.ics','Ábrelo y toca Añadir todos');
+/* ── exportar, respaldo y programa ── */
+function vistaExp(m){
+  const desde=rango==='prog'?lunesDe(inicioDe(DB,PLAN)):null;
+  const fs=Object.keys(DB.log).filter(f=>(!desde||f>=desde)&&Object.values(DB.log[f]).some(v=>okSets(v).length));
+  let ns=0;fs.forEach(f=>Object.values(DB.log[f]).forEach(v=>ns+=okSets(v).length));
+  const st=E('div','stats');[[fs.length,'Sesiones'],[ns,'Series'],[semanaDe(HOY,DB,PLAN),'Semana']].forEach(([v,k])=>st.appendChild(E('div','stat','<div class="v">'+v+'</div><div class="k">'+k+'</div>')));
+  m.appendChild(st);
+  const ch=E('div','chips');[['prog','Este programa'],['todo','Todo']].forEach(([k,t])=>{const b=E('button','chip'+(rango===k?' on':''),t);b.onclick=()=>{rango=k;pintar()};ch.appendChild(b)});
+  m.appendChild(ch);
+  const t=E('textarea');t.id='out';t.readOnly=true;t.value=texto(DB,PLAN,HOY,desde);m.appendChild(t);
+  const c=E('button','btn p','Copiar reporte');c.onclick=async()=>{try{await navigator.clipboard.writeText(t.value);toast('Reporte copiado')}catch(e){t.focus();t.setSelectionRange(0,t.value.length);toast('Ya está seleccionado, cópialo')}};
+  m.appendChild(c);
+  m.appendChild(E('p','tip','En el check-in pégalo en el chat de entrenamiento junto con las fotos.'));
+  const rb=E('div','blk','<span class="eyebrow">Respaldo · '+(DB.respaldo?'último: '+fechaLarga(DB.respaldo):'todavía ninguno')+'</span>');
+  const two=E('div','two');const bk=E('button','btn s','↓ Guardar respaldo');bk.onclick=respaldar;const im=E('button','btn s','↑ Cargar respaldo');im.onclick=()=>elegirArchivo(cargarArchivo);
+  two.appendChild(bk);two.appendChild(im);rb.appendChild(two);
+  rb.appendChild(E('p','tip','Un archivo con todo tu registro y tu programa. Mándatelo por WhatsApp o guárdalo en Archivos, cada semana.'));
+  m.appendChild(rb);
+  const pr=E('div','blk','<span class="eyebrow">Programa</span>');
+  pr.appendChild(E('div','ult','<div class="a">'+PLAN.nombre+'<s>'+PLAN.dias.length+' días · '+todos(PLAN).length+' ejercicios · check-in '+checkinDe(DB,PLAN)+'</s></div>'));
+  const fi=E('div','row2');const fd=E('div','fld','<label>Fecha de inicio</label>');const di=E('input');di.type='date';di.value=inicioDe(DB,PLAN);
+  di.onchange=()=>{if(!di.value)return;DB.inicioProg=di.value===PLAN.inicio?null:di.value;guardar();toast('Inicio: '+fechaLarga(di.value));pintar()};
+  fd.appendChild(di);fi.appendChild(fd);pr.appendChild(fi);
+  const two2=E('div','two');const cp=E('button','btn s','↑ Cargar programa');cp.onclick=()=>elegirArchivo(cargarArchivo);
+  const dp=E('button','btn s','↓ Bajar programa');dp.onclick=()=>compartir(new Blob([JSON.stringify(PLAN,null,1)],{type:'application/json'}),'programa-'+PLAN.id+'.json','Programa guardado');
+  two2.appendChild(cp);two2.appendChild(dp);pr.appendChild(two2);
+  pr.appendChild(E('p','tip','Para el mes 2: te doy un archivo de programa, lo cargas aquí y listo. Tu registro se conserva.'));
+  m.appendChild(pr);
+  const z=E('button','btn d','Empezar de cero · borra el registro');let armado=false;
+  z.onclick=async()=>{if(!armado){armado=true;z.textContent='Toca otra vez para confirmar';setTimeout(()=>{armado=false;z.textContent='Empezar de cero · borra el registro'},4000);return}
+    if(cuentaSesiones(DB))await respaldar();const ip=DB.inicioProg;DB=sanea({});DB.visto=true;DB.inicioProg=ip;guardar();toast('Registro en cero');pintar()};
+  m.appendChild(z);
+  m.appendChild(E('p','tip',ALMACEN.nom+'. Si borras Safari o quitas la app, el registro se va con ellos: por eso el respaldo.'));
 }
 async function compartir(blob,nombre,msg){
-  try{
-    const f=new File([blob],nombre,{type:blob.type});
-    if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f]});return toast(msg)}
-  }catch(e){if(e&&e.name==='AbortError')return}
-  try{
-    const u=URL.createObjectURL(blob),a=document.createElement('a');
-    a.href=u;a.download=nombre;document.body.appendChild(a);a.click();a.remove();
-    setTimeout(()=>URL.revokeObjectURL(u),5000);toast(msg);
-  }catch(e){toast('No se pudo generar el archivo')}
+  try{const f=new File([blob],nombre,{type:blob.type});if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f]});toast(msg);return true}}
+  catch(e){if(e&&e.name==='AbortError')return false}
+  try{const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=nombre;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),5000);toast(msg);return true}
+  catch(e){toast('No se pudo generar el archivo');return false}
+}
+async function respaldar(){
+  const o=Object.assign({},DB,{programa:PLAN,app:'mosbyfit'});
+  const ok=await compartir(new Blob([JSON.stringify(o)],{type:'application/json'}),'mosbyfit-'+HOY+'.json','Respaldo listo: guárdalo en Archivos o mándatelo');
+  if(ok){DB.respaldo=HOY;guardar();if(tab!=='hoy'||!(activa()||ojear))pintar()}
+}
+function elegirArchivo(cb){const i=document.createElement('input');i.type='file';i.accept='application/json,.json,text/plain';
+  i.onchange=()=>{const f=i.files&&i.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{let o;try{o=JSON.parse(r.result)}catch(e){return toast('Ese archivo no es de MosbyFit')}cb(o)};r.readAsText(f)};i.click()}
+function cargarArchivo(o){
+  if(o&&o.formato==='mosbyfit-programa')return confirmarPrograma(o);
+  const d=sanea(o);if(d._futuro)return toast('Ese respaldo es de una versión más nueva de la app');
+  const n=cuentaSesiones(d),fs=Object.keys(d.log).sort();
+  const trae=o&&o.programa&&validaPlan(o.programa).length===0?o.programa:null;
+  if(!n&&!Object.keys(d.medidas).length&&!trae)return toast('Ese archivo no trae nada que cargar');
+  abrirHoja('<div class="eyebrow">Respaldo encontrado</div><h2>'+n+(n===1?' sesión':' sesiones')+'</h2><div class="gbody" style="display:block">'+
+    (n?'<p>Del <b>'+fs[0]+'</b> al <b>'+fs[fs.length-1]+'</b>.</p>':'')+(trae?'<p>Trae el programa <b>'+trae.nombre+'</b>.</p>':'')+
+    '<p><b>Fusionar</b> conserva lo que ya tienes y añade lo que falte.<br><b>Reemplazar</b> borra lo actual y deja solo el respaldo.</p></div>'+
+    '<button class="sbtn p" id="imF">Fusionar</button><button class="sbtn d" id="imR">Reemplazar todo</button>');
+  const fin=async m=>{if(trae){PLAN=normalizaPlan(trae);try{await ALMACEN.set(KP,JSON.stringify(trae))}catch(e){}}guardar();$('sheet').classList.remove('on');dia=diaDeHoy();pintar();toast(m)};
+  $('imF').onclick=()=>{fusionar(DB,d);fin('Respaldo fusionado')};
+  $('imR').onclick=()=>{DB=d;DB.visto=true;fin('Registro reemplazado')};
+}
+function confirmarPrograma(p){
+  const err=validaPlan(p);
+  if(err.length)return abrirHoja('<div class="eyebrow">No se puede cargar</div><h2>El programa tiene errores</h2><div class="gbody" style="display:block"><p>'+err.slice(0,8).join('<br>')+'</p><p>Pásale este mensaje al chat que lo hizo.</p></div>');
+  const ne=p.dias.reduce((a,d)=>a+d.ejercicios.length,0);
+  abrirHoja('<div class="eyebrow">Programa nuevo</div><h2>'+(p.nombre||p.id)+'</h2><div class="gbody" style="display:block"><p>'+p.dias.length+' días · '+ne+' ejercicios · inicio '+(p.inicio||'—')+'.</p><p>Tu registro se conserva. Los ejercicios que se llamen igual siguen su historial.</p></div><button class="sbtn p" id="pOk">Cargar programa</button>');
+  $('pOk').onclick=async()=>{PLAN=normalizaPlan(p);DB.inicioProg=null;try{await ALMACEN.set(KP,JSON.stringify(p))}catch(e){}guardar();$('sheet').classList.remove('on');dia=diaDeHoy();pintar();toast('Programa cargado')};
+}
+function calendario(){
+  abrirHoja('<div class="eyebrow">Archivo de calendario</div><h2>Tus 5 entrenos</h2><div class="gbody" style="display:block"><p>Las cinco sesiones desde el '+fechaLarga(lunesDe(inicioDe(DB,PLAN)))+', repitiéndose '+PLAN.semanas.length+' semanas, con recordatorio 30 minutos antes. Se abre con el Calendario del iPhone: toca <b>Añadir todos</b>.</p><span class="lbl">¿A qué hora entrenas?</span></div>'+
+    '<input class="tini" type="time" id="hEnt" value="'+(PLAN.hora_sugerida||'17:00')+'"><button class="sbtn p" id="gIcs">Generar archivo</button>');
+  $('gIcs').onclick=()=>{compartir(new Blob([ics(PLAN,DB,$('hEnt').value||'17:00')],{type:'text/calendar'}),'mosbyfit.ics','Ábrelo y toca Añadir todos');$('sheet').classList.remove('on')};
 }
 
-document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{tab=b.dataset.t;restaurar=(b.dataset.t==='hoy'&&DB.ses&&DB.ses.f===HOY)?DB.ses.sc:0;pintar()});
+/* ══════════ ARRANQUE ══════════ */
+async function cargar(){
+  try{const raw=await ALMACEN.get(KP);if(raw){const p=JSON.parse(raw);if(validaPlan(p).length===0)PLAN=normalizaPlan(p)}}catch(e){}
+  if(!PLAN)PLAN=normalizaPlan(JSON.parse(JSON.stringify(PLAN_BASE)));
+  try{const raw=await ALMACEN.get(K);if(raw)DB=sanea(JSON.parse(raw))}catch(e){toast('No se pudo leer el registro anterior')}
+  if(DB._futuro){toast('Registro de una versión más nueva: no se modificó');DB=sanea({})}
+  if(ALMACEN.modo==='memoria')dot('err');
+  cerrarViejas();
+  if(DB.ses&&DB.ses.f===HOY){dia=DB.ses.dia;abierto=DB.ses.ab;restaurar=DB.ses.sc;ojear=true}else dia=activa()?(sesionHoy().dia||diaDeHoy()):diaDeHoy();
+  if(activa())dia=sesionHoy().dia||dia;
+  pintar();tickReloj();reanudarDescanso();
+  if(!DB.visto){DB.visto=true;guardar();ayuda()}
+}
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{tab=b.dataset.t;restaurar=(tab==='hoy'&&DB.ses&&DB.ses.f===HOY)?DB.ses.sc:null;pintar()});
 document.body.addEventListener('touchstart',()=>{despierto();audioOn()},{once:true,passive:true});
-document.body.addEventListener('click',()=>{despierto();audioOn()},{once:true});
-if('serviceWorker' in navigator)
-  addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+if('serviceWorker'in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 cargar();
+
 </script>
